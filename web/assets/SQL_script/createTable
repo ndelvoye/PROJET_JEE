@@ -1,0 +1,10 @@
+CREATE TABLE Demande
+(
+    id SERIAL PRIMARY KEY,
+    type      CHAR(30),
+    etat    TINYINT,
+    dateDebut DATE,
+    dateFin DATE,
+    dateCreation DATE
+);
+
