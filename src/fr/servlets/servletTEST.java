@@ -10,8 +10,16 @@ import java.io.PrintWriter;
 public class servletTEST extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        resp.setContentType("text/html");
+        /*this.getServletContext().getRequestDispatcher( "/web/vues/jspTEST.jsp" ).forward( req, resp );
+         */
+        /*resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.println("<html><body><h1>Hello</h1></body></html>");
+        out.println("<html><body><h1>Hello</h1></body></html>");*/
+
+
+
+        String message = "Transmission de variables : OK !";
+        req.setAttribute( "test", message );
+        this.getServletContext().getRequestDispatcher( "/jspTEST.jsp" ).forward( req, resp);
     }
 }
