@@ -15,7 +15,7 @@ public class DBManager {
 
     private ResourceBundle properties;
 
-    private static String resourceBundle = "config";
+    private static String resourceBundle = "config.properties";
 
     private DBManager() {
         properties = ResourceBundle.getBundle(resourceBundle);
