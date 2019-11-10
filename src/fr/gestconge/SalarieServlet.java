@@ -18,7 +18,7 @@ public class SalarieServlet extends javax.servlet.http.HttpServlet {
     }
     private void doProcess(HttpServletRequest request, HttpServletResponse
             response)  {
-        String pageName="/index.jsp";
+        String pageName="/welcome.jsp";
         RequestDispatcher rd =
                 getServletContext().getRequestDispatcher(pageName);
         try {

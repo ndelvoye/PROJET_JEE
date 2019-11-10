@@ -1,99 +1,68 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Marie-Danielle
+  Date: 10/11/2019
+  Time: 17:09
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!--
-Material Dashboard - v2.1.1
-Copyright 2019 Creative Tim (https://www.creative-tim.com)
-Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/blob/master/LICENSE.md)
-Coded by Creative Tim
--->
-<%
-    String nom = "nom";
-    String prenom = "prenom";
-%>
-<!doctype html>
-<html lang="en">
 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<html>
 <head>
-    <title>Mon agenda • <%= nom + " " + prenom %>
-    </title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <!-- Material Kit CSS -->
-    <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
-</head>
+    <title>Login Page</title>
+    <!--Made with love by Mutiullah Samim -->
 
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="signin.css">0
+</head>
 <body>
-<div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white">
-        <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-        Tip 2: you can also add an image using data-image tag
-    -->
-        <div class="logo">
-            <a href="#" class="simple-text logo-mini">
-                Projet JEE 2019
-            </a>
-        </div>
-        <div class="sidebar-wrapper">
-            <ul class="nav">
-                <li class="nav-item active  ">
-                    <a class="nav-link" href="#0">
-                        <i class="material-icons">dashboard</i>
-                        <p>Mon agenda</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#0">
-                        <i class="material-icons">face</i>
-                        <p>Mon profil</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#0">
-                        <i class="material-icons">power_settings_new</i>
-                        <p>Se déconnecter</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="main-panel">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-            <div class="container-fluid">
-                <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="#pablo">Mon agenda</a>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Sign In</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="username">
+
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="password">
+                    </div>
+                    <div class="row align-items-center remember">
+                        <input type="checkbox">Remember Me
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn float-right login_btn">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Don't have an account?<a href="#">Sign Up</a>
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="navbar-toggler-icon icon-bar"></span>
-                    <span class="navbar-toggler-icon icon-bar"></span>
-                    <span class="navbar-toggler-icon icon-bar"></span>
-                </button>
-            </div>
-        </nav>
-        <!-- End Navbar -->
-        <div class="content">
-            <div class="container-fluid">
-                <jsp:include page="calendrier.jsp"/>
-            </div>
-        </div>
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="float-left">
-                    <ul></ul>
-                </nav>
-                <div class="copyright float-right">
-                    ENSSAT - IMR2 - DANIEL / DELVOYE / MORIN / TRAN
+                <div class="d-flex justify-content-center">
+                    <a href="#">Forgot your password?</a>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
 </div>
 </body>

@@ -1,10 +1,10 @@
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="calendrier.css" rel="stylesheet" id="calendrier-css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.4.19.min.js"></script>
 <script src="calendrier.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
+6
 <!DOCTYPE html>
 <html>
 <head>
