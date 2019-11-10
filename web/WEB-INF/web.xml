@@ -14,5 +14,15 @@
         <url-pattern>/SalarieServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+    <servlet-name>InscriptionServlet</servlet-name>
+    <servlet-class>fr.gestconge.InscriptionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InscriptionServlet</servlet-name>
+        <url-pattern>/InscriptionServlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
