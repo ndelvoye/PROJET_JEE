@@ -14,11 +14,12 @@ import fr.gestconge.InscriptionFormulaire;
 public class InscriptionServlet extends javax.servlet.http.HttpServlet {
     public static final String ATT_USER = "utilisateur";
     public static final String ATT_FORM = "form";
-    public static final String VUE = "/inscription.jsp";
+    public static final String VUE_FORM = "/inscription.jsp";
+    public static final String VUE_SUCCES   = "/welcome.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
         /* Affichage de la page d'inscription */
-        this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
+        this.getServletContext().getRequestDispatcher( VUE_FORM ).forward( request, response );
     }
 
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
@@ -32,9 +33,17 @@ public class InscriptionServlet extends javax.servlet.http.HttpServlet {
         request.setAttribute( ATT_FORM, form );
         request.setAttribute( ATT_USER, utilisateur );
         RequestDispatcher rd =
-                getServletContext().getRequestDispatcher(VUE);
+                getServletContext().getRequestDispatcher(VUE_FORM);
+        RequestDispatcher rd_2 =
+                getServletContext().getRequestDispatcher(VUE_SUCCES);
 
-        rd.forward( request, response );
+        if ( form.getErreurs().isEmpty() ) {
+            /* Si aucune erreur, alors affichage de la fiche récapitulative */
+            rd_2.forward( request, response );
+        } else {
+            /* Sinon, ré-affichage du formulaire */
+            rd.forward( request, response );
+        }
     }
 
 }
