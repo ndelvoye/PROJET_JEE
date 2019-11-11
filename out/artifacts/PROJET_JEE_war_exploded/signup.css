@@ -27,21 +27,25 @@ body{
     margin-top: 166px;
 }
 /*--- for label of first and last name---*/
-.lastname{
+.nom{
     margin-left: 1px;
     font-family: sans-serif;
     font-size: 14px;
     color: white;
     margin-top: 10px;
 }
-.firstname{
+.prenom{
     margin-left: 1px;
     font-family: sans-serif;
     font-size: 14px;
     color: white;
     margin-top: 5px;
 }
-#lname{
+    #nom{
+    margin-top:5px;
+}
+
+#prenom{
     margin-top:5px;
 }
 
@@ -61,17 +65,19 @@ body{
 }
 /*-----------for Password--------*/
 /*-------label-----*/
-.mail{
+.email{
     margin-left: 44px;
     font-family: sans-serif;
+    font-color: black;
     color: white;
     font-size: 14px;
     margin-top: 13px;
 }
-.pass{
+.motdepasse{
     color: white;
     margin-top: 9px;
     font-size: 14px;
+    font-color: green;
     font-family: sans-serif;
     margin-left: 6px;
     margin-top: 9px;
@@ -100,15 +106,20 @@ body{
 }
 
 /*---------- for Input type--------*/
+.col-xs-4{
+    color: White;
+}
 .col-xs-4.male{
     color: white;
     font-size: 13px;
+    font-color:green;
     margin-top: 9px;
     padding-bottom: 16px;
 }
 .col-xs-4.female {
     color: white;
     font-size: 13px;
+    font-color:red;
     margin-top: 9px;
     padding-bottom: 16px;
     padding-right: 95px;
