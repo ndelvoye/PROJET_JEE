@@ -19,7 +19,7 @@ public class ConnexionServlet extends javax.servlet.http.HttpServlet {
     public static final String ATT_FORM         = "form";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
     public static final String VUE_FORM              = "/index.jsp";
-    public static final String VUE_SUCCES              = "/welcome.jsp";
+    public static final String VUE_SUCCES              = "/accesPublic.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* Affichage de la page de connexion */

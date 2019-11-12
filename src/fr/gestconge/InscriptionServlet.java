@@ -15,7 +15,7 @@ public class InscriptionServlet extends javax.servlet.http.HttpServlet {
     public static final String ATT_USER = "utilisateur";
     public static final String ATT_FORM = "form";
     public static final String VUE_FORM = "/inscription.jsp";
-    public static final String VUE_SUCCES   = "/welcome.jsp";
+    public static final String VUE_SUCCES   = "/accesPublic.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
         /* Affichage de la page d'inscription */
