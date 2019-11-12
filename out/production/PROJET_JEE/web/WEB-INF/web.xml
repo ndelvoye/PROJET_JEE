@@ -4,9 +4,14 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+
     <servlet>
-        <servlet-name>SalarieServlet</servlet-name>
-        <servlet-class>fr.gestconge.SalarieServlet</servlet-class>
+        <servlet-name>ConnexionServlet</servlet-name>
+        <servlet-class>fr.gestconge.ConnexionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>InscriptionServlet</servlet-name>
@@ -15,8 +20,8 @@
 
 
     <servlet-mapping>
-        <servlet-name>SalarieServlet</servlet-name>
-        <url-pattern>/SalarieServlet</url-pattern>
+        <servlet-name>ConnexionServlet</servlet-name>
+        <url-pattern>/ConnexionServlet</url-pattern>
     </servlet-mapping>
 
 
