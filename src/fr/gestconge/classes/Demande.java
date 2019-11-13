@@ -1,4 +1,4 @@
-package fr.gestconge;
+package fr.gestconge.classes;
 
 import java.util.Date;
 

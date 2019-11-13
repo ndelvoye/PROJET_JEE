@@ -1,17 +1,15 @@
-package fr.gestconge;
+package fr.gestconge.servlets;
 
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fr.gestconge.Employe;
-import fr.gestconge.ConnexionFormulaire;
+import fr.gestconge.classes.Employe;
+import fr.gestconge.formulaire.ConnexionFormulaire;
 
 
 public class ConnexionServlet extends javax.servlet.http.HttpServlet {

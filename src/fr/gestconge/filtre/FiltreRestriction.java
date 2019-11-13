@@ -1,4 +1,4 @@
-package fr.gestconge;
+package fr.gestconge.filtre;
 
 import java.io.IOException;
 

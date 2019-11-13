@@ -1,4 +1,4 @@
-<%--@elvariable id="form" type="fr.gestconge.InscriptionFormulaire"--%>
+<%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Inscription</title>
-    <link type="text/css" rel="stylesheet" href="signup.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/signup.css" />
 </head>
 <body>
 <form method="post" action="InscriptionServlet">
@@ -28,7 +28,7 @@
                         <label for="email">Adresse email <span class="requis">*</span></label>
                     </div>
                     <div class="col-xs-8"	>
-                        <input type="email" id="email" name="email" placeholder="Entrer votre email" class="form-control " value="<%--@elvariable id="utilisateur" type="fr.gestconge.Employe"--%>
+                        <input type="email" id="email" name="email" placeholder="Entrer votre email" class="form-control " value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.Employe"--%>
                         <c:out value="${utilisateur.email}"/>" size="20" maxlength="60" />
                         <span class="erreur">${form.erreurs['email']}</span>
                         <br />

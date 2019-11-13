@@ -1,4 +1,6 @@
-package fr.gestconge;
+package fr.gestconge.formulaire;
+import fr.gestconge.classes.Employe;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +23,7 @@ public class InscriptionFormulaire {
         return erreurs;
     }
 
-    public Employe inscrireUtilisateur( HttpServletRequest request ) {
+    public Employe inscrireUtilisateur(HttpServletRequest request ) {
         String email = getValeurChamp( request, CHAMP_EMAIL );
         String motDePasse = getValeurChamp( request, CHAMP_PASS );
         String confirmation = getValeurChamp( request, CHAMP_CONF );

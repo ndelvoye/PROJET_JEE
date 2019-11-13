@@ -6,11 +6,11 @@
 
     <servlet>
         <servlet-name>ConnexionServlet</servlet-name>
-        <servlet-class>fr.gestconge.ConnexionServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlets.ConnexionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>InscriptionServlet</servlet-name>
-        <servlet-class>fr.gestconge.InscriptionServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlets.InscriptionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConnexionServlet</servlet-name>
@@ -25,11 +25,11 @@
 
     <filter>
         <filter-name>FiltreRestriction</filter-name>
-        <filter-class>fr.gestconge.FiltreRestriction</filter-class>
+        <filter-class>fr.gestconge.filtre.FiltreRestriction</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>FiltreRestriction</filter-name>
-        <url-pattern>/FiltreRestriction/*</url-pattern>
+        <url-pattern>/restreint/*</url-pattern>
     </filter-mapping>
 
 

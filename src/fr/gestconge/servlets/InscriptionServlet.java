@@ -1,14 +1,13 @@
-package fr.gestconge;
+package fr.gestconge.servlets;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import fr.gestconge.Employe;
-import fr.gestconge.InscriptionFormulaire;
+import fr.gestconge.classes.Employe;
+import fr.gestconge.formulaire.InscriptionFormulaire;
 
 //@WebServlet("/InscriptionServlet")
 public class InscriptionServlet extends javax.servlet.http.HttpServlet {

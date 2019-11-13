@@ -1,4 +1,4 @@
-<%--@elvariable id="form" type="fr.gestconge.InscriptionFormulaire"--%>
+<%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="signin.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/signin.css">
 </head>
 <body>
 <form method="post" action="ConnexionServlet">
@@ -38,7 +38,7 @@
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
 
-                        <input type="email" class="form-control" placeholder="email" value="<%--@elvariable id="utilisateur" type="fr.gestconge.Employe"--%>
+                        <input type="email" class="form-control" placeholder="email" value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.Employe"--%>
                         <c:out value="${utilisateur.email}"/>" size="20" maxlength="60" />
                         <span class="erreur">${form.erreurs['email']}</span>
 

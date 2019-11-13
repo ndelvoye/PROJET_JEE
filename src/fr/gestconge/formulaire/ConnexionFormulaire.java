@@ -1,4 +1,6 @@
-package fr.gestconge;
+package fr.gestconge.formulaire;
+
+import fr.gestconge.classes.Employe;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -20,7 +22,7 @@ public class ConnexionFormulaire {
         return erreurs;
     }
 
-    public Employe connecterUtilisateur( HttpServletRequest request ) {
+    public Employe connecterUtilisateur(HttpServletRequest request ) {
         /* Récupération des champs du formulaire */
         String email = getValeurChamp( request, CHAMP_EMAIL );
         String motDePasse = getValeurChamp( request, CHAMP_PASS );
