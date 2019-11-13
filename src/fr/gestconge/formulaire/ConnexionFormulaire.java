@@ -1,6 +1,6 @@
 package fr.gestconge.formulaire;
 
-import fr.gestconge.classes.Employe;
+import fr.gestconge.classes.beans.Employe;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;

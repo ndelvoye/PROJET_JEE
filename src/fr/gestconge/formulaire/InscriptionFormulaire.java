@@ -1,5 +1,5 @@
 package fr.gestconge.formulaire;
-import fr.gestconge.classes.Employe;
+import fr.gestconge.classes.beans.Employe;
 
 import java.util.HashMap;
 import java.util.Map;
