@@ -1,18 +1,16 @@
-<%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
+<jsp:useBean id="form" scope="request" type="fr.gestconge.connexion.ConnexionFormulaire"/>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>Inscription</title>
-    <link type="text/css" rel="stylesheet" href="../assets/css/signup.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/signup.css"/>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <form method="post" action="InscriptionServlet">
@@ -27,11 +25,13 @@
                     <div class="col-xs-4">
                         <label for="email">Adresse email <span class="requis">*</span></label>
                     </div>
-                    <div class="col-xs-8"	>
-                        <input type="email" id="email" name="email" placeholder="Entrer votre email" class="form-control " value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.Employe"--%>
-                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="60" />
+                    <div class="col-xs-8">
+                        <input type="email" id="email" name="email" placeholder="Entrer votre email"
+                               class="form-control "
+                               value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.Employe"--%>
+                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="60"/>
                         <span class="erreur">${form.erreurs['email']}</span>
-                        <br />
+                        <br/>
                     </div>
                 </div>
             </div>
@@ -43,9 +43,10 @@
                         <label for="motdepasse">Mot de passe <span class="requis">*</span></label>
                     </div>
                     <div class="col-xs-8">
-                        <input type="password" id="motdepasse" name="motdepasse" placeholder="Entrer votre mot de passe" class="form-control " value="" size="20" maxlength="20" />
+                        <input type="password" id="motdepasse" name="motdepasse" placeholder="Entrer votre mot de passe"
+                               class="form-control " value="" size="20" maxlength="20"/>
                         <span class="erreur">${form.erreurs['motdepasse']}</span>
-                        <br />
+                        <br/>
                     </div>
                 </div>
             </div>
@@ -56,9 +57,10 @@
                         <label for="confirmation">Confirmation du mot de passe <span class="requis">*</span></label>
                     </div>
                     <div class="col-xs-8">
-                        <input type="password" id="confirmation" name="confirmation" placeholder="Confirmer" class="form-control " value="" size="20" maxlength="20" />
+                        <input type="password" id="confirmation" name="confirmation" placeholder="Confirmer"
+                               class="form-control " value="" size="20" maxlength="20"/>
                         <span class="erreur">${form.erreurs['confirmation']}</span>
-                        <br />
+                        <br/>
                     </div>
                 </div>
             </div>
@@ -68,10 +70,11 @@
                     <div class="col-xs-4">
                         <label for="nom">Nom d'utilisateur</label>
                     </div>
-                    <div class ="col-xs-8">
-                        <input type="text" id="nom" name="nom" placeholder="Entrer votre nom" class="form-control " value="<c:out value="${utilisateur.nom}"/>" size="20" maxlength="20" />
+                    <div class="col-xs-8">
+                        <input type="text" id="nom" name="nom" placeholder="Entrer votre nom" class="form-control "
+                               value="<c:out value="${utilisateur.nom}"/>" size="20" maxlength="20"/>
                         <span class="erreur">${form.erreurs['nom']}</span>
-                        <br />
+                        <br/>
                     </div>
                 </div>
             </div>
@@ -79,18 +82,20 @@
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-xs-4">
-                        <label for="prenom">Prenom d'utilisateur</label>
+                        <label for="prenom">Prénom de l'utilisateur</label>
                     </div>
-                    <div class ="col-xs-8">
-                        <input type="text" id="prenom" name="prenom" placeholder="Entrer votre prenom" class="form-control " value="<c:out value="${utilisateur.prenom}"/>" size="20" maxlength="20" />
+                    <div class="col-xs-8">
+                        <input type="text" id="prenom" name="prenom" placeholder="Entrer votre prenom"
+                               class="form-control " value="<c:out value="${utilisateur.prenom}"/>" size="20"
+                               maxlength="20"/>
                         <span class="erreur">${form.erreurs['prenom']}</span>
-                        <br />
+                        <br/>
                     </div>
                 </div>
             </div>
 
-            <input type="submit" value="Inscription" class="sansLabel" />
-            <br />
+            <input type="submit" value="Inscription" class="sansLabel"/>
+            <br/>
         </div>
         <p class="${empty form.erreurs ? 'succes' : 'erreur'}" style="color:white">${form.resultat}</p>
 

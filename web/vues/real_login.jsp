@@ -1,25 +1,29 @@
-<%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
+<%--@elvariable id="form" type="fr.gestconge.inscription.InscriptionFormulaire"--%>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <title>mes Conges</title>
     <!--Made with love by Mutiullah Samim -->
 
     <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="../assets/css/signin.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <form method="post" action="ConnexionServlet">
@@ -38,8 +42,9 @@
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
 
-                        <input type="email" class="form-control" placeholder="email" value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.Employe"--%>
-                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="60" />
+                        <input type="email" class="form-control" placeholder="email"
+                               value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.Employe"--%>
+                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="60"/>
                         <span class="erreur">${form.erreurs['email']}</span>
 
                     </div>
@@ -47,7 +52,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="mot de passe" value=""  size="20" maxlength="20" />
+                        <input type="password" class="form-control" placeholder="mot de passe" value="" size="20"
+                               maxlength="20"/>
                         <span class="erreur">${form.erreurs['motdepasse']}</span>
 
                     </div>
@@ -70,11 +76,11 @@
             </div>
         </div>
     </div>
-        <%-- Vérification de la présence d'un objet utilisateur en session --%>
-        <c:if test="${!empty sessionScope.sessionUtilisateur}">
-            <%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
-            <p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.email}</p>
-        </c:if>
+    <%-- Vérification de la présence d'un objet utilisateur en session --%>
+    <c:if test="${!empty sessionScope.sessionUtilisateur}">
+        <%-- Si l'utilisateur existe en session, alors on affiche son adresse email. --%>
+        <p class="succes">Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.email}</p>
+    </c:if>
 </form>
 </body>
 </html>

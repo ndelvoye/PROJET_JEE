@@ -1,18 +1,11 @@
 
 <!--
-=========================================================
 Material Dashboard - v2.1.1
-=========================================================
-
 Product Page: https://www.creative-tim.com/product/material-dashboard
 Copyright 2019 Creative Tim (https://www.creative-tim.com)
 Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/blob/master/LICENSE.md)
-
 Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,8 +26,6 @@ The above copyright notice and this permission notice shall be included in all c
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <!-- CSS Files -->
     <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="../assets/demo/demo.css" rel="stylesheet"/>
 </head>
 
 <body class="">
@@ -42,11 +33,6 @@ The above copyright notice and this permission notice shall be included in all c
 
 <div class="wrapper ">
     <div class="sidebar" data-background-color="white" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
-        <!--
-          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-          Tip 2: you can also add an image using data-image tag
-      -->
         <div class="logo">
             <a class="simple-text logo-normal" href="http://www.creative-tim.com">
                 Creative Tim

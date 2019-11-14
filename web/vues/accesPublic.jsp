@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!--
 Material Dashboard - v2.1.1
 Copyright 2019 Creative Tim (https://www.creative-tim.com)
@@ -36,7 +36,7 @@ Coded by Creative Tim
     -->
         <div class="logo">
             <a href="#" class="simple-text logo-mini">
-                Projet JEE 2019
+                Gestion congés
             </a>
         </div>
         <div class="sidebar-wrapper">

@@ -1,15 +1,14 @@
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="../assets/css/calendrier.css" rel="stylesheet" id="calendrier-css">
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-3.4.19.min.js"></script>
-<script src="../assets/js/calendrier.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-6
 <!DOCTYPE html>
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
           rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <link href="../assets/css/calendrier.css" rel="stylesheet" id="calendrier-css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.4.19.min.js"></script>
+    <script src="../assets/js/calendrier.js"></script>
     <script>
         $(document).ready(function () {
             var date = new Date();
@@ -17,16 +16,8 @@
             var m = date.getMonth();
             var y = date.getFullYear();
 
-            /*  className colors
-
-            className: default(transparent), important(red), chill(pink), success(green), info(blue)
-
-            */
-
-
             /* initialize the external events
             -----------------------------------------------------------------*/
-
             $('#external-events div.external-event').each(function () {
 
                 // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
@@ -50,7 +41,6 @@
 
             /* initialize the calendar
             -----------------------------------------------------------------*/
-
             var calendar = $('#calendar').fullCalendar({
                 header: {
                     left: 'title',
@@ -169,7 +159,6 @@
 
     </script>
     <style>
-
         body {
             margin-bottom: 40px;
             margin-top: 40px;

@@ -5,12 +5,21 @@
          version="4.0">
 
     <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>fr.gestconge.TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/TestServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>ConnexionServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.ConnexionServlet</servlet-class>
+        <servlet-class>fr.gestconge.connexion.ConnexionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>InscriptionServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.InscriptionServlet</servlet-class>
+        <servlet-class>fr.gestconge.inscription.InscriptionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConnexionServlet</servlet-name>
