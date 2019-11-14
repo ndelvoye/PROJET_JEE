@@ -13,8 +13,16 @@
         <servlet-class>fr.gestconge.servlets.InscriptionServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SuppressionServlet</servlet-name>
+        <servlet-class>fr.gestconge.servlets.SuppressionServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DemandeServlet</servlet-name>
         <servlet-class>fr.gestconge.servlets.DemandeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HistoriqueDemandeServlet</servlet-name>
+        <servlet-class>fr.gestconge.servlets.HistoriqueDemandeServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConnexionServlet</servlet-name>
@@ -25,8 +33,16 @@
         <url-pattern>/InscriptionServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>SuppressionServlet</servlet-name>
+        <url-pattern>/SuppressionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>DemandeServlet</servlet-name>
         <url-pattern>/DemandeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HistoriqueDemandeServlet</servlet-name>
+        <url-pattern>/HistoriqueDemandeServlet</url-pattern>
     </servlet-mapping>
 
 

@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <form role="form" METHOD="post" action="<c:url value="/DemandeServlet"/>">
+            <form role="form" METHOD="post" action="DemandeServlet">
                 <div class="row setup-content" id="step-1">
                     <div class="col-xs-12">
                         <div class="col-md-12">
@@ -57,22 +57,36 @@
                     </div>
                 </div>
                 <div class="row setup-content" id="step-2">
-                    <div class="col-xs-12">
+                    <div class="col-xs-11">
                         <div class="col-md-12">
                             <h3> Etape 2</h3>
                             <div class="form-group">
-                                <label class="control-label">Type de Congés</label>
-                                    <input maxlength="200" type="radio" required="required" class="form-control" id="ca" name="typeDemande" value="<c:out value="${demande.type}"/>"
-                                           checked >
-                                    <label for="ca">Congés annuels</label>
-                                    <input maxlength="200" type="radio" required="required" class="form-control" id="cm" name="typeDemande"  value="<c:out value="${demande.type}"/>">
-                                    <label for="cm">Congés maternité</label>
-                                    <input maxlength="200" type="radio" required="required" class="form-control" id="cp" name="typeDemande" value="<c:out value="${demande.type}"/>">
-                                    <label for="cp">Congés paternité</label>
-                                    <input maxlength="200" type="radio" required="required" class="form-control" id="clm" name="typeDemande" value="<c:out value="${demande.type}"/>">
-                                    <label for="clm">Congés maladie</label>
-                                    <input maxlength="200" type="radio" required="required" class="form-control" id="cif" name="typeDemande"  value="<c:out value="${demande.type}"/>">
-                                    <label for="cif">CIF</label>
+                                    <p class="control-label">Type de Congés</p>
+                                    <div class="d-inline">
+                                        <input class="bouton-radio" type="radio" name="typeDemande" value="<c:out value="${demande.type}"/>"  required="required" class="form-control" id="ca"
+                                               checked >
+                                        <label for="ca">Congés annuels</label>
+                                    </div>
+                                    <div class="d-inline">
+                                        <input class="bouton-radio" type="radio" name="typeDemande"  value="<c:out value="${demande.type}"/>" required="required" class="form-control" id="cm" >
+                                        <label for="cm">Congés maternité</label>
+                                    </div>
+
+                                    <div class="d-inline">
+                                        <input class="bouton-radio" type="radio" required="required" class="form-control" id="cp" name="typeDemande" value="<c:out value="${demande.type}"/>">
+                                        <label for="cp">Congés paternité</label>
+                                    </div >
+
+                                    <div class="d-inline">
+                                        <input class="bouton-radio" type="radio" required="required" class="form-control" id="clm" name="typeDemande" value="<c:out value="${demande.type}"/>">
+                                        <label for="clm">Congés maladie</label>
+                                    </div>
+
+                                    <div class="d-inline">
+                                        <input class="bouton-radio" type="radio" required="required" class="form-control" id="cif" name="typeDemande"  value="<c:out value="${demande.type}"/>">
+                                        <label for="cif">CIF</label>
+                                    </div>
+
                                  </div>
                             <div class="form-group">
                                 <label class="control-label">Date de début</label>
@@ -93,12 +107,13 @@
                 </div>
 
                 <div class="row setup-content" id="step-3">
-                    <p class="info">${ form.resultat }</p>
+
                     <div class="col-xs-12">
                         <div class="col-md-12">
                             <h3> Etape 3</h3>
                             <button class="btn btn-success btn-lg pull-right" type="submit">Envoyer</button>
                         </div>
+                        <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
                     </div>
                 </div>
             </form>

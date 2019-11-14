@@ -1,4 +1,4 @@
-
+<%@page contentType="text/html;charset=UTF-8" language="java"%>
 <!--
 =========================================================
 Material Dashboard - v2.1.1

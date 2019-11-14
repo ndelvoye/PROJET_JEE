@@ -1,4 +1,4 @@
-package fr.gestconge.classes;
+package fr.gestconge.classes.beans;
 
 import java.util.Date;
 
@@ -6,9 +6,12 @@ public class Demande {
    private int id;
    private String type;
    private int status;
-   private Date dtDebut;
-   private Date dtFin;
-   private Date dtCreation;
+   private String dtDebut;
+   private String dtFin;
+   private String dtCreation;
+   private String nomDemandeur;
+   private String prenomDemandeur;
+
 
    public int getId() {
       return id;
@@ -34,27 +37,43 @@ public class Demande {
       this.status = status;
    }
 
-   public Date getDtDebut() {
+   public String getDtDebut() {
       return dtDebut;
    }
 
-   public void setDtDebut(Date dtDebut) {
+   public void setDtDebut(String dtDebut) {
       this.dtDebut = dtDebut;
    }
 
-   public Date getDtFin() {
+   public String getDtFin() {
       return dtFin;
    }
 
-   public void setDtFin(Date dtFin) {
+   public void setDtFin(String dtFin) {
       this.dtFin = dtFin;
    }
 
-   public Date getDtCreation() {
+   public String getDtCreation() {
       return dtCreation;
    }
 
-   public void setDtCreation(Date dtCreation) {
+   public void setDtCreation(String dtCreation) {
       this.dtCreation = dtCreation;
+   }
+
+   public String getNomDemandeur() {
+      return nomDemandeur;
+   }
+
+   public void setNomDemandeur(String nomDemandeur) {
+      this.nomDemandeur = nomDemandeur;
+   }
+
+   public String getPrenomDemandeur() {
+      return prenomDemandeur;
+   }
+
+   public void setPrenomDemandeur(String prenomDemandeur) {
+      this.prenomDemandeur = prenomDemandeur;
    }
 }

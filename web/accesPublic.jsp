@@ -55,9 +55,15 @@ Coded by Creative Tim
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="DemandeServlet">
-                    <i class="material-icons">list</i>
-                    <p>Mes demandes</p>
+                    <i class="material-icons">description</i>
+                    <p>Formulaire</p>
                 </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="HistoriqueDemandeServlet">
+                        <i class="material-icons">list</i>
+                        <p>Mes demandes</p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#0">

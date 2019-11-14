@@ -1,4 +1,4 @@
-package fr.gestconge.classes;
+package fr.gestconge.classes.beans;
 
 import java.time.LocalDate;
 
