@@ -44,12 +44,13 @@
                             <h3> Etape 1</h3>
                             <div class="form-group">
                                 <label class="control-label">Nom</label>
-                                <input   type="text" required="required" class="form-control" placeholder="Nom"  name="nom_demandeur" value="<c:out value="${demande.nomDemandeur}"/>" size="30" maxlength="30"/>
+                                <input   type="text" required="required" class="form-control" placeholder="Nom"  name="nom_demandeur" value="<c:out value="${old.nomDemandeur}"/>" size="30" maxlength="30"/>
                                 <span class="erreur">${form.erreurs['nom_demandeur']}</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Prenom</label>
-                                <input type="text" required="required" class="form-control" placeholder="Prenom" name="prenom_demandeur" value="<c:out value="${demande.prenomDemandeur}"/>" size="30" maxlength="30"/>
+                                <input type="text" required="required" class="form-control" placeholder="Prenom" name="prenom_demandeur" value="<%--@elvariable id="old" type="fr.gestconge.classes.beans.Demande"--%>
+                                <c:out value="${old.prenomDemandeur}"/>" size="30" maxlength="30"/>
                                 <span class="erreur">${form.erreurs['prenom_demandeur']}</span>
                             </div>
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Suivant</button>
@@ -67,14 +68,14 @@
                                                checked="checked">
                                         <label for="ca">Congés annuels</label>
                                         <c:if test="${param.typeDemande == 'Conges annuels'}">
-                                            <c:out value="${demande.type}"/>
+                                            <c:out value="${old.type}"/>
                                         </c:if>
                                     </div>
                                     <div class="d-inline">
                                         <input class="bouton-radio" type="radio" name="typeDemande"  value="Conges maternite" required="required" id="cm" >
                                         <label for="cm">Congés maternité</label>
                                         <c:if test="${param.typeDemande == 'Conges maternite'}">
-                                            <c:out value="${demande.type}"/>
+                                            <c:out value="${old.type}"/>
                                         </c:if>
                                     </div>
 
@@ -82,7 +83,7 @@
                                         <input class="bouton-radio" type="radio" required="required" id="cp" name="typeDemande" value="Conges paternite">
                                         <label for="cp">Congés paternité</label>
                                         <c:if test="${param.typeDemande == 'Conges paternité'}">
-                                            <c:out value="${demande.type}"/>
+                                            <c:out value="${old.type}"/>
                                         </c:if>
                                     </div >
 
@@ -90,7 +91,7 @@
                                         <input class="bouton-radio" type="radio" required="required"  id="clm" name="typeDemande" value="Conges maladie">
                                         <label for="clm">Congés maladie</label>
                                         <c:if test="${param.typeDemande == 'Conges maladie'}">
-                                            <c:out value="${demande.type}"/>
+                                            <c:out value="${old.type}"/>
                                         </c:if>
                                     </div>
 
@@ -98,7 +99,7 @@
                                         <input class="bouton-radio" type="radio" required="required" id="cif" name="typeDemande"  value="CIF">
                                         <label for="cif">CIF</label>
                                         <c:if test="${param.typeDemande == 'CIF'}">
-                                            <c:out value="${demande.type}"/>
+                                            <c:out value="${old.type}"/>
                                         </c:if>
                                     </div>
 
@@ -106,7 +107,7 @@
                                  </div>
                             <div class="form-group">
                                 <label class="control-label">Date de début</label>
-                                <input maxlength="200" required="required" class="form-control" type="date"  name="dtDebut" value="<c:out value="${demande.dtDebut}"/>" />
+                                <input maxlength="200" required="required" class="form-control" type="date"  name="dtDebut" value="<c:out value="${old.dtDebut}"/>" />
                                 <span class="erreur">${form.erreurs['dtDebut']}</span>
 
 
@@ -114,7 +115,7 @@
                             <div class="form-group">
                                 <label class="control-label">Date de fin</label>
                                 <input maxlength="200" required="required" class="form-control" type="date"  name="dtFin" value="<%--@elvariable id="demande" type="fr.gestconge.classes.beans.Demande"--%>
-                                <c:out value="${demande.dtFin}"/>"  />
+                                <c:out value="${old.dtFin}"/>"  />
                                 <span class="erreur">${form.erreurs['dtFin']}</span>
                             </div>
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Suivant</button>

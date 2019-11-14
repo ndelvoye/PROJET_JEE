@@ -81,3 +81,7 @@ body{
     min-height: 25px;
     height: 10%;
 }
+select {
+    font-size: .9rem;
+    padding: 2px 5px;
+}

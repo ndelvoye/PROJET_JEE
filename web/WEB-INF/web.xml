@@ -17,6 +17,10 @@
         <servlet-class>fr.gestconge.servlets.SuppressionServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ModificationServlet</servlet-name>
+        <servlet-class>fr.gestconge.servlets.ModificationServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DemandeServlet</servlet-name>
         <servlet-class>fr.gestconge.servlets.DemandeServlet</servlet-class>
     </servlet>
@@ -35,6 +39,10 @@
     <servlet-mapping>
         <servlet-name>SuppressionServlet</servlet-name>
         <url-pattern>/SuppressionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModificationServlet</servlet-name>
+        <url-pattern>/ModificationServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DemandeServlet</servlet-name>

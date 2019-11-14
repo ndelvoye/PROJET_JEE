@@ -27,7 +27,7 @@ Coded by Creative Tim
     <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
 </head>
 
-<body>
+<body style="background-image:url('./assets/img/avion.png'); background-color: transparent; background-repeat: no-repeat;background-position: right;">
 <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white">
         <!--
@@ -54,10 +54,10 @@ Coded by Creative Tim
                     </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="DemandeServlet">
-                    <i class="material-icons">description</i>
-                    <p>Formulaire</p>
-                </a>
+                    <a class="nav-link" href="DemandeServlet">
+                        <i class="material-icons">description</i>
+                        <p>Formulaire</p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="HistoriqueDemandeServlet">
@@ -93,7 +93,7 @@ Coded by Creative Tim
         <!-- End Navbar -->
         <div class="content">
             <div class="container-fluid">
-                <jsp:include page="calendrier.jsp"/>
+                <jsp:include page="recapitulatifDemande.jsp"/>
 
 
             </div>

@@ -6,14 +6,15 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Affichage d'une commande</title>
+    <title>Affichage d'une demande</title>
     <link type="text/css" rel="stylesheet" href="<c:url value="/assets/css/demande.css"/>" />
 </head>
-<body>
+<body >
 
 <div id="corps">
     <p class="info">${ form.resultat }</p>
-    <p>Commande</p>
+    <p>Nouvelle demande</p>
+    <br>
     <p>Date Création  : <c:out value="${ demande.dtCreation }"/></p>
     <p>nom demandeur  : <c:out value="${ demande.nomDemandeur }"/></p>
     <p>prenom demandeur  : <c:out value="${ demande.prenomDemandeur }"/></p>

@@ -13,7 +13,7 @@ Coded by Creative Tim
 <html lang="en">
 
 <head>
-    <title>Mon agenda • <%= nom + " " + prenom %>
+    <title>Mes demandes • <%= nom + " " + prenom %>
     </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -54,10 +54,10 @@ Coded by Creative Tim
                     </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="DemandeServlet">
-                    <i class="material-icons">description</i>
-                    <p>Formulaire</p>
-                </a>
+                    <a class="nav-link" href="DemandeServlet">
+                        <i class="material-icons">description</i>
+                        <p>Formulaire</p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="HistoriqueDemandeServlet">
@@ -93,7 +93,7 @@ Coded by Creative Tim
         <!-- End Navbar -->
         <div class="content">
             <div class="container-fluid">
-                <jsp:include page="calendrier.jsp"/>
+                <jsp:include page="historiqueDemande.jsp"/>
 
 
             </div>

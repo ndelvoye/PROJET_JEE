@@ -66,7 +66,7 @@ Coded by Creative Tim
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#0">
+                    <a class="nav-link" href="ConnexionServlet">
                         <i class="material-icons">power_settings_new</i>
                         <p>Se déconnecter</p>
                     </a>

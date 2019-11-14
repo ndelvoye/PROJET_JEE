@@ -18,8 +18,8 @@ public class DemandeServlet extends HttpServlet {
     public static final String ATT_FORM     = "form";
     public static final String SESSION_DEMANDES = "demandes";
 
-    public static final String VUE_SUCCES   = "/recapitulatifDemande.jsp";
-    public static final String VUE_FORM     = "/demande.jsp";
+    public static final String VUE_SUCCES   = "/recapitulatif.jsp";
+    public static final String VUE_FORM     = "/formulaireDemande.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* À la réception d'une requête GET, simple affichage du formulaire */

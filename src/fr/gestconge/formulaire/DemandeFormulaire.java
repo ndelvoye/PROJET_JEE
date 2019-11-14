@@ -28,7 +28,7 @@ public final class DemandeFormulaire {
     private static final String CHAMP_TYPE_DEMANDE   = "typeDemande";
     private static final String CHAMP_STATUT_DEMANDE = "statutDemande";
 
-    private static final String FORMAT_DATE            = "dd-MM-yyyy";
+    private static final String FORMAT_DATE            = "dd-MM-yyyy HH:mm:ss";
 
     private String              resultat;
     private Map<String, String> erreurs                = new HashMap<String, String>();
@@ -43,7 +43,7 @@ public final class DemandeFormulaire {
 
     public Demande creerDemande(HttpServletRequest request ) {
 
-        LocalDate dt = LocalDate.now();
+        LocalDateTime dt = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern( FORMAT_DATE );
         String date = dt.format(formatter);
 

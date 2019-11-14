@@ -1,6 +1,6 @@
 <%--@elvariable id="form" type="fr.gestconge.formulaire.DemandeFormulaire"--%>
 <%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
-<%@ page pageEncoding="UTF-8" %>
+<%@  page contentType="text/html;charset=UTF-8" language="java"  %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -63,29 +63,45 @@
                             <div class="form-group">
                                     <p class="control-label">Type de Congés</p>
                                     <div class="d-inline">
-                                        <input class="bouton-radio" type="radio" name="typeDemande" value="<c:out value="${demande.type}"/>"  required="required" class="form-control" id="ca"
-                                               checked >
+                                        <input class="bouton-radio" type="radio" name="typeDemande" value= "Conges annuels"required="required"  id="ca"
+                                               checked="checked">
                                         <label for="ca">Congés annuels</label>
+                                        <c:if test="${param.typeDemande == 'Conges annuels'}">
+                                            <c:out value="${demande.type}"/>
+                                        </c:if>
                                     </div>
                                     <div class="d-inline">
-                                        <input class="bouton-radio" type="radio" name="typeDemande"  value="<c:out value="${demande.type}"/>" required="required" class="form-control" id="cm" >
+                                        <input class="bouton-radio" type="radio" name="typeDemande"  value="Conges maternite" required="required" id="cm" >
                                         <label for="cm">Congés maternité</label>
+                                        <c:if test="${param.typeDemande == 'Conges maternite'}">
+                                            <c:out value="${demande.type}"/>
+                                        </c:if>
                                     </div>
 
                                     <div class="d-inline">
-                                        <input class="bouton-radio" type="radio" required="required" class="form-control" id="cp" name="typeDemande" value="<c:out value="${demande.type}"/>">
+                                        <input class="bouton-radio" type="radio" required="required" id="cp" name="typeDemande" value="Conges paternite">
                                         <label for="cp">Congés paternité</label>
+                                        <c:if test="${param.typeDemande == 'Conges paternité'}">
+                                            <c:out value="${demande.type}"/>
+                                        </c:if>
                                     </div >
 
                                     <div class="d-inline">
-                                        <input class="bouton-radio" type="radio" required="required" class="form-control" id="clm" name="typeDemande" value="<c:out value="${demande.type}"/>">
+                                        <input class="bouton-radio" type="radio" required="required"  id="clm" name="typeDemande" value="Conges maladie">
                                         <label for="clm">Congés maladie</label>
+                                        <c:if test="${param.typeDemande == 'Conges maladie'}">
+                                            <c:out value="${demande.type}"/>
+                                        </c:if>
                                     </div>
 
                                     <div class="d-inline">
-                                        <input class="bouton-radio" type="radio" required="required" class="form-control" id="cif" name="typeDemande"  value="<c:out value="${demande.type}"/>">
+                                        <input class="bouton-radio" type="radio" required="required" id="cif" name="typeDemande"  value="CIF">
                                         <label for="cif">CIF</label>
+                                        <c:if test="${param.typeDemande == 'CIF'}">
+                                            <c:out value="${demande.type}"/>
+                                        </c:if>
                                     </div>
+
 
                                  </div>
                             <div class="form-group">
