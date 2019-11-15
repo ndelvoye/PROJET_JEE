@@ -1,100 +1,227 @@
-<%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Inscription</title>
-    <link type="text/css" rel="stylesheet" href="assets/css/signup.css" />
-</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
 <body>
-<form method="post" action="InscriptionServlet">
-    <div class="container">
-
-        <legend style="color:white">Inscription</legend>
-        <p style="color:white">Vous pouvez vous inscrire via ce formulaire.</p>
-        <div class="row ">
-            <!-----For email---->
-            <div class="col-sm-12">
+    <form method="post" action="InscriptionServlet">
+        <div class="container">
+            <div id="accordion">
                 <div class="row">
-                    <div class="col-xs-4">
-                        <label for="email">Adresse email <span class="requis">*</span></label>
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <h3>Nouvel employé</h3>
+                        </div>
                     </div>
-                    <div class="col-xs-8"	>
-                        <input type="email" id="email" name="email" placeholder="Entrer votre email" class="form-control " value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.beans.Employe"--%>
-                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="60" />
-                        <span class="erreur">${form.erreurs['email']}</span>
-                        <br />
+                </div>
+
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                <i class="glyphicon glyphicon-search text-gold"></i>
+                                <b>SECTION I: COORDONNEES</b>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="collapse show">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Nom</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-lg-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Prenom</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 col-lg-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Date embauche</label>
+                                        <input maxlength="200" required="required" class="form-control" type="date"  name="dtEmb"  />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Adresse mail</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Mot de passe </label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Confirmation </label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                    <i class="glyphicon glyphicon-lock text-gold"></i>
+                                    <b>SECTION II: POSTE</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="collapse show">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <table class="table table-primary">
+                                            <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>LEADER</th>
+                                                <th>STANDARD</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Poste</td>
+                                                    <td>
+                                                        <label class="control-label">
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="control-label">
+                                                            <input type="checkbox">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-primary">
+                                            <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>IA</th>
+                                                <th>DEFENSE</th>
+                                                <th>IOT</th>
+                                                <th>RH</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Service</td>
+                                                <td>
+                                                    <label class="control-label">
+                                                        <input type="checkbox">
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="control-label">
+                                                        <input type="checkbox">
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="control-label">
+                                                        <input type="checkbox">
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="control-label">
+                                                        <input type="checkbox">
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-primary">
+                                            <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>JAWA</th>
+                                                <th>ECHO</th>
+                                                <th>HOLA</th>
+                                                <th>DREAM</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Nom équipe</td>
+                                                <td>
+                                                    <label class="control-label">
+                                                        <input type="checkbox">
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="control-label">
+                                                        <input type="checkbox">
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="control-label">
+                                                        <input type="checkbox">
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="control-label">
+                                                        <input type="checkbox">
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="pull-right">
+                            <a href="#" class="btn btn-success btn-lg" id="btnSubmit"><i class="fa fa-save"></i> Save</a>
+                            <a class="btn btn-warning btn-lg" href="#" id="btnToTop"><i class="fa fa-arrow-up"></i> Top</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-----For Password and confirm password---->
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <label for="motdepasse">Mot de passe <span class="requis">*</span></label>
-                    </div>
-                    <div class="col-xs-8">
-                        <input type="password" id="motdepasse" name="motdepasse" placeholder="Entrer votre mot de passe" class="form-control " value="" size="20" maxlength="20" />
-                        <span class="erreur">${form.erreurs['motdepasse']}</span>
-                        <br />
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <label for="confirmation">Confirmation du mot de passe <span class="requis">*</span></label>
-                    </div>
-                    <div class="col-xs-8">
-                        <input type="password" id="confirmation" name="confirmation" placeholder="Confirmer" class="form-control " value="" size="20" maxlength="20" />
-                        <span class="erreur">${form.erreurs['confirmation']}</span>
-                        <br />
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <label for="nom">Nom d'utilisateur</label>
-                    </div>
-                    <div class ="col-xs-8">
-                        <input type="text" id="nom" name="nom" placeholder="Entrer votre nom" class="form-control " value="<c:out value="${utilisateur.nom}"/>" size="20" maxlength="20" />
-                        <span class="erreur">${form.erreurs['nom']}</span>
-                        <br />
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <label for="prenom">Prenom d'utilisateur</label>
-                    </div>
-                    <div class ="col-xs-8">
-                        <input type="text" id="prenom" name="prenom" placeholder="Entrer votre prenom" class="form-control " value="<c:out value="${utilisateur.prenom}"/>" size="20" maxlength="20" />
-                        <span class="erreur">${form.erreurs['prenom']}</span>
-                        <br />
-                    </div>
-                </div>
-            </div>
-
-            <input type="submit" value="Inscription" class="sansLabel" />
-            <br />
         </div>
-        <p class="${empty form.erreurs ? 'succes' : 'erreur'}" style="color:white">${form.resultat}</p>
 
-    </div>
-</form>
+        <style>
+            .card-default {
+                color: #333;
+                background: linear-gradient(#fff,#ebebeb) repeat scroll 0 0 transparent;
+                font-weight: 600;
+                border-radius: 6px;
+            }
+
+        </style>
+
+        <script>
+            $(function () {
+                $(".date").datepicker({
+                    autoclose: true,
+                    todayHighlight: true
+                });
+            });
+        </script>
+    </form>
+
 </body>
-</html>

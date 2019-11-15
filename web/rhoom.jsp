@@ -41,36 +41,14 @@ Coded by Creative Tim
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">
-                        <i class="material-icons">dashboard</i>
-                        <p>Mon agenda</p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#0">
-                        <i class="material-icons">face</i>
-                        <p>Mon profil</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="DemandeServlet">
+                    <a class="nav-link" href="InscriptionServlet">
                         <i class="material-icons">description</i>
-                        <p>Formulaire</p>
+                        <p>Nouvelle fiche</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="HistoriqueDemandeServlet">
-                        <i class="material-icons">list</i>
-                        <p>Mes demandes</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./examples/notifications.html">
-                        <i class="material-icons">notifications</i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
+
                 <li class="nav-item active ">
                     <a class="nav-link" href="RhoomServlet">
                         <i class="material-icons">content_paste</i>

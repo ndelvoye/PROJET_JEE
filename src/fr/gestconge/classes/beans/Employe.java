@@ -6,10 +6,23 @@ public class Employe {
     // Attributs
     private String nom;
     private String prenom;
-    private LocalDate dateRecrutement;
+    private String dateRecrutement;
     private String motDePasse;
     private String email;
     private String poste;
+
+    private String equipe;
+    private String service;
+
+
+
+    public String getEquipe() {
+        return equipe;
+    }
+
+    public void setEquipe(String equipe) {
+        this.equipe = equipe;
+    }
 
     public String getMotDePasse() {
         return motDePasse;
@@ -19,7 +32,13 @@ public class Employe {
         this.motDePasse = motDePasse;
     }
 
+    public String getService() {
+        return service;
+    }
 
+    public void setService(String service) {
+        this.service = service;
+    }
 
     public String getNom() {
         return nom;
@@ -37,11 +56,11 @@ public class Employe {
         this.prenom = prenom;
     }
 
-    public LocalDate getDateRecrutement() {
+    public String getDateRecrutement() {
         return dateRecrutement;
     }
 
-    public void setDateRecrutement(LocalDate dateRecrutement) {
+    public void setDateRecrutement(String dateRecrutement) {
         this.dateRecrutement = dateRecrutement;
     }
 

@@ -12,6 +12,10 @@ public class InscriptionFormulaire {
     private static final String CHAMP_CONF   = "confirmation";
     private static final String CHAMP_NOM    = "nom";
     private static final String CHAMP_PRENOM    = "prenom";
+    private static final String CHAMP_POSTE    = "poste";
+    private static final String CHAMP_SERVICE   = "service";
+    private static final String CHAMP_EQUIPE    = "equipe";
+    private static final String CHAMP_DATE_RECRUTEMENT    = "dtRecrutement";
     private String resultat;
     private Map<String, String> erreurs      = new HashMap<String, String>();
 
@@ -29,6 +33,10 @@ public class InscriptionFormulaire {
         String confirmation = getValeurChamp( request, CHAMP_CONF );
         String nom = getValeurChamp( request, CHAMP_NOM );
         String prenom = getValeurChamp( request, CHAMP_PRENOM );
+        String poste = getValeurChamp( request, CHAMP_POSTE );
+        String service = getValeurChamp( request, CHAMP_SERVICE );
+        String equipe = getValeurChamp( request, CHAMP_PRENOM );
+        String dtRecrutement = getValeurChamp( request, CHAMP_DATE_RECRUTEMENT );
 
         Employe utilisateur = new Employe();
 
@@ -60,6 +68,11 @@ public class InscriptionFormulaire {
             setErreur( CHAMP_PRENOM, e.getMessage() );
         }
         utilisateur.setPrenom( prenom );
+
+        utilisateur.setDateRecrutement(dtRecrutement);
+        utilisateur.setService(service);
+        utilisateur.setPoste(poste);
+        utilisateur.setEquipe(equipe);
 
         if ( erreurs.isEmpty() ) {
             resultat = "Succès de l'inscription.";

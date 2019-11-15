@@ -1,4 +1,4 @@
-package fr.gestconge.servlets;
+package fr.gestconge.servlets.RH;
 import fr.gestconge.DAO.Rhoom;
 import fr.gestconge.DAO.RhoomImpl;
 import fr.gestconge.classes.beans.Demande;
