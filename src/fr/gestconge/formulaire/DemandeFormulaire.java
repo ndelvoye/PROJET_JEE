@@ -57,6 +57,7 @@ public final class DemandeFormulaire {
         // Noter la date de création de la demande
         Demande demande = new Demande();
         demande.setDtCreation( date );
+        demande.setStatus( 0 ); //statut 0 en cours de validation
 
         try {
             validationNom( nom );

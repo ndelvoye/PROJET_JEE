@@ -41,7 +41,7 @@ Coded by Creative Tim
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="nav-item active  ">
+                <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="material-icons">dashboard</i>
                         <p>Mon agenda</p>
@@ -59,7 +59,7 @@ Coded by Creative Tim
                         <p>Formulaire</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="HistoriqueDemandeServlet">
                         <i class="material-icons">list</i>
                         <p>Mes demandes</p>
@@ -79,7 +79,7 @@ Coded by Creative Tim
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="#pablo">Mon agenda</a>
+                    <a class="navbar-brand" href="#pablo">Historique</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                         aria-expanded="false" aria-label="Toggle navigation">

@@ -4,30 +4,42 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!-- Servlets-->
+
     <servlet>
         <servlet-name>ConnexionServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.ConnexionServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlets.employe.ConnexionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>InscriptionServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.InscriptionServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlets.RH.InscriptionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SuppressionServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.SuppressionServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlets.employe.SuppressionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ModificationServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.ModificationServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlets.employe.ModificationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RHServlet</servlet-name>
+        <servlet-class>fr.gestconge.servlets.RH.RHServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DemandeServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.DemandeServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlets.employe.DemandeServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>HistoriqueDemandeServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.HistoriqueDemandeServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlets.employe.HistoriqueDemandeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RhoomServlet</servlet-name>
+        <servlet-class>fr.gestconge.servlets.RH.RhoomServlet</servlet-class>
+    </servlet>
+    <!-- Mapping-->
+
     <servlet-mapping>
         <servlet-name>ConnexionServlet</servlet-name>
         <url-pattern>/ConnexionServlet</url-pattern>
@@ -41,6 +53,10 @@
         <url-pattern>/SuppressionServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>RHServlet</servlet-name>
+        <url-pattern>/RHServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ModificationServlet</servlet-name>
         <url-pattern>/ModificationServlet</url-pattern>
     </servlet-mapping>
@@ -51,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>HistoriqueDemandeServlet</servlet-name>
         <url-pattern>/HistoriqueDemandeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RhoomServlet</servlet-name>
+        <url-pattern>/RhoomServlet</url-pattern>
     </servlet-mapping>
 
 

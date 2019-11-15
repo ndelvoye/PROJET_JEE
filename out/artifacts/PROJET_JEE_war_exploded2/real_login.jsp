@@ -1,5 +1,5 @@
-<%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
-<%@ page pageEncoding="UTF-8" %>
+<%--@elvariable id="form" type="fr.gestconge.formulaire.ConnexionFormulaire"--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 

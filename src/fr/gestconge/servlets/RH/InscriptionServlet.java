@@ -1,4 +1,4 @@
-package fr.gestconge.servlets;
+package fr.gestconge.servlets.RH;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

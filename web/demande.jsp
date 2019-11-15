@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <h1 style="text-align: center"> Formulaire demande</h1>
+<div class="p-4">
         <div class="container">
             <div class="stepwizard">
                 <div class="stepwizard-row setup-panel">
@@ -40,7 +40,7 @@
             <form role="form" METHOD="post" action="DemandeServlet">
                 <div class="row setup-content" id="step-1">
                     <div class="col-xs-12">
-                        <div class="col-md-12">
+                        <div class="col-md-12" >
                             <h3> Etape 1</h3>
                             <div class="form-group">
                                 <label class="control-label">Nom</label>
@@ -106,7 +106,7 @@
                                  </div>
                             <div class="form-group">
                                 <label class="control-label">Date de début</label>
-                                <input maxlength="200" required="required" class="form-control" type="date"  name="dtDebut" value="<c:out value="${demande.dtDebut}"/>" />
+                                <input maxlength="200" required="required" class="form-control" type="date"  name="dtDebut" id ="dtDebut" value="<c:out value="${demande.dtDebut}"/>" />
                                 <span class="erreur">${form.erreurs['dtDebut']}</span>
 
 
@@ -135,5 +135,6 @@
             </form>
 
         </div>
+</div>
 </body>
 </html>

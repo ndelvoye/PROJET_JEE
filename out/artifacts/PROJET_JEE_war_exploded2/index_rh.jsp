@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="assets/css/signin.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/rh.css">
 </head>
 <body>
-<form method="post" action="ConnexionServlet">
+<form method="post" action="RHServlet">
     <div class="container">
         <br>
         <br>
@@ -32,7 +32,7 @@
             <div class="card">
                 <div class="card-header">
 
-                    <h3>Authentification</h3>
+                    <h3>Pôle RH</h3>
                 </div>
                 <div class="card-body">
                     <div class="input-group form-group">
@@ -56,9 +56,6 @@
 
                 </div>
                 <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                        Pôle RH?<a href="RHServlet">Go</a>
-                    </div>
                     <div class="d-flex justify-content-center links">
                         <div class="form-group">
                             <input type="submit" value="Entrer" class="btn float-right login_btn">

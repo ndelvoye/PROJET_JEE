@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 public class HistoriqueDemandeServlet extends HttpServlet {
     public static final String ATT_DEMANDE = "demande";
     public static final String ATT_FORM     = "form";
-
     public static final String VUE          = "/mesDemandes.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {

@@ -13,7 +13,7 @@ Coded by Creative Tim
 <html lang="en">
 
 <head>
-    <title>Formulaire demande • <%= nom + " " + prenom %>
+    <title>Mon agenda • <%= nom + " " + prenom %>
     </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -29,7 +29,7 @@ Coded by Creative Tim
 
 <body>
 <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white">
+    <div class="sidebar" data-color="azure" data-background-color="white">
         <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
         Tip 2: you can also add an image using data-image tag
@@ -41,19 +41,19 @@ Coded by Creative Tim
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li class="nav-item">
+                <li class="nav-item active  ">
                     <a class="nav-link" href="#">
                         <i class="material-icons">dashboard</i>
                         <p>Mon agenda</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#0">
+                    <a class="nav-link" href="./examples/user.html">
                         <i class="material-icons">face</i>
                         <p>Mon profil</p>
                     </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="DemandeServlet">
                         <i class="material-icons">description</i>
                         <p>Formulaire</p>
@@ -66,7 +66,25 @@ Coded by Creative Tim
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ConnexionServlet">
+                    <a class="nav-link" href="./examples/notifications.html">
+                        <i class="material-icons">notifications</i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./examples/dashboard.html">
+                        <i class="material-icons">timeline</i>
+                        <p>Statistiques</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="RhoomServlet">
+                        <i class="material-icons">content_paste</i>
+                        <p>Rhoom</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="RHServlet">
                         <i class="material-icons">power_settings_new</i>
                         <p>Se déconnecter</p>
                     </a>
@@ -79,7 +97,7 @@ Coded by Creative Tim
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="#pablo">Formulaire demande</a>
+                    <a class="navbar-brand" href="#pablo">Mon agenda</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -91,9 +109,10 @@ Coded by Creative Tim
             </div>
         </nav>
         <!-- End Navbar -->
+
         <div class="content">
             <div class="container-fluid">
-                <jsp:include page="demande.jsp"/>
+                <jsp:include page="calendrier.jsp"/>
 
 
             </div>
@@ -112,4 +131,3 @@ Coded by Creative Tim
 </div>
 </body>
 </html>
-

@@ -39,7 +39,7 @@ public class DemandeServlet extends HttpServlet {
 
         if ( form.getErreurs().isEmpty() ) {
             HttpSession session = request.getSession();
-            /* Ensuite récupération de la map des commandes dans la session */
+            /* Ensuite récupération de la map des demandes dans la session */
             Map<String, Demande> demandes = (HashMap<String, Demande>) session.getAttribute( SESSION_DEMANDES );
             /* Si aucune map n'existe, alors initialisation d'une nouvelle map */
             if ( demandes == null ) {
