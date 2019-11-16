@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class FiltreRestriction implements Filter {
-    public static final String ACCES_PUBLIC     = "/accesPublic.jsp";
+    public static final String ACCES_PUBLIC     = "/VueGlobale_Accueil_Standard.jsp";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
 
     public void init( FilterConfig config ) throws ServletException {

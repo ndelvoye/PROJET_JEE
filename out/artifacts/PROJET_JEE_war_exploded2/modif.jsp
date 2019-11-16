@@ -1,3 +1,4 @@
+<%--@elvariable id="old" type="fr.gestconge.classes.beans.Demande"--%>
 <%--@elvariable id="form" type="fr.gestconge.formulaire.DemandeFormulaire"--%>
 <%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
 <%@  page contentType="text/html;charset=UTF-8" language="java"  %>
@@ -44,13 +45,12 @@
                             <h3> Etape 1</h3>
                             <div class="form-group">
                                 <label class="control-label">Nom</label>
-                                <input   type="text" required="required" class="form-control" placeholder="Nom"  name="nom_demandeur" value="<c:out value="${old.nomDemandeur}"/>" size="30" maxlength="30"/>
+                                <input   type="text" required="required" class="form-control" placeholder="Nom"  name="nom_demandeur" value="${old.nomDemandeur}" size="30" maxlength="30"/>
                                 <span class="erreur">${form.erreurs['nom_demandeur']}</span>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Prenom</label>
-                                <input type="text" required="required" class="form-control" placeholder="Prenom" name="prenom_demandeur" value="<%--@elvariable id="old" type="fr.gestconge.classes.beans.Demande"--%>
-                                <c:out value="${old.prenomDemandeur}"/>" size="30" maxlength="30"/>
+                                <input type="text" required="required" class="form-control" placeholder="Prenom" name="prenom_demandeur" value="${old.prenomDemandeur}" size="30" maxlength="30"/>
                                 <span class="erreur">${form.erreurs['prenom_demandeur']}</span>
                             </div>
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Suivant</button>

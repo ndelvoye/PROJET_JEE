@@ -6,7 +6,7 @@ public class Employe {
     // Attributs
     private String nom;
     private String prenom;
-    private String dateRecrutement;
+    private String dtRecrutement;
     private String motDePasse;
     private String email;
     private String poste;
@@ -56,12 +56,12 @@ public class Employe {
         this.prenom = prenom;
     }
 
-    public String getDateRecrutement() {
-        return dateRecrutement;
+    public String getDtRecrutement() {
+        return dtRecrutement;
     }
 
-    public void setDateRecrutement(String dateRecrutement) {
-        this.dateRecrutement = dateRecrutement;
+    public void setDtRecrutement(String dateRecrutement) {
+        this.dtRecrutement = dtRecrutement;
     }
 
     public String getEmail() {

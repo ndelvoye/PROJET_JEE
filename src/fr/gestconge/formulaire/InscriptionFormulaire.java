@@ -69,7 +69,7 @@ public class InscriptionFormulaire {
         }
         utilisateur.setPrenom( prenom );
 
-        utilisateur.setDateRecrutement(dtRecrutement);
+        utilisateur.setDtRecrutement(dtRecrutement);
         utilisateur.setService(service);
         utilisateur.setPoste(poste);
         utilisateur.setEquipe(equipe);

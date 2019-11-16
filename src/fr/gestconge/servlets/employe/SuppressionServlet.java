@@ -17,7 +17,7 @@ public class SuppressionServlet extends HttpServlet {
     public static final String PARAM_DATE_DEMANDE = "dtCreation";
     public static final String SESSION_DEMANDES   = "demandes";
 
-    public static final String VUE                 = "/mesDemandes.jsp";
+    public static final String VUE                 = "/VueGlobale_MesDemandes_Standard.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* Récupération du paramètre */

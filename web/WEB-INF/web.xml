@@ -22,10 +22,7 @@
         <servlet-name>ModificationServlet</servlet-name>
         <servlet-class>fr.gestconge.servlets.employe.ModificationServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>RHServlet</servlet-name>
-        <servlet-class>fr.gestconge.servlets.RH.RHServlet</servlet-class>
-    </servlet>
+
     <servlet>
         <servlet-name>DemandeServlet</servlet-name>
         <servlet-class>fr.gestconge.servlets.employe.DemandeServlet</servlet-class>
@@ -52,10 +49,7 @@
         <servlet-name>SuppressionServlet</servlet-name>
         <url-pattern>/SuppressionServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RHServlet</servlet-name>
-        <url-pattern>/RHServlet</url-pattern>
-    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>ModificationServlet</servlet-name>
         <url-pattern>/ModificationServlet</url-pattern>
@@ -73,6 +67,9 @@
         <url-pattern>/RhoomServlet</url-pattern>
     </servlet-mapping>
 
+    <welcome-file-list>
+        <welcome-file>VueGlobale_Connexion_Standard.jsp</welcome-file>
+    </welcome-file-list>
 
     <!--
     <filter>

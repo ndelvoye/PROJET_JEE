@@ -3,19 +3,12 @@ import java.time.LocalDateTime; // Import the LocalDateTime class
 import java.time.LocalDate; // Import the LocalDateTime class
 import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
+import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 
 import fr.gestconge.classes.beans.Demande;
 
-
+import static java.lang.String.join;
 
 
 public final class DemandeFormulaire {
@@ -78,14 +71,38 @@ public final class DemandeFormulaire {
         } catch ( Exception e ) {
             setErreur( CHAMP_DATE_DEBUT, e.getMessage() );
         }*/
-        demande.setDtDebut( dtDebut );
+
+
+        String[] dtDebutInv = dtDebut.split("-");
+        String [] res = new String[3];
+        String tmp="";
+        for(int i=dtDebutInv.length -1; i>=0;i--){
+            res[dtDebutInv.length-1-i]=dtDebutInv[i];
+        }
+        for(int j =0; j<res.length-1; j++) {
+            tmp = tmp + res[j]+"-";
+        }
+        tmp = tmp + res[res.length-1];
+
+        demande.setDtDebut(tmp);
 
         /*try {
             validationDateFin( dtFin );
         } catch ( Exception e ) {
             setErreur( CHAMP_DATE_FIN, e.getMessage() );
         }*/
-        demande.setDtFin( dtFin );
+        String[] dtFinInv = dtFin.split("-");
+        String [] res1 = new String[3];
+        String tmp1="";
+        for(int i=dtFinInv.length -1; i>=0;i--){
+            res1[dtFinInv.length-1-i]=dtFinInv[i];
+        }
+        for(int j =0; j<res1.length-1; j++) {
+            //tmp = join("-",res[j]);
+            tmp1 = tmp1 + res1[j]+"-";
+        }
+        tmp1 = tmp1 + res1[res1.length-1];
+        demande.setDtFin( tmp1 );
 
         /*try {
             validationTypeDemande( typeDemande );
