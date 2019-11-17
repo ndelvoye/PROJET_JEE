@@ -73,10 +73,10 @@
                                     </td>
                                     <td class="action">
                                         <a href="<c:url value="/SuppressionServlet"><c:param name="dtCreation" value="${ mapDemandes.key }" /></c:url>">
-                                            <img src="<c:url value="assets/img/supprimer.png"/>" alt="Supprimer"  style="height: 25px"; width="25px"/>
+                                            <img src="<c:url value="assets/img/valider.png"/>" alt="Supprimer"  style="height: 25px"; width="25px"/>
                                         </a>
                                         <a href="<c:url value="/ModificationServlet"><c:param name="dtCreation" value="${ mapDemandes.key }" /></c:url>">
-                                            <img src="<c:url value="assets/img/modifier.png"/>" alt="Modifier"  style="height: 25px"; width="25px"/>
+                                            <img src="<c:url value="assets/img/refuser.png"/>" alt="Modifier"  style="height: 25px"; width="25px"/>
                                         </a>
                                     </td>
 

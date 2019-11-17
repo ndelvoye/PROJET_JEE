@@ -1,3 +1,4 @@
+<%@ page import="fr.gestconge.classes.beans.Employe" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--
 Material Dashboard - v2.1.1
@@ -6,14 +7,13 @@ Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/bl
 Coded by Creative Tim
 -->
 <%
-    String nom = "nom";
-    String prenom = "prenom";
+    Employe employe = (Employe)session.getAttribute("sessionUtilisateur");
 %>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Formulaire demande • <%= nom + " " + prenom %>
+    <title>Formulaire demande • <%= employe.getNom() + " " + employe.getPrenom() %>
     </title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -29,14 +29,14 @@ Coded by Creative Tim
 
 <body>
 <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white">
+    <div class="sidebar" data-color="green" data-background-color="white">
         <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
         Tip 2: you can also add an image using data-image tag
     -->
         <div class="logo">
             <a href="#" class="simple-text logo-mini">
-                Projet JEE 2019
+                <%= employe.getNom() + " " + employe.getPrenom() %>
             </a>
         </div>
         <div class="sidebar-wrapper">

@@ -13,7 +13,7 @@ public class HistoriqueDemandeServlet extends HttpServlet {
     public static final String VUE          = "/VueGlobale_MesDemandes_Standard.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-        /* À la réception d'une requête GET, affichage de la liste des commandes */
+        /* À la réception d'une requête GET, affichage de la liste des demandes */
         this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
     }
 }

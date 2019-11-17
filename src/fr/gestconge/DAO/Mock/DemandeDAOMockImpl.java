@@ -2,16 +2,17 @@ package fr.gestconge.DAO.Mock;
 
 import fr.gestconge.DAO.Mock.DemandeDAO;
 import fr.gestconge.classes.beans.Demande;
+import fr.gestconge.classes.beans.Employe;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DemandeDAOMockImpl implements DemandeDAO {
+    private static List<Demande> listeDemandes = (new ArrayList<Demande>());
     @Override
     public List<Demande> findByAll() {
-        List<Demande> listeDemandes = new ArrayList<Demande>();
-
-        Demande demande = new Demande();
+        List<Demande>listReturned = listeDemandes;
+      /*  Demande demande = new Demande();
         demande.setType("Conges annuels");
         demande.setNomDemandeur("toto");
         demande.setPrenomDemandeur("toto");
@@ -26,11 +27,12 @@ public class DemandeDAOMockImpl implements DemandeDAO {
         demande1.setDtCreation("14-11-2019 12:30:21");
         demande1.setDtFin("14-12-2019");
        //ajout des demandes das la liste
-        listeDemandes.add(demande);
-        listeDemandes.add(demande1);
+        listReturned.add(demande);
+        listReturned.add(demande1);*/
 
-        return listeDemandes;
+        return listReturned;
     }
+
 
     @Override
     public List<Demande> findByName(String searchText) {
@@ -38,7 +40,24 @@ public class DemandeDAOMockImpl implements DemandeDAO {
     }
 
     @Override
-    public List<Demande> findByPoste(String searchText) {
-        return null;
+    public List<Demande> findByService(String searchText, List<Employe>listeEmployes, List<Demande>listeDemandes) {
+        List<Demande> resultat = new ArrayList<Demande>();
+        for (Employe pivot : listeEmployes) {
+            for (Demande item : listeDemandes) {
+                if (pivot.getService().equals(searchText) && pivot.getNom().equals(item.getNomDemandeur())) {
+                    resultat.add(item);
+                }
+            }
+
+        }
+
+
+        return resultat;
+    }
+
+    @Override
+    public void update(Demande demande) {
+        listeDemandes.add(demande);
+
     }
 }

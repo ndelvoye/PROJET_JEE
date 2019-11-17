@@ -23,6 +23,7 @@ public class ConnexionServlet extends javax.servlet.http.HttpServlet {
     public static final String VUE_FORM              = "/VueGlobale_Connexion_Standard.jsp";
     public static final String VUE_STANDARD              = "/VueGlobale_Accueil_Standard.jsp";
     public static final String VUE_RH              = "/VueGlobale_Accueil_RH.jsp";
+    public static final String VUE_LEADER             = "/VueGlobale_Accueil_TeamLeader.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* Affichage de la page de connexion */
@@ -42,20 +43,13 @@ public class ConnexionServlet extends javax.servlet.http.HttpServlet {
         /* Récupération de la session depuis la requête */
         HttpSession session = request.getSession();
 
-        /**
-         * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
-         * Utilisateur à la session, sinon suppression du bean de la session.
-         */
-        if ( form.getErreurs().isEmpty() ) {
-            session.setAttribute( ATT_SESSION_USER, utilisateur );
-        } else {
-            session.setAttribute( ATT_SESSION_USER, null );
-        }
+
 
         /* Stockage du formulaire, du bean dans l'objet request */
-        //request.setAttribute("listeEmployes",listeEmployes);
+
         request.setAttribute( ATT_FORM, form );
         request.setAttribute( ATT_USER, utilisateur );
+
 
         RequestDispatcher rd =
                 getServletContext().getRequestDispatcher(VUE_FORM);
@@ -63,6 +57,8 @@ public class ConnexionServlet extends javax.servlet.http.HttpServlet {
                 getServletContext().getRequestDispatcher(VUE_STANDARD);
         RequestDispatcher rd_3 =
                 getServletContext().getRequestDispatcher(VUE_RH);
+        RequestDispatcher rd_4 =
+                getServletContext().getRequestDispatcher(VUE_LEADER);
 
         List<Employe> verifEmail =
                 company.getUserByMail(utilisateur.getEmail(), listeEmployes);
@@ -73,16 +69,26 @@ public class ConnexionServlet extends javax.servlet.http.HttpServlet {
         //request.setAttribute("verification",verifPwd);
         if(form.getErreurs().isEmpty() && verifPwd.size()!=0 ) {
 
+            utilisateur = verifPwd.get(0);
+            /*
+             * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
+             * Utilisateur à la session
+             */
+                session.setAttribute( ATT_SESSION_USER, utilisateur );
+
             utilisateur.setService(verifPwd.get(0).getService());
-            if (!"rh".equals(utilisateur.getService())) {
+            if (!"rh".equals(utilisateur.getService()) && !"leader".equals(utilisateur.getPoste())) {
                 /* Si aucune erreur, l'utilisateur est dans la bdd et à un profil standard alors affichage de la fiche récapitulative standard */
                 rd_2.forward(request, response);
             } else if (utilisateur.getService().equals("rh")) {
                 /* Si aucune erreur,l'utilisateur est dans la bdd et à un profil rh alors affichage de la fiche récapitulative rh */
                 rd_3.forward(request, response);
-
             }
-        } else {
+            else if (utilisateur.getPoste().equals("leader")) {
+                /* Si aucune erreur,l'utilisateur est dans la bdd et à un profil rh alors affichage de la fiche récapitulative rh */rd_4.forward(request, response);
+            }
+        }
+        else {
             /* Sinon, ré-affichage du formulaire */
             rd.forward( request, response );
         }
