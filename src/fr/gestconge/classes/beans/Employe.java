@@ -1,6 +1,7 @@
 package fr.gestconge.classes.beans;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Employe {
     // Attributs
@@ -14,7 +15,15 @@ public class Employe {
     private String equipe;
     private String service;
 
+    private List<Demande> demandes;
 
+    public List<Demande> getDemandes() {
+        return demandes;
+    }
+
+    public void setDemandes(List<Demande> demandes) {
+        this.demandes = demandes;
+    }
 
     public String getEquipe() {
         return equipe;

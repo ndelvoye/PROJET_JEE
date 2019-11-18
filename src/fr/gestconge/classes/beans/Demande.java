@@ -11,7 +11,15 @@ public class Demande {
    private String dtCreation;
    private String nomDemandeur;
    private String prenomDemandeur;
+   private Employe employe;
 
+   public Employe getEmploye() {
+      return employe;
+   }
+
+   public void setEmploye(Employe employe) {
+      this.employe = employe;
+   }
 
    public int getId() {
       return id;

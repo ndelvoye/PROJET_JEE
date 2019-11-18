@@ -40,20 +40,26 @@ public class DemandeDAOMockImpl implements DemandeDAO {
     }
 
     @Override
-    public List<Demande> findByService(String searchText, List<Employe>listeEmployes, List<Demande>listeDemandes) {
-        List<Demande> resultat = new ArrayList<Demande>();
-        for (Employe pivot : listeEmployes) {
-            for (Demande item : listeDemandes) {
-                if (pivot.getService().equals(searchText) && pivot.getNom().equals(item.getNomDemandeur())) {
-                    resultat.add(item);
-                }
+    public List<Demande> findByEquipe(String searchText) {
+        List<Demande> listeDemande = new ArrayList<Demande>();
+        for(Demande demande : listeDemandes){
+            if(demande.getEmploye().getEquipe().equals(searchText)){
+                listeDemande.add(demande);
             }
-
         }
-
-
-        return resultat;
+        return listeDemande;
     }
+    @Override
+    public List<Demande> findByEmail(String searchText) {
+        List<Demande> listeDemande = new ArrayList<Demande>();
+        for(Demande demande : listeDemandes){
+            if(demande.getEmploye().getEmail().equals(searchText)){
+                listeDemande.add(demande);
+            }
+        }
+        return listeDemande;
+    }
+
 
     @Override
     public void update(Demande demande) {

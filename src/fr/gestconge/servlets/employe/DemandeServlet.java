@@ -14,20 +14,20 @@ import javax.servlet.http.HttpSession;
 import fr.gestconge.DAO.Mock.Rhoom;
 import fr.gestconge.DAO.Mock.RhoomImpl;
 import fr.gestconge.classes.beans.Demande;
+import fr.gestconge.classes.beans.Employe;
 import fr.gestconge.formulaire.DemandeFormulaire;
 
 public class DemandeServlet extends HttpServlet {
     public static final String ATT_DEMANDE = "demande";
     public static final String ATT_FORM     = "form";
     public static final String SESSION_DEMANDES = "demandes";
-
+    public static final String ATT_SESSION_USER = "sessionUtilisateur";
     public static final String VUE_SUCCES_STANDARD   = "/VueGlobale_ConfirmationFormulaire_Standard.jsp";
     public static final String VUE_SUCCES_RH   = "/VueGlobale_ConfirmationFormulaire_Standard.jsp";
     public static final String VUE_SUCCES_LEADER   = "/VueGlobale_ConfirmationFormulaire_Standard.jsp";
     public static final String VUE_STANDARD     = "/VueGlobale_Formulaire_Standard.jsp";
     public static final String VUE_RH              = "/VueGlobale_Formulaire_RH.jsp";
     public static final String VUE_LEADER             = "/VueGlobale_Formulaire_TeamLeader.jsp";
-    private static final String ATT_SESSION_USER = "utilisateur" ;
 
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
@@ -36,6 +36,7 @@ public class DemandeServlet extends HttpServlet {
     }
 
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        HttpSession session = request.getSession();
         /* Préparation de l'objet formulaire */
         DemandeFormulaire form = new DemandeFormulaire();
         Rhoom rhoom = new RhoomImpl();
@@ -45,14 +46,15 @@ public class DemandeServlet extends HttpServlet {
 
         /* Traitement de la requête et récupération du bean en résultant */
         Demande demande = form.creerDemande( request );
-
+        Employe employe = (Employe) session.getAttribute(ATT_SESSION_USER);
+        demande.setEmploye(employe);
         /* Ajout du bean et de l'objet métier à l'objet requête */
         request.setAttribute( ATT_DEMANDE, demande );
         request.setAttribute( ATT_FORM, form );
 
 
         if ( form.getErreurs().isEmpty() ) {
-            HttpSession session = request.getSession();
+
             //session.getAttribute( ATT_SESSION_USER, demande. );
             /* Ensuite récupération de la map des demandes dans la session */
             Map<String, Demande> demandes = (HashMap<String, Demande>) session.getAttribute( SESSION_DEMANDES );

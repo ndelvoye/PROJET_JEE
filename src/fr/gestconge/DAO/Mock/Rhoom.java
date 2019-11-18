@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface Rhoom {
     List<Demande> getAllDemandes();
-    List<Demande> getAllByService(String searchText, List<Employe>listeEmployes, List<Demande>listeDemandes);
+    List<Demande> getByEquipe(String searchText);
+    List<Demande> getByEmail(String searchText);
     void updateDemandes(Demande demande);
 }

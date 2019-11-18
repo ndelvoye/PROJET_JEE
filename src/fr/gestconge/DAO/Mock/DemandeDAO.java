@@ -8,6 +8,7 @@ import java.util.List;
 public interface DemandeDAO {
     List<Demande> findByAll();
     List<Demande> findByName(String searchText);
-    List<Demande> findByService(String searchText, List<Employe> listeEmployes, List<Demande> listeDemandes);
+    List<Demande> findByEquipe(String searchText);
+    List<Demande> findByEmail(String searchText);
     void update(Demande demande);
 }

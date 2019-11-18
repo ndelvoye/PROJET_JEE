@@ -2,7 +2,9 @@ package fr.gestconge.servlets.employe;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +14,9 @@ import javax.servlet.http.HttpSession;
 
 import fr.gestconge.DAO.Mock.Company;
 import fr.gestconge.DAO.Mock.CompanyImpl;
+import fr.gestconge.DAO.Mock.Rhoom;
+import fr.gestconge.DAO.Mock.RhoomImpl;
+import fr.gestconge.classes.beans.Demande;
 import fr.gestconge.classes.beans.Employe;
 import fr.gestconge.formulaire.ConnexionFormulaire;
 
@@ -19,6 +24,7 @@ import fr.gestconge.formulaire.ConnexionFormulaire;
 public class ConnexionServlet extends javax.servlet.http.HttpServlet {
     public static final String ATT_USER         = "utilisateur";
     public static final String ATT_FORM         = "form";
+    public static final String SESSION_DEMANDES = "demandes";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
     public static final String VUE_FORM              = "/VueGlobale_Connexion_Standard.jsp";
     public static final String VUE_STANDARD              = "/VueGlobale_Accueil_Standard.jsp";
@@ -42,7 +48,8 @@ public class ConnexionServlet extends javax.servlet.http.HttpServlet {
 
         /* Récupération de la session depuis la requête */
         HttpSession session = request.getSession();
-
+        session.invalidate();
+        session = request.getSession();
 
 
         /* Stockage du formulaire, du bean dans l'objet request */
@@ -74,7 +81,14 @@ public class ConnexionServlet extends javax.servlet.http.HttpServlet {
              * Si aucune erreur de validation n'a eu lieu, alors ajout du bean
              * Utilisateur à la session
              */
-                session.setAttribute( ATT_SESSION_USER, utilisateur );
+            session.setAttribute( ATT_SESSION_USER, utilisateur );
+
+            //initialisation des demandes de l'utilisateur
+            Rhoom rhoom = new RhoomImpl();
+            List<Demande> list = rhoom.getByEmail(utilisateur.getEmail());;
+            Map<String, Demande> map = new HashMap<String, Demande>();
+            for (Demande demande : list) map.put(demande.getEmploye().getEmail(),demande);
+            session.setAttribute( SESSION_DEMANDES, map );
 
             utilisateur.setService(verifPwd.get(0).getService());
             if (!"rh".equals(utilisateur.getService()) && !"leader".equals(utilisateur.getPoste())) {
