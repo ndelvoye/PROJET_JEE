@@ -10,4 +10,5 @@ public interface Rhoom {
     List<Demande> getByEquipe(String searchText);
     List<Demande> getByEmail(String searchText);
     void updateDemandes(Demande demande);
+    void removeDemandes(Demande demande);
 }

@@ -30,4 +30,10 @@ public class RhoomImpl implements Rhoom {
         demandeDao.update(demande);
     }
 
+    @Override
+    public void removeDemandes(Demande demande) {
+
+            demandeDao.remove(demande);
+    }
+
 }

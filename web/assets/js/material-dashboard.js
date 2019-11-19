@@ -16,7 +16,7 @@
  */
 
 (function () {
-    isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
+    isWindows = navigator.platform.indexOf('Win') > -1;
 
     if (isWindows) {
         // if we are on windows OS we activate the perfectScrollbar function

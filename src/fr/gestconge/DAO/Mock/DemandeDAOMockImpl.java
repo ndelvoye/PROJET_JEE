@@ -66,4 +66,9 @@ public class DemandeDAOMockImpl implements DemandeDAO {
         listeDemandes.add(demande);
 
     }
+
+    @Override
+    public void remove(Demande demande) {
+        listeDemandes.remove(demande);
+    }
 }

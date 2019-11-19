@@ -22,12 +22,8 @@ public class DemandeServlet extends HttpServlet {
     public static final String ATT_FORM     = "form";
     public static final String SESSION_DEMANDES = "demandes";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
-    public static final String VUE_SUCCES_STANDARD   = "/VueGlobale_ConfirmationFormulaire_Standard.jsp";
-    public static final String VUE_SUCCES_RH   = "/VueGlobale_ConfirmationFormulaire_Standard.jsp";
-    public static final String VUE_SUCCES_LEADER   = "/VueGlobale_ConfirmationFormulaire_Standard.jsp";
-    public static final String VUE_STANDARD     = "/VueGlobale_Formulaire_Standard.jsp";
-    public static final String VUE_RH              = "/VueGlobale_Formulaire_RH.jsp";
-    public static final String VUE_LEADER             = "/VueGlobale_Formulaire_TeamLeader.jsp";
+    public static final String VUE_SUCCES_STANDARD   = "/vues_Standard/VueGlobale_ConfirmationFormulaire_Standard.jsp";
+    public static final String VUE_STANDARD     = "/vues_Standard/VueGlobale_Formulaire_Standard.jsp";
 
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
@@ -40,9 +36,6 @@ public class DemandeServlet extends HttpServlet {
         /* Préparation de l'objet formulaire */
         DemandeFormulaire form = new DemandeFormulaire();
         Rhoom rhoom = new RhoomImpl();
-
-        //List<Demande> listeDemandes= rhoom.getAllDemandes();
-       // request.setAttribute("listeDemandes", listeDemandes);
 
         /* Traitement de la requête et récupération du bean en résultant */
         Demande demande = form.creerDemande( request );

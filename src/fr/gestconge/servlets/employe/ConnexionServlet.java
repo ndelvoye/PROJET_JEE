@@ -26,10 +26,10 @@ public class ConnexionServlet extends javax.servlet.http.HttpServlet {
     public static final String ATT_FORM         = "form";
     public static final String SESSION_DEMANDES = "demandes";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
-    public static final String VUE_FORM              = "/VueGlobale_Connexion_Standard.jsp";
-    public static final String VUE_STANDARD              = "/VueGlobale_Accueil_Standard.jsp";
-    public static final String VUE_RH              = "/VueGlobale_Accueil_RH.jsp";
-    public static final String VUE_LEADER             = "/VueGlobale_Accueil_TeamLeader.jsp";
+    public static final String VUE_FORM              = "/vues_Standard/VueGlobale_Connexion_Standard.jsp";
+    public static final String VUE_STANDARD              = "/vues_Standard/VueGlobale_Accueil_Standard.jsp";
+    public static final String VUE_RH              = "/vues_RH/VueGlobale_Accueil_RH.jsp";
+    public static final String VUE_LEADER             = "/vues_Leader/VueGlobale_Accueil_TeamLeader.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         /* Affichage de la page de connexion */

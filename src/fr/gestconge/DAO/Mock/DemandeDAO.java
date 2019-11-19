@@ -11,4 +11,5 @@ public interface DemandeDAO {
     List<Demande> findByEquipe(String searchText);
     List<Demande> findByEmail(String searchText);
     void update(Demande demande);
+    void remove(Demande demande);
 }

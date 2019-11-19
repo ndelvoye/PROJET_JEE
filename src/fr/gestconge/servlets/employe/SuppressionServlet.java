@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.gestconge.DAO.Mock.Rhoom;
+import fr.gestconge.DAO.Mock.RhoomImpl;
 import fr.gestconge.classes.beans.Demande;
 
 public class SuppressionServlet extends HttpServlet {
@@ -17,9 +19,10 @@ public class SuppressionServlet extends HttpServlet {
     public static final String PARAM_DATE_DEMANDE = "dtCreation";
     public static final String SESSION_DEMANDES   = "demandes";
 
-    public static final String VUE                 = "/VueGlobale_MesDemandes_Standard.jsp";
+    public static final String VUE                 = "/vues_Standard/VueGlobale_MesDemandes_Standard.jsp";
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        Rhoom rhoom = new RhoomImpl();
         /* Récupération du paramètre */
         String dtCreation = getValeurParametre( request, PARAM_DATE_DEMANDE );
 
@@ -33,6 +36,7 @@ public class SuppressionServlet extends HttpServlet {
             demandes.remove( dtCreation );
             /* Et remplacement de l'ancienne Map en session par la nouvelle */
             session.setAttribute( SESSION_DEMANDES, demandes );
+            rhoom.removeDemandes(demandes.get(dtCreation));
         }
 
         /* Redirection vers la fiche récapitulative */

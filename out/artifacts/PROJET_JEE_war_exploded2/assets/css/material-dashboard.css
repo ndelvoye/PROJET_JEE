@@ -26,7 +26,7 @@
     box-sizing: border-box;
 }
 
-html {
+html {!important
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -53,7 +53,7 @@ section {
     display: block;
 }
 
-body {
+body {!important
     margin: 0;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;

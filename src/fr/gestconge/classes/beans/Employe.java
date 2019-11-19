@@ -11,7 +11,6 @@ public class Employe {
     private String motDePasse;
     private String email;
     private String poste;
-
     private String equipe;
     private String service;
 

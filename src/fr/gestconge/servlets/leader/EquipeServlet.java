@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class EquipeServlet extends javax.servlet.http.HttpServlet{
-    public static final String VUE    = "/VueGlobale_Equipe_TeamLeader.jsp";
+    public static final String VUE    = "/vues_Leader/VueGlobale_Equipe_TeamLeader.jsp";
     public static final String ATT_SESSION_USER         = "sessionUtilisateur";
 
     private void doProcess(HttpServletRequest request, HttpServletResponse

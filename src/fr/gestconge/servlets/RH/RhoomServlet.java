@@ -11,7 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 public class RhoomServlet extends javax.servlet.http.HttpServlet{
-    public static final String VUE    = "/VueGlobale_Rhoom_RH.jsp";
+    public static final String VUE    = "/vues_RH/VueGlobale_Rhoom_RH.jsp";
 
     private void doProcess(HttpServletRequest request, HttpServletResponse
             response) {
