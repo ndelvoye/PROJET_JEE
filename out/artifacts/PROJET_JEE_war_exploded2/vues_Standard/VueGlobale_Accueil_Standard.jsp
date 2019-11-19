@@ -26,7 +26,8 @@ Coded by Creative Tim
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Material Kit CSS -->
-    <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
+    <link href="${pageContext.request.contextPath}/assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal.css" />
 </head>
 
 <body>
@@ -90,6 +91,7 @@ Coded by Creative Tim
                     <span class="navbar-toggler-icon icon-bar"></span>
                     <span class="navbar-toggler-icon icon-bar"></span>
                 </button>
+
             </div>
         </nav>
         <!-- End Navbar -->

@@ -9,16 +9,16 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/js/demande.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/demande.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<link type="text/css" rel="stylesheet" href="assets/css/demande.css" />
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/demande.css" />
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>Formulaire demande</title>
-    <link type="text/css" rel="stylesheet" href="assets/css/demande.css" />
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/demande.css" />
 </head>
 
 <body>

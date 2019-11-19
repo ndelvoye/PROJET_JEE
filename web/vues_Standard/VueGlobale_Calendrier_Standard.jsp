@@ -18,7 +18,7 @@
             var m = date.getMonth();
             var y = date.getFullYear();
 
-            /*  className colors
+              /* className colors
 
             className: default(transparent), important(red), chill(pink), success(green), info(blue)
 
@@ -119,49 +119,25 @@
 
                 events: [
                     {
-                        title: 'All Day Event',
+                        title: 'Réunion projet ',
                         start: new Date(y, m, 1)
                     },
+
                     {
                         id: 999,
-                        title: 'Repeating Event',
-                        start: new Date(y, m, d - 3, 16, 0),
-                        allDay: false,
-                        className: 'info'
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
+                        title: 'Entretien stagiaires',
                         start: new Date(y, m, d + 4, 16, 0),
                         allDay: false,
                         className: 'info'
                     },
                     {
-                        title: 'Meeting',
-                        start: new Date(y, m, d, 10, 30),
-                        allDay: false,
-                        className: 'important'
-                    },
-                    {
-                        title: 'Lunch',
+                        title: 'Déjeuner équipe jawa',
                         start: new Date(y, m, d, 12, 0),
                         end: new Date(y, m, d, 14, 0),
                         allDay: false,
                         className: 'important'
                     },
-                    {
-                        title: 'Birthday Party',
-                        start: new Date(y, m, d + 1, 19, 0),
-                        end: new Date(y, m, d + 1, 22, 30),
-                        allDay: false,
-                    },
-                    {
-                        title: 'Click for Google',
-                        start: new Date(y, m, 28),
-                        end: new Date(y, m, 29),
-                        url: 'https://ccp.cloudaccess.net/aff.php?aff=5188',
-                        className: 'success'
-                    }
+
                 ],
             });
 

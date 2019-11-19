@@ -66,9 +66,8 @@
         <servlet-name>RhoomServlet</servlet-name>
         <url-pattern>/RhoomServlet</url-pattern>
     </servlet-mapping>
-
     <welcome-file-list>
-        <welcome-file>VueGlobale_Connexion_Standard.jsp</welcome-file>
+        <welcome-file>vues_Standard/VueGlobale_Connexion_Standard.jsp</welcome-file>
     </welcome-file-list>
 
     <!--
