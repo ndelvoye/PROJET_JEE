@@ -7,26 +7,27 @@ import java.time.LocalDate;
 @Entity
 public class Employe {
     @Id
-    private Integer id;
+    private String email;
     private String password;
     private String nom;
     private String prenom;
-    private LocalDate dtRecrutement;
-    private String poste;
+    private String adresse;
+    private String fonction;
     private String equipe;
     private String service;
+    private LocalDate dateRecrutement;
 
     // Constructeur
     public Employe() {
     }
 
     // Getters & Setters
-    public Integer getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -53,20 +54,20 @@ public class Employe {
         this.prenom = prenom;
     }
 
-    public LocalDate getDtRecrutement() {
-        return dtRecrutement;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setDtRecrutement(LocalDate dtRecrutement) {
-        this.dtRecrutement = dtRecrutement;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
-    public String getPoste() {
-        return poste;
+    public String getFonction() {
+        return fonction;
     }
 
-    public void setPoste(String poste) {
-        this.poste = poste;
+    public void setFonction(String fonction) {
+        this.fonction = fonction;
     }
 
     public String getEquipe() {
@@ -83,5 +84,13 @@ public class Employe {
 
     public void setService(String service) {
         this.service = service;
+    }
+
+    public LocalDate getDateRecrutement() {
+        return dateRecrutement;
+    }
+
+    public void setDateRecrutement(LocalDate dateRecrutement) {
+        this.dateRecrutement = dateRecrutement;
     }
 }

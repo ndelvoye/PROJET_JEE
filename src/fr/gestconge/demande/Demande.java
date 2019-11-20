@@ -10,14 +10,13 @@ public class Demande {
     private Integer id;
     private String type;
     private Integer etat;
-    private Integer idEmploye;
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private LocalDate dateCreation;
+    private String emailEmploye;
 
     // Constructeur
     public Demande() {
-
     }
 
     // Getters & setters
@@ -45,14 +44,6 @@ public class Demande {
         this.etat = etat;
     }
 
-    public Integer getIdEmploye() {
-        return idEmploye;
-    }
-
-    public void setIdEmploye(Integer idEmploye) {
-        this.idEmploye = idEmploye;
-    }
-
     public LocalDate getDateDebut() {
         return dateDebut;
     }
@@ -77,18 +68,25 @@ public class Demande {
         this.dateCreation = dateCreation;
     }
 
-    // Autres fonctions
+    public String getEmailEmploye() {
+        return emailEmploye;
+    }
 
+    public void setEmailEmploye(String emailEmploye) {
+        this.emailEmploye = emailEmploye;
+    }
+
+    // Autres fonctions
     @Override
     public String toString() {
         return "Demande{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
                 ", etat=" + etat +
-                ", idEmploye=" + idEmploye +
                 ", dateDebut=" + dateDebut +
                 ", dateFin=" + dateFin +
                 ", dateCreation=" + dateCreation +
+                ", emailEmploye='" + emailEmploye + '\'' +
                 '}';
     }
 }

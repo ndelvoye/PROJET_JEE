@@ -10,7 +10,7 @@ public class CompteurServiceImpl implements CompteurService {
         return compteurDAO.findAll();
     }
 
-    public List<Compteur> getCompteursByIdEmploye(Integer idEmploye) {
-        return compteurDAO.findByIdEmploye(idEmploye);
+    public List<Compteur> getCompteursByEmailEmploye(String emailEmploye) {
+        return compteurDAO.findByEmailEmploye(emailEmploye);
     }
 }

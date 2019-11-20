@@ -5,5 +5,5 @@ import java.util.List;
 public interface CompteurDAO {
     List<Compteur> findAll();
 
-    List<Compteur> findByIdEmploye(Integer idEmploye);
+    List<Compteur> findByEmailEmploye(String emailEmploye);
 }

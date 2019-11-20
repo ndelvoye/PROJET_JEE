@@ -14,39 +14,43 @@ public class CompteurDAOImpl implements CompteurDAO {
     public List<Compteur> findAll() {
         Compteur compteur;
         Connection connexion = DBManager.getInstance().getConnection();
-        List<Compteur> liste = new ArrayList<>();
+        List<Compteur> listeCompteurs = new ArrayList<>();
         try {
             Statement statement = connexion.createStatement();
             ResultSet rs;
-            rs = statement.executeQuery("select * from gestconge.compteur");
+            rs = statement.executeQuery("select * from gestionconges.compteur");
             while (rs.next()) {
                 compteur = new Compteur();
-                compteur.setIdEmploye(rs.getInt("idEmploye"));
-                compteur.setRTT(rs.getInt("rtt"));
-                compteur.setCP(rs.getInt("cp"));
-                liste.add(compteur);
-
+                compteur.setEmail(rs.getString("email"));
+                compteur.setRTT(rs.getInt("RTT"));
+                compteur.setCongesAnnuels(rs.getInt("congesAnnuels"));
+                compteur.setEnfantMalade(rs.getInt("enfantMalade"));
+                compteur.setFamille(rs.getInt("famille"));
+                listeCompteurs.add(compteur);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return liste;
+        return listeCompteurs;
     }
 
-    public List<Compteur> findByIdEmploye(Integer idEmploye) {
+    public List<Compteur> findByEmailEmploye(String emailEmploye) {
         Connection connexion = DBManager.getInstance().getConnection();
         List<Compteur> listeCompteurs = new ArrayList<>();
         try {
             Statement statement = connexion.createStatement();
             ResultSet rs;
-            String rq = "select * from gestconge.compteur where gestconge.compteur.idEmploye = '" + idEmploye + "'";
+            String rq = "select * from gestionconges.compteur where gestionconges.compteur.emailemploye = '" + emailEmploye + "'";
 
             rs = statement.executeQuery(rq);
             while (rs.next()) {
                 Compteur compteur = new Compteur();
-                compteur.setRTT(rs.getInt("rtt"));
-                compteur.setCP(rs.getInt("cp"));
+                compteur.setEmail(rs.getString("email"));
+                compteur.setRTT(rs.getInt("RTT"));
+                compteur.setCongesAnnuels(rs.getInt("congesAnnuels"));
+                compteur.setEnfantMalade(rs.getInt("enfantMalade"));
+                compteur.setFamille(rs.getInt("famille"));
                 listeCompteurs.add(compteur);
             }
         } catch (SQLException e) {

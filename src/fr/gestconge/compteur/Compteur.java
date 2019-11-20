@@ -6,21 +6,23 @@ import javax.persistence.Id;
 @Entity
 public class Compteur {
     @Id
-    private int idEmploye;
+    private String email;
     private int RTT;
-    private int CP;
+    private int congesAnnuels;
+    private int enfantMalade;
+    private int famille;
 
     // Constructeur
     public Compteur() {
     }
 
     // Getters & setters
-    public int getIdEmploye() {
-        return idEmploye;
+    public String getEmail() {
+        return email;
     }
 
-    public void setIdEmploye(int idEmploye) {
-        this.idEmploye = idEmploye;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getRTT() {
@@ -31,11 +33,27 @@ public class Compteur {
         this.RTT = RTT;
     }
 
-    public int getCP() {
-        return CP;
+    public int getCongesAnnuels() {
+        return congesAnnuels;
     }
 
-    public void setCP(int CP) {
-        this.CP = CP;
+    public void setCongesAnnuels(int congesAnnuels) {
+        this.congesAnnuels = congesAnnuels;
+    }
+
+    public int getEnfantMalade() {
+        return enfantMalade;
+    }
+
+    public void setEnfantMalade(int enfantMalade) {
+        this.enfantMalade = enfantMalade;
+    }
+
+    public int getFamille() {
+        return famille;
+    }
+
+    public void setFamille(int famille) {
+        this.famille = famille;
     }
 }

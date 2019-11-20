@@ -17,17 +17,18 @@ public class EmployeDAOImpl implements EmployeDAO {
         try {
             Statement statement = connexion.createStatement();
             ResultSet rs;
-            rs = statement.executeQuery("select * from gestconge.employe");
+            rs = statement.executeQuery("select * from gestionconges.employe");
             while (rs.next()) {
                 Employe employe = new Employe();
-                employe.setId(rs.getInt("id"));
+                employe.setEmail(rs.getString("email"));
                 employe.setPassword(rs.getString("password"));
                 employe.setNom(rs.getString("nom"));
                 employe.setPrenom(rs.getString("prenom"));
-                employe.setDtRecrutement(rs.getDate("dtRecrutement").toLocalDate());
-                employe.setPoste(rs.getString("poste"));
+                employe.setAdresse(rs.getString("adresse"));
+                employe.setFonction(rs.getString("fonction"));
                 employe.setEquipe(rs.getString("equipe"));
                 employe.setService(rs.getString("service"));
+                employe.setDateRecrutement(rs.getDate("dateRecrutement").toLocalDate());
                 listeEmployes.add(employe);
             }
         } catch (SQLException e) {
@@ -37,24 +38,25 @@ public class EmployeDAOImpl implements EmployeDAO {
         return listeEmployes;
     }
 
-    public List<Employe> findByIdEmploye(Integer idEmploye) {
+    public List<Employe> findByEmail(String email) {
         Connection connexion = DBManager.getInstance().getConnection();
         List<Employe> listeEmployes = new ArrayList<>();
         try {
             Statement statement = connexion.createStatement();
             ResultSet rs;
-            String rq = "select * from gestconge.demande where gestconge.employe.id = '" + idEmploye + "'";
+            String rq = "select * from gestionconges.demande where gestionconges.employe.email = '" + email + "'";
             rs = statement.executeQuery(rq);
             while (rs.next()) {
                 Employe employe = new Employe();
-                employe.setId(rs.getInt("id"));
+                employe.setEmail(email);
                 employe.setPassword(rs.getString("password"));
                 employe.setNom(rs.getString("nom"));
                 employe.setPrenom(rs.getString("prenom"));
-                employe.setDtRecrutement(rs.getDate("dtRecrutement").toLocalDate());
-                employe.setPoste(rs.getString("poste"));
+                employe.setAdresse(rs.getString("adresse"));
+                employe.setFonction(rs.getString("fonction"));
                 employe.setEquipe(rs.getString("equipe"));
                 employe.setService(rs.getString("service"));
+                employe.setDateRecrutement(rs.getDate("dateRecrutement").toLocalDate());
                 listeEmployes.add(employe);
             }
         } catch (SQLException e) {

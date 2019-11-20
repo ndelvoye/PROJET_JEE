@@ -5,6 +5,6 @@ import java.util.List;
 public interface CompteurService {
     List<Compteur> getAllCompteurs();
 
-    List<Compteur> getCompteursByIdEmploye(Integer idEmploye);
+    List<Compteur> getCompteursByEmailEmploye(String emailEmploye);
 }
 
