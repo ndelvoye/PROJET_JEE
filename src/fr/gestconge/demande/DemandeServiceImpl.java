@@ -1,6 +1,5 @@
 package fr.gestconge.demande;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class DemandeServiceImpl implements DemandeService {
@@ -10,15 +9,8 @@ public class DemandeServiceImpl implements DemandeService {
         return demandeDAO.findAll();
     }
 
-    public List<Demande> getDemandesById(Integer id) {
-        return demandeDAO.findById(id);
-    }
-
-    public List<Demande> getDemandesByEtat(Integer etat) {
-        return demandeDAO.findByEtat(etat);
-    }
-
-    public List<Demande> getDemandesByDateDebut(LocalDate dateDebut) {
-        return demandeDAO.findByDateDebut(dateDebut);
+    @Override
+    public List<Demande> getDemandesByEmail(String email) {
+        return demandeDAO.findByEmail(email);
     }
 }

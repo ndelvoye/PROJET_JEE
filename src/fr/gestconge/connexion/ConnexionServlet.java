@@ -4,18 +4,18 @@ import fr.gestconge.employe.Employe;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-
-public class ConnexionServlet extends javax.servlet.http.HttpServlet {
-    public static final String ATT_USER = "utilisateur";
-    public static final String ATT_FORM = "form";
-    public static final String ATT_SESSION_USER = "sessionUtilisateur";
-    public static final String VUE_FORM = "/index.jsp";
-    public static final String VUE_SUCCES = "/accesPublic.jsp";
+public class ConnexionServlet extends HttpServlet {
+    private static final String ATT_USER = "utilisateur";
+    private static final String ATT_FORM = "form";
+    private static final String ATT_SESSION_USER = "sessionUtilisateur";
+    private static final String VUE_FORM = "/index.jsp";
+    private static final String VUE_SUCCES = "/accesPublic.jsp";
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /* Affichage de la page de connexion */

@@ -1,19 +1,13 @@
 package fr.gestconge.filtre;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 public class FiltreRestriction implements Filter {
-    public static final String ACCES_PUBLIC     = "/accesPublic.jsp";
+    public static final String ACCES_PUBLIC = "/VueGlobale_Accueil_Standard.jsp";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
 
     public void init( FilterConfig config ) throws ServletException {

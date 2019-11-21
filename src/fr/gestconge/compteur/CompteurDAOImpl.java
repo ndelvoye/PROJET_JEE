@@ -11,10 +11,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompteurDAOImpl implements CompteurDAO {
+    private Connection connexion = DBManager.getInstance().getConnection();
+    private List<Compteur> listeCompteurs = new ArrayList<>();
+
+    @Override
+    public void save(Compteur compteur) {
+        listeCompteurs.add(compteur);
+    }
+
+    @Override
+    public void update(Compteur compteur, String[] params) {
+        compteur.setRTT(Integer.parseInt(params[0]));
+        compteur.setCongesAnnuels(Integer.parseInt(params[1]));
+        compteur.setEnfantMalade(Integer.parseInt(params[2]));
+        compteur.setFamille(Integer.parseInt(params[3]));
+    }
+
+    @Override
+    public void delete(Compteur compteur) {
+        listeCompteurs.remove(compteur);
+    }
+
+    @Override
     public List<Compteur> findAll() {
         Compteur compteur;
-        Connection connexion = DBManager.getInstance().getConnection();
-        List<Compteur> listeCompteurs = new ArrayList<>();
         try {
             Statement statement = connexion.createStatement();
             ResultSet rs;
@@ -35,9 +55,8 @@ public class CompteurDAOImpl implements CompteurDAO {
         return listeCompteurs;
     }
 
+    @Override
     public List<Compteur> findByEmailEmploye(String emailEmploye) {
-        Connection connexion = DBManager.getInstance().getConnection();
-        List<Compteur> listeCompteurs = new ArrayList<>();
         try {
             Statement statement = connexion.createStatement();
             ResultSet rs;

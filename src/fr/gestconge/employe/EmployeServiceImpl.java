@@ -9,6 +9,10 @@ public class EmployeServiceImpl implements EmployeService {
         return employeDAO.findAll();
     }
 
+    public List<Employe> getEmployesByNomPrenom(String nom, String prenom) {
+        return employeDAO.findByNomPrenom(nom, prenom);
+    }
+
     public List<Employe> getEmployesByEmail(String email) {
         return employeDAO.findByEmail(email);
     }

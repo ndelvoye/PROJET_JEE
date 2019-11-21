@@ -35,7 +35,7 @@ public class ConnexionFormulaire {
         return erreurs;
     }
 
-    public Employe connecterUtilisateur(HttpServletRequest request) {
+    Employe connecterUtilisateur(HttpServletRequest request) {
         /* Récupération des champs du formulaire */
         String email = getValeurChamp(request, CHAMP_EMAIL);
         String motDePasse = getValeurChamp(request, CHAMP_PASS);
@@ -46,15 +46,15 @@ public class ConnexionFormulaire {
         try {
             validationEmail(email);
         } catch (Exception e) {
-            setErreur(CHAMP_EMAIL, e.getMessage());
+            ajouterErreur(CHAMP_EMAIL, e.getMessage());
         }
-        //utilisateur.setEmail(email);
+        utilisateur.setEmail(email);
 
         /* Validation du champ mot de passe. */
         try {
             validationMotDePasse(motDePasse);
         } catch (Exception e) {
-            setErreur(CHAMP_PASS, e.getMessage());
+            ajouterErreur(CHAMP_PASS, e.getMessage());
         }
         utilisateur.setPassword(motDePasse);
 
@@ -93,7 +93,7 @@ public class ConnexionFormulaire {
     /*
      * Ajoute un message correspondant au champ spécifié à la map des erreurs.
      */
-    private void setErreur(String champ, String message) {
+    private void ajouterErreur(String champ, String message) {
         erreurs.put(champ, message);
     }
 }
