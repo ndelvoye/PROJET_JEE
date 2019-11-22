@@ -1,4 +1,4 @@
-<%@ page import="fr.gestconge.employe.Employe" %>
+<%@ page import="fr.gestconge.bean.Employe" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--
 Material Dashboard - v2.1.1
@@ -7,7 +7,7 @@ Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/bl
 Coded by Creative Tim
 -->
 <%
-    Employe employe = (Employe)session.getAttribute("sessionUtilisateur");
+    Employe employe = (Employe) session.getAttribute("sessionUtilisateur");
 %>
 <!doctype html>
 <html lang="en">
@@ -99,7 +99,8 @@ Coded by Creative Tim
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" href="${pageContext.request.contextPath}/vues_Standard/Aide_Standard.jsp">
+                            <a class="nav-link" data-toggle="modal"
+                               href="${pageContext.request.contextPath}/vues_Standard/Aide_Standard.jsp">
                                 <i class="material-icons">help_outline</i>
                                 <p class="d-lg-none d-md-block">
                                     Stats

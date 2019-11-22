@@ -1,4 +1,4 @@
-<%@ page import="fr.gestconge.classes.beans.Employe" %>
+<%@ page import="fr.gestconge.bean.Employe" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--
 Material Dashboard - v2.1.1
@@ -7,7 +7,7 @@ Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/bl
 Coded by Creative Tim
 -->
 <%
-    Employe employe = (Employe)session.getAttribute("sessionUtilisateur");
+    Employe employe = (Employe) session.getAttribute("sessionUtilisateur");
 %>
 <!doctype html>
 <html lang="en">
@@ -25,7 +25,7 @@ Coded by Creative Tim
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Material Kit CSS -->
     <link href="${pageContext.request.contextPath}/assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal.css" />
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal.css"/>
 </head>
 
 <body>

@@ -22,10 +22,10 @@
                     </button>
                 </div>
                 <div class="modal-body row">
-                    <form class="col" method="post "action="modalDemandeServlet">
+                    <form class="col" method="post " action="modalDemandeServlet">
                         <div class="form-group">
                             <label for="nom" class="form-control-label">Nom</label>
-                            <input type="text" class="form-control" name ="nom" id="nom" placeholder="Votre nom">
+                            <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom">
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-control-label">Email</label>
@@ -43,20 +43,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
-    $(function(){
-        $('form').submit(function(e) {
+    $(function () {
+        $('form').submit(function (e) {
             e.preventDefault()
             var $form = $(this)
             $.post($form.attr('action'), $form.serialize())
-                .done(function(data) {
+                .done(function (data) {
                     $('#html').html(data)
                     $('#formulaire').modal('hide')
                 })
-                .fail(function() {
+                .fail(function () {
                     alert('ça ne marche pas...')
                 })
         })
-        $('.modal').on('shown.bs.modal', function(){
+        $('.modal').on('shown.bs.modal', function () {
             $('input:first').focus()
         })
     })

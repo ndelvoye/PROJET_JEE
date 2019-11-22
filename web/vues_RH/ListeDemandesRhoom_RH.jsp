@@ -1,5 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
+<%@ page import="fr.gestconge.bean.Demande" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Marie-Danielle
   Date: 15/11/2019
@@ -7,7 +7,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@page import="fr.gestconge.classes.beans.Demande,java.util.List" %>
 <% List<Demande> listeDemandes = (List<Demande>) request.getAttribute("listeDemandes");%>
 <html>
 <head>
@@ -39,13 +38,13 @@
                                 <tbody>
                                 <%
                                     for (Demande demande : listeDemandes) {
-                                        demande.setStatus(1);
-                                        int statut = demande.getStatus();
-                                        String nomD = demande.getNomDemandeur();
-                                        String prenomD = demande.getPrenomDemandeur();
-                                        String dtCreation = demande.getDtCreation();
-                                        String dtDebut = demande.getDtDebut();
-                                        String dtFin = demande.getDtFin();
+                                        demande.setEtat(1);
+                                        int statut = demande.getEtat();
+                                        String nomD = demande.getEmailEmploye();
+                                        String prenomD = demande.getEmailEmploye();
+                                        String dtCreation = String.valueOf(demande.getDateCreation());
+                                        String dtDebut = String.valueOf(demande.getDateDebut());
+                                        String dtFin = String.valueOf(demande.getDateFin());
                                         String type = demande.getType();
 
                                 %>

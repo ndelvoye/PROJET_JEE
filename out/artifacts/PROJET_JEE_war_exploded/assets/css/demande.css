@@ -1,6 +1,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
-body{
-    margin-top:40px;
+
+body {
+    margin-top: 40px;
 }
 
 .stepwizard-step p {
@@ -49,15 +50,18 @@ body{
     line-height: 1.428571429;
     border-radius: 15px;
 }
-.bouton-radio{
+
+.bouton-radio {
     width: auto;
 }
+
 .track_tbl td.track_dot {
     width: 50px;
     position: relative;
     padding: 0;
     text-align: center;
 }
+
 .track_tbl td.track_dot:after {
     content: "\f111";
     font-family: FontAwesome;
@@ -65,6 +69,7 @@ body{
     margin-left: -5px;
     top: 11px;
 }
+
 .track_tbl td.track_dot span.track_line {
     background: #000;
     width: 3px;
@@ -72,15 +77,18 @@ body{
     position: absolute;
     height: 101%;
 }
+
 .track_tbl tbody tr:first-child td.track_dot span.track_line {
     top: 30px;
     min-height: 25px;
 }
+
 .track_tbl tbody tr:last-child td.track_dot span.track_line {
     top: 0;
     min-height: 25px;
     height: 10%;
 }
+
 select {
     font-size: .9rem;
     padding: 2px 5px;

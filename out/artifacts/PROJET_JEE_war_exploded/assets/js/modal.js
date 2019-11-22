@@ -1,4 +1,3 @@
-
 const triggers = document.querySelectorAll('[aria-haspopup="dialog"]');
 const doc = document.querySelector('.js-document');
 const focusableElementsArray = [
@@ -28,34 +27,41 @@ const open = function (dialog) {
         return;
     }
 
-    window.setTimeout(() => {
+    window.setTimeout(() = > {
         firstFocusableElement.focus();
 
-        // trapping focus inside the dialog
-        focusableElements.forEach((focusableElement) => {
-            if (focusableElement.addEventListener) {
-                focusableElement.addEventListener('keydown', (event) => {
-                    const tab = event.which === keyCodes.tab;
+    // trapping focus inside the dialog
+    focusableElements.forEach((focusableElement) = > {
+        if(focusableElement.addEventListener
+)
+    {
+        focusableElement.addEventListener('keydown', (event) = > {
+            const tab = event.which === keyCodes.tab;
 
-                    if (!tab) {
-                        return;
-                    }
+        if (!tab) {
+            return;
+        }
 
-                    if (event.shiftKey) {
-                        if (event.target === firstFocusableElement) { // shift + tab
-                            event.preventDefault();
+        if (event.shiftKey) {
+            if (event.target === firstFocusableElement) { // shift + tab
+                event.preventDefault();
 
-                            lastFocusableElement.focus();
-                        }
-                    } else if (event.target === lastFocusableElement) { // tab
-                        event.preventDefault();
-
-                        firstFocusableElement.focus();
-                    }
-                });
+                lastFocusableElement.focus();
             }
-        });
-    }, 100);
+        } else if (event.target === lastFocusableElement) { // tab
+            event.preventDefault();
+
+            firstFocusableElement.focus();
+        }
+    })
+        ;
+    }
+})
+    ;
+},
+    100
+)
+    ;
 };
 
 const close = function (dialog, trigger) {
@@ -66,45 +72,58 @@ const close = function (dialog, trigger) {
     trigger.focus();
 };
 
-triggers.forEach((trigger) => {
+triggers.forEach((trigger) = > {
     const dialog = document.getElementById(trigger.getAttribute('aria-controls'));
-    const dismissTriggers = dialog.querySelectorAll('[data-dismiss]');
+const dismissTriggers = dialog.querySelectorAll('[data-dismiss]');
 
-    // open dialog
-    trigger.addEventListener('click', (event) => {
-        event.preventDefault();
+// open dialog
+trigger.addEventListener('click', (event) = > {
+    event.preventDefault();
 
-        open(dialog);
-    });
+open(dialog);
+})
+;
 
-    trigger.addEventListener('keydown', (event) => {
-        if (event.which === keyCodes.enter) {
-            event.preventDefault();
+trigger.addEventListener('keydown', (event) = > {
+    if(event.which === keyCodes.enter
+)
+{
+    event.preventDefault();
 
-            open(dialog);
-        }
-    });
+    open(dialog);
+}
+})
+;
 
-    // close dialog
-    dialog.addEventListener('keydown', (event) => {
-        if (event.which === keyCodes.escape) {
-            close(dialog, trigger);
-        }
-    });
+// close dialog
+dialog.addEventListener('keydown', (event) = > {
+    if(event.which === keyCodes.escape
+)
+{
+    close(dialog, trigger);
+}
+})
+;
 
-    dismissTriggers.forEach((dismissTrigger) => {
-        const dismissDialog = document.getElementById(dismissTrigger.dataset.dismiss);
+dismissTriggers.forEach((dismissTrigger) = > {
+    const dismissDialog = document.getElementById(dismissTrigger.dataset.dismiss);
 
-        dismissTrigger.addEventListener('click', (event) => {
-            event.preventDefault();
+dismissTrigger.addEventListener('click', (event) = > {
+    event.preventDefault();
 
-            close(dismissDialog, trigger);
-        });
-    });
+close(dismissDialog, trigger);
+})
+;
+})
+;
 
-    window.addEventListener('click', (event) => {
-        if (event.target === dialog) {
-            close(dialog, trigger);
-        }
-    });
-});
+window.addEventListener('click', (event) = > {
+    if(event.target === dialog
+)
+{
+    close(dialog, trigger);
+}
+})
+;
+})
+;

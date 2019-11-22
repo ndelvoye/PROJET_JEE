@@ -1,6 +1,5 @@
 <%--@elvariable id="form" type="fr.gestconge.formulaire.DemandeFormulaire"--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--@elvariable id="demande" type="fr.gestconge.classes.beans.Demande"--%>
 <!DOCTYPE html>
 <html>

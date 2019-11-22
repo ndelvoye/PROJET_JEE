@@ -1,4 +1,4 @@
-<%@ page import="fr.gestconge.classes.beans.Employe" %>
+<%@ page import="fr.gestconge.bean.Employe" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--
 Material Dashboard - v2.1.1
@@ -7,7 +7,7 @@ Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/bl
 Coded by Creative Tim
 -->
 <%
-    Employe employe = (Employe)session.getAttribute("sessionUtilisateur");
+    Employe employe = (Employe) session.getAttribute("sessionUtilisateur");
 %>
 <!doctype html>
 <html lang="en">
@@ -25,7 +25,7 @@ Coded by Creative Tim
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Material Kit CSS -->
     <link href="${pageContext.request.contextPath}/assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal.css" />
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal.css"/>
 </head>
 
 <body>
@@ -82,7 +82,8 @@ Coded by Creative Tim
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" href="${pageContext.request.contextPath}/vues_Standard/Aide_Standard.jsp">
+                            <a class="nav-link" data-toggle="modal"
+                               href="${pageContext.request.contextPath}/vues_Standard/Aide_Standard.jsp">
                                 <i class="material-icons">help_outline</i>
                                 <p class="d-lg-none d-md-block">
                                     Stats
@@ -95,32 +96,32 @@ Coded by Creative Tim
         </nav>
         <!-- End Navbar -->
 
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-                <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
 
-                    <button aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation"
-                            class="navbar-toggler" data-toggle="collapse" type="button">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                        <span class="navbar-toggler-icon icon-bar"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end">
+                <button aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation"
+                        class="navbar-toggler" data-toggle="collapse" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                    <span class="navbar-toggler-icon icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end">
 
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <i class="material-icons">keyboard_return</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Stats
-                                    </p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pablo">
+                                <i class="material-icons">keyboard_return</i>
+                                <p class="d-lg-none d-md-block">
+                                    Stats
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
         <div class="content">
             <!-- Modal -->
             <a class="nav-link" data-toggle="modal" href="#infos"><i class="material-icons">help_outline</i>

@@ -1,4 +1,4 @@
-<%@ page import="fr.gestconge.classes.beans.Employe" %>
+<%@ page import="fr.gestconge.bean.Employe" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--
 Material Dashboard - v2.1.1
@@ -7,7 +7,7 @@ Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/bl
 Coded by Creative Tim
 -->
 <%
-    Employe employe = (Employe)session.getAttribute("sessionUtilisateur");
+    Employe employe = (Employe) session.getAttribute("sessionUtilisateur");
 %>
 <!doctype html>
 <html lang="en">
@@ -94,7 +94,7 @@ Coded by Creative Tim
                     <span class="navbar-toggler-icon icon-bar"></span>
                     <span class="navbar-toggler-icon icon-bar"></span>
                 </button>
-                
+
             </div>
         </nav>
         <!-- End Navbar -->

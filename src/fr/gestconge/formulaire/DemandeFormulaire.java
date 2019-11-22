@@ -1,7 +1,6 @@
 package fr.gestconge.formulaire;
 
-import fr.gestconge.demande.Demande;
-import fr.gestconge.employe.EmployeServiceImpl;
+import fr.gestconge.bean.Demande;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
@@ -46,8 +45,6 @@ public final class DemandeFormulaire {
     }
 
     public Demande creerDemande(HttpServletRequest request) {
-        EmployeServiceImpl employeService = new EmployeServiceImpl();
-
         String typeDemande = getValeurChamp(request, CHAMP_TYPE_DEMANDE);
         String dtDebut = getValeurChamp(request, CHAMP_DATE_DEBUT);
         String dtFin = getValeurChamp(request, CHAMP_DATE_FIN);
@@ -70,7 +67,7 @@ public final class DemandeFormulaire {
             setErreur(CHAMP_PRENOM, e.getMessage());
         }
 
-        demande.setEmailEmploye(employeService.getEmployesByNomPrenom(nom, prenom).get(0).getEmail());
+        //demande.setEmailEmploye(employeService.getEmployesByNomPrenom(nom, prenom).get(0).getEmail());
 
        /* try {
             validationDateDebut( dtDebut );

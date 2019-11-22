@@ -1,4 +1,4 @@
-<%@ page import="fr.gestconge.classes.beans.Employe" %>
+<%@ page import="fr.gestconge.bean.Employe" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--
 Material Dashboard - v2.1.1
@@ -7,7 +7,7 @@ Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/bl
 Coded by Creative Tim
 -->
 <%
-    Employe employe = (Employe)session.getAttribute("sessionUtilisateur");
+    Employe employe = (Employe) session.getAttribute("sessionUtilisateur");
 %>
 <!doctype html>
 <html lang="en">
@@ -91,7 +91,9 @@ Coded by Creative Tim
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="#pablo">Mon agenda • <%= employe.getNom() + " " + employe.getPrenom() %></a>
+                    <a class="navbar-brand" href="#pablo">Mon agenda
+                        • <%= employe.getNom() + " " + employe.getPrenom() %>
+                    </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -106,7 +108,7 @@ Coded by Creative Tim
         <!-- End Navbar -->
 
         <div class="content">
-            <div class="container-fluid" >
+            <div class="container-fluid">
                 <jsp:include page="../vues_Standard/VueGlobale_Calendrier_Standard.jsp"/>
             </div>
         </div>

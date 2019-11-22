@@ -1,4 +1,4 @@
-<%@page contentType="text/html;charset=UTF-8" language="java"%>
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="${pageContext.request.contextPath}/assets/css/calendrier.css" rel="stylesheet" id="calendrier-css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -18,11 +18,11 @@
             var m = date.getMonth();
             var y = date.getFullYear();
 
-              /* className colors
+            /* className colors
 
-            className: default(transparent), important(red), chill(pink), success(green), info(blue)
+          className: default(transparent), important(red), chill(pink), success(green), info(blue)
 
-            */
+          */
 
 
             /* initialize the external events

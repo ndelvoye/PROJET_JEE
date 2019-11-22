@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--@elvariable id="form" type="fr.gestconge.formulaire.InscriptionFormulaire"--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -10,6 +9,25 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet"
       type="text/css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
+<style>
+    .card-default {
+        color: #333;
+        background: linear-gradient(#fff, #ebebeb) repeat scroll 0 0 transparent;
+        font-weight: 600;
+        border-radius: 6px;
+    }
+
+</style>
+
+<script>
+    $(function () {
+        $(".date").datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+    });
+</script>
 
 <body>
 <form method="post" action="InscriptionServlet">
@@ -221,27 +239,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-        <style>
-            .card-default {
-                color: #333;
-                background: linear-gradient(#fff, #ebebeb) repeat scroll 0 0 transparent;
-                font-weight: 600;
-                border-radius: 6px;
-            }
-
-        </style>
-
-        <script>
-            $(function () {
-                $(".date").datepicker({
-                    autoclose: true,
-                    todayHighlight: true
-                });
-            });
-        </script>
+    </div>
 </form>
-
 </body>

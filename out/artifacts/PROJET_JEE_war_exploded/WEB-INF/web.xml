@@ -8,35 +8,39 @@
 
     <servlet>
         <servlet-name>ConnexionServlet</servlet-name>
-        <servlet-class>fr.gestconge.inscription.employe.ConnexionServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlet.ConnexionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>InscriptionServlet</servlet-name>
-        <servlet-class>fr.gestconge.RH.InscriptionServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlet.InscriptionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SuppressionServlet</servlet-name>
-        <servlet-class>fr.gestconge.inscription.employe.SuppressionServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlet.SuppressionServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ModificationServlet</servlet-name>
-        <servlet-class>fr.gestconge.inscription.employe.ModificationServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlet.ModificationServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>DemandeServlet</servlet-name>
-        <servlet-class>fr.gestconge.inscription.employe.DemandeServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlet.DemandeServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>HistoriqueDemandeServlet</servlet-name>
-        <servlet-class>fr.gestconge.inscription.employe.HistoriqueDemandeServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlet.HistoriqueDemandeServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RhoomServlet</servlet-name>
-        <servlet-class>fr.gestconge.RH.RhoomServlet</servlet-class>
+        <servlet-class>fr.gestconge.servlet.RhoomServlet</servlet-class>
     </servlet>
-    <!-- Mapping-->
 
+    <listener>
+        <listener-class>fr.gestconge.dao.InitialisationDAOFactory</listener-class>
+    </listener>
+
+    <!-- Mapping-->
     <servlet-mapping>
         <servlet-name>ConnexionServlet</servlet-name>
         <url-pattern>/ConnexionServlet</url-pattern>
@@ -66,19 +70,8 @@
         <servlet-name>RhoomServlet</servlet-name>
         <url-pattern>/RhoomServlet</url-pattern>
     </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>vues_Standard/VueGlobale_Connexion_Standard.jsp</welcome-file>
     </welcome-file-list>
-
-    <!--
-    <filter>
-        <filter-name>FiltreRestriction</filter-name>
-        <filter-class>fr.gestconge.filtre.FiltreRestriction</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>FiltreRestriction</filter-name>
-        <url-pattern>/restreint/*</url-pattern>
-    </filter-mapping>
--->
-
 </web-app>
