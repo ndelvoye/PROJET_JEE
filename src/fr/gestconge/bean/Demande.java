@@ -1,41 +1,34 @@
 package fr.gestconge.bean;
 
-import javax.persistence.*;
-import java.time.LocalDate;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.sql.Timestamp;
+import java.util.Objects;
 
 @Entity
 public class Demande {
-    @Id
-    private Integer id;
+    private long id;
     private String type;
-    private int etat;
-    private LocalDate dateDebut;
-    private LocalDate dateFin;
-    private LocalDate dateCreation;
+    private boolean etat;
+    private Timestamp dateDebut;
+    private Timestamp dateFin;
+    private Timestamp dateCreation;
     private String emailEmploye;
 
-    // Constructeur
-    public Demande(String type, int etat, LocalDate dateDebut, LocalDate dateFin, LocalDate dateCreation, String emailEmploye) {
-        this.type = type;
-        this.etat = etat;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.dateCreation = dateCreation;
-        this.emailEmploye = emailEmploye;
-    }
-
-    public Demande() {
-    }
-
-    // Getters & setters
-    public Integer getId() {
+    @Id
+    @Column(name = "id")
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
+    @Basic
+    @Column(name = "type")
     public String getType() {
         return type;
     }
@@ -44,38 +37,48 @@ public class Demande {
         this.type = type;
     }
 
-    public int getEtat() {
+    @Basic
+    @Column(name = "etat")
+    public boolean isEtat() {
         return etat;
     }
 
-    public void setEtat(int etat) {
+    public void setEtat(boolean etat) {
         this.etat = etat;
     }
 
-    public LocalDate getDateDebut() {
+    @Basic
+    @Column(name = "dateDebut")
+    public Timestamp getDateDebut() {
         return dateDebut;
     }
 
-    public void setDateDebut(LocalDate dateDebut) {
+    public void setDateDebut(Timestamp dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public LocalDate getDateFin() {
+    @Basic
+    @Column(name = "dateFin")
+    public Timestamp getDateFin() {
         return dateFin;
     }
 
-    public void setDateFin(LocalDate dateFin) {
+    public void setDateFin(Timestamp dateFin) {
         this.dateFin = dateFin;
     }
 
-    public LocalDate getDateCreation() {
+    @Basic
+    @Column(name = "dateCreation")
+    public Timestamp getDateCreation() {
         return dateCreation;
     }
 
-    public void setDateCreation(LocalDate dateCreation) {
+    public void setDateCreation(Timestamp dateCreation) {
         this.dateCreation = dateCreation;
     }
 
+    @Basic
+    @Column(name = "emailEmploye")
     public String getEmailEmploye() {
         return emailEmploye;
     }
@@ -84,17 +87,21 @@ public class Demande {
         this.emailEmploye = emailEmploye;
     }
 
-    // Autres fonctions
     @Override
-    public String toString() {
-        return "Demande{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", etat=" + etat +
-                ", dateDebut=" + dateDebut +
-                ", dateFin=" + dateFin +
-                ", dateCreation=" + dateCreation +
-                ", emailEmploye='" + emailEmploye + '\'' +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Demande demande = (Demande) o;
+        return id == demande.id &&
+                etat == demande.etat &&
+                Objects.equals(type, demande.type) &&
+                Objects.equals(dateDebut, demande.dateDebut) &&
+                Objects.equals(dateFin, demande.dateFin) &&
+                Objects.equals(dateCreation, demande.dateCreation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, type, etat, dateDebut, dateFin, dateCreation);
     }
 }

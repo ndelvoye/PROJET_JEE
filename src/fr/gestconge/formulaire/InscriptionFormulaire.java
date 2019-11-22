@@ -3,7 +3,7 @@ package fr.gestconge.formulaire;
 import fr.gestconge.bean.Employe;
 
 import javax.servlet.http.HttpServletRequest;
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,7 +84,7 @@ public class InscriptionFormulaire {
         }
         utilisateur.setPrenom(prenom);
 
-        utilisateur.setDateRecrutement(LocalDate.parse(dtRecrutement));
+        utilisateur.setDateRecrutement(new Date(2000, 10, 10));
         utilisateur.setService(service);
         utilisateur.setFonction(poste);
         utilisateur.setEquipe(equipe);

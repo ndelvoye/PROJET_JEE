@@ -18,7 +18,7 @@ public class ModificationServlet extends HttpServlet {
     public static final String ATT_DEMANDE = "old";
     public static final String SESSION_DEMANDES = "demandes";
     public static final String ATT_FORM = "form";
-    public static final String VUE_SUCCES = "/VueGlobale_ConfirmationFormulaire_Standard.jsp";
+    public static final String VUE_SUCCES = "/vues/standard/VueGlobale_ConfirmationFormulaire_Standard.jsp";
     public static final String VUE = "/modif.jsp";
 
     /*

@@ -18,8 +18,8 @@ public class DemandeServlet extends HttpServlet {
     private static final String ATT_FORM = "form";
     private static final String SESSION_DEMANDES = "demandes";
     private static final String ATT_SESSION_USER = "sessionUtilisateur";
-    private static final String VUE_SUCCES_STANDARD = "/vues_Standard/VueGlobale_ConfirmationFormulaire_Standard.jsp";
-    private static final String VUE_STANDARD = "/vues_Standard/VueGlobale_Formulaire_Standard.jsp";
+    private static final String VUE_SUCCES_STANDARD = "/vues/standard/VueGlobale_ConfirmationFormulaire_Standard.jsp";
+    private static final String VUE_STANDARD = "/vues/standard/VueGlobale_Formulaire_Standard.jsp";
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

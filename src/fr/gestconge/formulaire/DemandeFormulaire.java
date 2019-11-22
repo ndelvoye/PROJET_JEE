@@ -3,7 +3,7 @@ package fr.gestconge.formulaire;
 import fr.gestconge.bean.Demande;
 
 import javax.servlet.http.HttpServletRequest;
-import java.time.LocalDate;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,8 +53,8 @@ public final class DemandeFormulaire {
 
         // Noter la date de création de la demande
         Demande demande = new Demande();
-        demande.setDateCreation(LocalDate.now());
-        demande.setEtat(0); // statut 0 en cours de validation
+        demande.setDateCreation(new Timestamp(2000, 10, 10, 10, 10, 10, 10));
+        demande.setEtat(true); // statut 0 en cours de validation
 
         try {
             validationNom(nom);
@@ -87,7 +87,7 @@ public final class DemandeFormulaire {
         }
         tmp = tmp + res[res.length - 1];
 
-        demande.setDateDebut(LocalDate.parse(tmp));
+        demande.setDateDebut(new Timestamp(2000, 10, 10, 10, 10, 10, 10));
 
         /*try {
             validationDateFin( dtFin );
@@ -105,7 +105,7 @@ public final class DemandeFormulaire {
             tmp1 = tmp1 + res1[j] + "-";
         }
         tmp1 = tmp1 + res1[res1.length - 1];
-        demande.setDateFin(LocalDate.parse(tmp1));
+        demande.setDateFin(new Timestamp(2000, 10, 10, 10, 10, 10, 10));
 
         /*try {
             validationTypeDemande( typeDemande );

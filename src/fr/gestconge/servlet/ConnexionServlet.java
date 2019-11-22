@@ -16,10 +16,10 @@ public class ConnexionServlet extends HttpServlet {
     private static final String ATT_USER = "utilisateur";
     private static final String ATT_FORM = "form";
     private static final String ATT_SESSION_USER = "sessionUtilisateur";
-    private static final String VUE_FORM = "/vues_Standard/VueGlobale_Connexion_Standard.jsp";
-    private static final String VUE_STANDARD = "/vues_Standard/VueGlobale_Accueil_Standard.jsp";
-    private static final String VUE_RH = "/vues_RH/VueGlobale_Accueil_RH.jsp";
-    private static final String VUE_LEADER = "/vues_Leader/VueGlobale_Accueil_TeamLeader.jsp";
+    private static final String VUE_FORM = "/vues/standard/VueGlobale_Connexion_Standard.jsp";
+    private static final String VUE_STANDARD = "/vues/standard/VueGlobale_Accueil_Standard.jsp";
+    private static final String VUE_RH = "/vues/rh/VueGlobale_Accueil_RH.jsp";
+    private static final String VUE_LEADER = "/vues/leader/VueGlobale_Accueil_TeamLeader.jsp";
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Affichage de la page de connexion

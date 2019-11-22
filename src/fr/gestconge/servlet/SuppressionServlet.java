@@ -15,7 +15,7 @@ public class SuppressionServlet extends HttpServlet {
     private static final String PARAM_DATE_DEMANDE = "dtCreation";
     private static final String SESSION_DEMANDES = "demandes";
 
-    private static final String VUE = "/vues_Standard/VueGlobale_MesDemandes_Standard.jsp";
+    private static final String VUE = "/vues/standard/VueGlobale_MesDemandes_Standard.jsp";
 
     /*
      * Méthode utilitaire qui retourne null si un paramètre est vide, et son

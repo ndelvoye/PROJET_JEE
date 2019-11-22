@@ -1,43 +1,23 @@
 package fr.gestconge.bean;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.sql.Date;
+import java.util.Objects;
 
 @Entity
-@Table(name="Employe")
 public class Employe {
-    @Id
     private String email;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "nom")
     private String nom;
-
-    @Column(name = "prenom")
     private String prenom;
-
-    @Column(name = "adresse")
     private String adresse;
-
-    @Column(name = "fonction")
     private String fonction;
-
-    @Column(name = "equipe")
     private String equipe;
-
-    @Column(name = "service")
     private String service;
+    private Date dateRecrutement;
 
-    @Column(name = "dateRecrutement")
-    private LocalDate dateRecrutement;
-
-    // Constructeur
-    public Employe() {
-    }
-
-    // Getters & Setters
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public String getEmail() {
         return email;
     }
@@ -46,6 +26,8 @@ public class Employe {
         this.email = email;
     }
 
+    @Basic
+    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -54,6 +36,8 @@ public class Employe {
         this.password = password;
     }
 
+    @Basic
+    @Column(name = "nom")
     public String getNom() {
         return nom;
     }
@@ -62,6 +46,8 @@ public class Employe {
         this.nom = nom;
     }
 
+    @Basic
+    @Column(name = "prenom")
     public String getPrenom() {
         return prenom;
     }
@@ -70,6 +56,8 @@ public class Employe {
         this.prenom = prenom;
     }
 
+    @Basic
+    @Column(name = "adresse")
     public String getAdresse() {
         return adresse;
     }
@@ -78,6 +66,8 @@ public class Employe {
         this.adresse = adresse;
     }
 
+    @Basic
+    @Column(name = "fonction")
     public String getFonction() {
         return fonction;
     }
@@ -86,6 +76,8 @@ public class Employe {
         this.fonction = fonction;
     }
 
+    @Basic
+    @Column(name = "equipe")
     public String getEquipe() {
         return equipe;
     }
@@ -94,6 +86,8 @@ public class Employe {
         this.equipe = equipe;
     }
 
+    @Basic
+    @Column(name = "service")
     public String getService() {
         return service;
     }
@@ -102,11 +96,34 @@ public class Employe {
         this.service = service;
     }
 
-    public LocalDate getDateRecrutement() {
+    @Basic
+    @Column(name = "dateRecrutement")
+    public Date getDateRecrutement() {
         return dateRecrutement;
     }
 
-    public void setDateRecrutement(LocalDate dateRecrutement) {
+    public void setDateRecrutement(Date dateRecrutement) {
         this.dateRecrutement = dateRecrutement;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employe employe = (Employe) o;
+        return Objects.equals(email, employe.email) &&
+                Objects.equals(password, employe.password) &&
+                Objects.equals(nom, employe.nom) &&
+                Objects.equals(prenom, employe.prenom) &&
+                Objects.equals(adresse, employe.adresse) &&
+                Objects.equals(fonction, employe.fonction) &&
+                Objects.equals(equipe, employe.equipe) &&
+                Objects.equals(service, employe.service) &&
+                Objects.equals(dateRecrutement, employe.dateRecrutement);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email, password, nom, prenom, adresse, fonction, equipe, service, dateRecrutement);
     }
 }

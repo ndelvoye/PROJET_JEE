@@ -35,10 +35,10 @@
         <servlet-name>RhoomServlet</servlet-name>
         <servlet-class>fr.gestconge.servlet.RhoomServlet</servlet-class>
     </servlet>
-
-    <listener>
-        <listener-class>fr.gestconge.dao.InitialisationDAOFactory</listener-class>
-    </listener>
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>fr.gestconge.servlet.TestServlet</servlet-class>
+    </servlet>
 
     <!-- Mapping-->
     <servlet-mapping>
@@ -71,7 +71,12 @@
         <url-pattern>/RhoomServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/TestServlet</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
-        <welcome-file>vues_Standard/VueGlobale_Connexion_Standard.jsp</welcome-file>
+        <welcome-file>vues/standard/VueGlobale_Connexion_Standard.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

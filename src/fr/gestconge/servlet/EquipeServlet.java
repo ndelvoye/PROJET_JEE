@@ -1,18 +1,15 @@
 package fr.gestconge.servlet;
 
-import fr.gestconge.bean.Employe;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
 public class EquipeServlet extends javax.servlet.http.HttpServlet {
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
-    private static final String VUE = "/vues_Leader/VueGlobale_Equipe_TeamLeader.jsp";
+    private static final String VUE = "/vues/leader/VueGlobale_Equipe_TeamLeader.jsp";
 
     private void doProcess(HttpServletRequest request, HttpServletResponse
             response) {
