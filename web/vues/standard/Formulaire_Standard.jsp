@@ -4,9 +4,11 @@
     Employe employe = (Employe) session.getAttribute("sessionUtilisateur");
 %>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+
 <script src="${pageContext.request.contextPath}/assets/js/demande.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/demande.css"/>
