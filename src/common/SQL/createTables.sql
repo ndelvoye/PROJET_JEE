@@ -22,11 +22,11 @@ create table if not exists demande
 (
     id           bigint unsigned auto_increment,
     type         varchar(8)  not null,
-    etat         bit(2)      not null,
+    etat         smallint(6) not null,
     dateDebut    datetime    not null,
     dateFin      datetime    not null,
     dateCreation datetime    not null,
-    emailEmploye varchar(32) not null,
+    emailEmploye varchar(64) not null,
     constraint demande_employe_uindex
         unique (emailEmploye),
     constraint demande_id_uindex

@@ -35,9 +35,11 @@ public class ConnexionServlet extends HttpServlet {
 
         // Récupération de la session depuis la requête
         HttpSession session = request.getSession();
-        session.invalidate();
-        session = request.getSession();
-
+        if (utilisateur != null) {
+            session = request.getSession();
+        } else {
+            session.invalidate();
+        }
 
         // Stockage du formulaire, du bean dans l'objet request
         request.setAttribute(ATT_FORM, form);

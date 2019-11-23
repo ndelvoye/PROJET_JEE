@@ -4,27 +4,27 @@ import fr.gestconge.bean.Compteur;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Query;
+import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.function.Consumer;
 
-public class JpaCompteurDao implements Dao<Compteur> {
-
+public class CompteurDAO implements DAO<Compteur> {
     private EntityManager entityManager;
 
-    // standard constructors
-
-    @Override
-    public Optional<Compteur> get(long id) {
-        return Optional.ofNullable(entityManager.find(Compteur.class, id));
+    public CompteurDAO() {
+        this.entityManager = Persistence.createEntityManagerFactory("PROJET_JEE").createEntityManager();
     }
 
+    // Fonctions spécifiques
+    public List<Compteur> getByEmail(String email) {
+        return entityManager.createQuery("SELECT c FROM Compteur c WHERE emailEmploye = '" + email + "'").getResultList();
+    }
+
+    // Fonctions de base
     @Override
     public List<Compteur> getAll() {
-        Query query = entityManager.createQuery("SELECT emailEmploye, rtt, congesAnnuels, enfantMalade, famille FROM Compteur");
-        return query.getResultList();
+        return entityManager.createQuery("SELECT c FROM Compteur c", Compteur.class).getResultList();
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Demande {
     private long id;
     private String type;
-    private boolean etat;
+    private short etat;
     private Timestamp dateDebut;
     private Timestamp dateFin;
     private Timestamp dateCreation;
@@ -39,11 +39,11 @@ public class Demande {
 
     @Basic
     @Column(name = "etat")
-    public boolean isEtat() {
+    public short getEtat() {
         return etat;
     }
 
-    public void setEtat(boolean etat) {
+    public void setEtat(short etat) {
         this.etat = etat;
     }
 
@@ -103,5 +103,18 @@ public class Demande {
     @Override
     public int hashCode() {
         return Objects.hash(id, type, etat, dateDebut, dateFin, dateCreation);
+    }
+
+    @Override
+    public String toString() {
+        return "Demande{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", etat=" + etat +
+                ", dateDebut=" + dateDebut +
+                ", dateFin=" + dateFin +
+                ", dateCreation=" + dateCreation +
+                ", emailEmploye='" + emailEmploye + '\'' +
+                '}';
     }
 }

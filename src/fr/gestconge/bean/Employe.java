@@ -126,4 +126,19 @@ public class Employe {
     public int hashCode() {
         return Objects.hash(email, password, nom, prenom, adresse, fonction, equipe, service, dateRecrutement);
     }
+
+    @Override
+    public String toString() {
+        return "Employe{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", fonction='" + fonction + '\'' +
+                ", equipe='" + equipe + '\'' +
+                ", service='" + service + '\'' +
+                ", dateRecrutement=" + dateRecrutement +
+                '}';
+    }
 }

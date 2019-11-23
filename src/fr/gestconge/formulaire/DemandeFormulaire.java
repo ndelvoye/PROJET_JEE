@@ -54,7 +54,7 @@ public final class DemandeFormulaire {
         // Noter la date de création de la demande
         Demande demande = new Demande();
         demande.setDateCreation(new Timestamp(2000, 10, 10, 10, 10, 10, 10));
-        demande.setEtat(true); // statut 0 en cours de validation
+        demande.setEtat((short) 0); // statut 0 en cours de validation
 
         try {
             validationNom(nom);

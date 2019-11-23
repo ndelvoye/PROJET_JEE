@@ -4,27 +4,43 @@ import fr.gestconge.bean.Employe;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Query;
+import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.function.Consumer;
 
-public class JpaEmployeDao implements Dao<Employe> {
-
+public class EmployeDAO implements DAO<Employe> {
     private EntityManager entityManager;
 
-    // standard constructors
-
-    @Override
-    public Optional<Employe> get(long id) {
-        return Optional.ofNullable(entityManager.find(Employe.class, id));
+    public EmployeDAO() {
+        this.entityManager = Persistence.createEntityManagerFactory("PROJET_JEE").createEntityManager();
     }
 
+    // Fonctions spécifiques
+    public Employe getByEmail(String email) {
+        return entityManager.find(Employe.class, email);
+    }
+
+    public List<Employe> getByNomPrenom(String nom, String prenom) {
+        return entityManager.createQuery("SELECT e FROM Employe e WHERE nom = '" + nom + "' AND prenom = '" + prenom + "'").getResultList();
+    }
+
+    public List<Employe> getByFonction(String fonction) {
+        return entityManager.createQuery("SELECT e FROM Employe e WHERE fonction = '" + fonction + "'").getResultList();
+    }
+
+    public List<Employe> getByEquipe(String equipe) {
+        return entityManager.createQuery("SELECT e FROM Employe e WHERE equipe = '" + equipe + "'").getResultList();
+    }
+
+    public List<Employe> getByService(String service) {
+        return entityManager.createQuery("SELECT e FROM Employe e WHERE service = '" + service + "'").getResultList();
+    }
+
+    // Fonctions de base
     @Override
     public List<Employe> getAll() {
-        Query query = entityManager.createQuery("SELECT email, password, nom, prenom, adresse, fonction, equipe, service, dateRecrutement FROM Employe");
-        return query.getResultList();
+        return entityManager.createQuery("SELECT e FROM Employe e").getResultList();
     }
 
     @Override

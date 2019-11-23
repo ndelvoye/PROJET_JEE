@@ -60,7 +60,7 @@
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
                         <input type="password" id="motdepasse" name="motdepasse" class="form-control"
-                               placeholder="mot de passe" value="<c:out value="${utilisateur.motDePasse}"/>" size="20"
+                               placeholder="mot de passe" value="<c:out value="${utilisateur.password}"/>" size="20"
                                maxlength="20"/>
                         <span class="erreur">${form.erreurs['motdepasse']}</span>
 

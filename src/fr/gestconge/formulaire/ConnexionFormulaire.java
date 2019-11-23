@@ -1,6 +1,7 @@
 package fr.gestconge.formulaire;
 
 import fr.gestconge.bean.Employe;
+import fr.gestconge.dao.EmployeDAO;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ public class ConnexionFormulaire {
     private static final String CHAMP_PASS = "motdepasse";
 
     private String resultat;
-    private Map<String, String> erreurs = new HashMap<String, String>();
+    private Map<String, String> erreurs = new HashMap<>();
 
     /*
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
@@ -36,29 +37,27 @@ public class ConnexionFormulaire {
     }
 
     public Employe connecterUtilisateur(HttpServletRequest request) {
-        /* Récupération des champs du formulaire */
+        // Récupération des champs du formulaire
         String email = getValeurChamp(request, CHAMP_EMAIL);
         String motDePasse = getValeurChamp(request, CHAMP_PASS);
 
-        Employe utilisateur = new Employe();
+        EmployeDAO employeDAO = new EmployeDAO();
+        Employe utilisateur = employeDAO.getByEmail(email);
 
-        /* Validation du champ email. */
-        try {
-            validationEmail(email);
-        } catch (Exception e) {
-            setErreur(CHAMP_EMAIL, e.getMessage());
+        if (utilisateur != null) { // Si le mail existe en base de donnée
+            try {
+                validationMotDePasse(motDePasse); // On vérifie la longueur du mot de passe
+                if (!utilisateur.getPassword().equals(motDePasse)) {
+                    throw new Exception("L'email ou le mot de passe saisi n'existe pas.");
+                }
+            } catch (Exception e) {
+                setErreur(CHAMP_EMAIL, e.getMessage());
+            }
+        } else {
+            setErreur(CHAMP_EMAIL, "L'email ou le mot de passe saisi n'existe pas.");
         }
-        utilisateur.setEmail(email);
 
-        /* Validation du champ mot de passe. */
-        try {
-            validationMotDePasse(motDePasse);
-        } catch (Exception e) {
-            setErreur(CHAMP_PASS, e.getMessage());
-        }
-        utilisateur.setPassword(motDePasse);
-
-        /* Initialisation du résultat global de la validation. */
+        // Initialisation du résultat global de la validation.
         if (erreurs.isEmpty()) {
             resultat = "Succès de la connexion.";
         } else {
@@ -66,15 +65,6 @@ public class ConnexionFormulaire {
         }
 
         return utilisateur;
-    }
-
-    /**
-     * Valide l'adresse email saisie.
-     */
-    private void validationEmail(String email) throws Exception {
-        if (email != null && !email.matches("([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)")) {
-            throw new Exception("Merci de saisir une adresse mail valide.");
-        }
     }
 
     /**
@@ -86,7 +76,7 @@ public class ConnexionFormulaire {
                 throw new Exception("Le mot de passe doit contenir au moins 3 caractères.");
             }
         } else {
-            throw new Exception("Merci de saisir votre mot de passe.");
+            throw new Exception("L'email ou le mot de passe saisi n'existe pas.");
         }
     }
 
