@@ -182,6 +182,7 @@ The above copyright notice and this permission notice shall be included in all c
         <!-- End Navbar -->
         <div class="content">
             <div class="container-fluid">
+                <!-- CHIFFRES -->
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="card card-stats">
@@ -189,15 +190,16 @@ The above copyright notice and this permission notice shall be included in all c
                                 <div class="card-icon">
                                     <i class="material-icons">content_copy</i>
                                 </div>
-                                <p class="card-category">Used Space</p>
-                                <h3 class="card-title">49/50
-                                    <small>GB</small>
+                                <p class="card-category">Nombre d'employé</p>
+                                <h3 class="card-title">500
+<%--                                    <small>employé</small>--%>
                                 </h3>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
-                                    <i class="material-icons text-danger">warning</i>
-                                    <a href="#pablo">Get More Space...</a>
+<%--                                    <i class="material-icons text-danger">warning</i>--%>
+<%--                                    <a href="#pablo">Get More Space...</a>--%>
+                                    Depuis Aout 2019
                                 </div>
                             </div>
                         </div>
@@ -251,17 +253,18 @@ The above copyright notice and this permission notice shall be included in all c
                         </div>
                     </div>
                 </div>
+                <!-- FIN CHIFFRES -->
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card card-chart">
                             <div class="card-header card-header-success">
-                                <div class="ct-chart" id="dailySalesChart"></div>
+                                <div class="ct-chart" id="dailySalesChart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="40" x2="40" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="70.42857142857143" x2="70.42857142857143" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="100.85714285714286" x2="100.85714285714286" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="131.28571428571428" x2="131.28571428571428" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="161.71428571428572" x2="161.71428571428572" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="192.14285714285714" x2="192.14285714285714" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="222.57142857142856" x2="222.57142857142856" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line y1="120" y2="120" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="253" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M40,91.2C70.429,79.2,70.429,79.2,70.429,79.2C100.857,103.2,100.857,103.2,100.857,103.2C131.286,79.2,131.286,79.2,131.286,79.2C161.714,64.8,161.714,64.8,161.714,64.8C192.143,76.8,192.143,76.8,192.143,76.8C222.571,28.8,222.571,28.8,222.571,28.8" class="ct-line"></path><line x1="40" y1="91.2" x2="40.01" y2="91.2" class="ct-point" ct:value="12" opacity="1"></line><line x1="70.42857142857143" y1="79.2" x2="70.43857142857144" y2="79.2" class="ct-point" ct:value="17" opacity="1"></line><line x1="100.85714285714286" y1="103.2" x2="100.86714285714287" y2="103.2" class="ct-point" ct:value="7" opacity="1"></line><line x1="131.28571428571428" y1="79.2" x2="131.29571428571427" y2="79.2" class="ct-point" ct:value="17" opacity="1"></line><line x1="161.71428571428572" y1="64.8" x2="161.7242857142857" y2="64.8" class="ct-point" ct:value="23" opacity="1"></line><line x1="192.14285714285714" y1="76.8" x2="192.15285714285713" y2="76.8" class="ct-point" ct:value="18" opacity="1"></line><line x1="222.57142857142856" y1="28.799999999999997" x2="222.58142857142855" y2="28.799999999999997" class="ct-point" ct:value="38" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="30.428571428571427" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="70.42857142857143" y="125" width="30.428571428571427" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">T</span></foreignObject><foreignObject style="overflow: visible;" x="100.85714285714286" y="125" width="30.428571428571423" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">W</span></foreignObject><foreignObject style="overflow: visible;" x="131.28571428571428" y="125" width="30.42857142857143" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">T</span></foreignObject><foreignObject style="overflow: visible;" x="161.71428571428572" y="125" width="30.42857142857143" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">F</span></foreignObject><foreignObject style="overflow: visible;" x="192.14285714285714" y="125" width="30.428571428571416" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" x="222.57142857142856" y="125" width="30.428571428571445" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">10</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">20</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">30</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">40</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">50</span></foreignObject></g></svg></div>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Daily Sales</h4>
+                                <h4 class="card-title">Nombre d'employé en présentiel par semaine </h4>
                                 <p class="card-category">
-                                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase
-                                    in today sales.</p>
+                                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
@@ -273,10 +276,10 @@ The above copyright notice and this permission notice shall be included in all c
                     <div class="col-md-4">
                         <div class="card card-chart">
                             <div class="card-header card-header-warning">
-                                <div class="ct-chart" id="websiteViewsChart"></div>
+                                <div class="ct-chart" id="websiteViewsChart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;"><g class="ct-grids"><line y1="120" y2="120" x1="40" x2="248" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="248" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="248" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="248" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="248" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="248" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><line x1="48.666666666666664" x2="48.666666666666664" y1="120" y2="54.959999999999994" class="ct-bar" ct:value="542" opacity="1"></line><line x1="66" x2="66" y1="120" y2="66.84" class="ct-bar" ct:value="443" opacity="1"></line><line x1="83.33333333333333" x2="83.33333333333333" y1="120" y2="81.6" class="ct-bar" ct:value="320" opacity="1"></line><line x1="100.66666666666667" x2="100.66666666666667" y1="120" y2="26.400000000000006" class="ct-bar" ct:value="780" opacity="1"></line><line x1="118" x2="118" y1="120" y2="53.64" class="ct-bar" ct:value="553" opacity="1"></line><line x1="135.33333333333331" x2="135.33333333333331" y1="120" y2="65.64" class="ct-bar" ct:value="453" opacity="1"></line><line x1="152.66666666666666" x2="152.66666666666666" y1="120" y2="80.88" class="ct-bar" ct:value="326" opacity="1"></line><line x1="169.99999999999997" x2="169.99999999999997" y1="120" y2="67.92" class="ct-bar" ct:value="434" opacity="1"></line><line x1="187.33333333333331" x2="187.33333333333331" y1="120" y2="51.84" class="ct-bar" ct:value="568" opacity="1"></line><line x1="204.66666666666666" x2="204.66666666666666" y1="120" y2="46.8" class="ct-bar" ct:value="610" opacity="1"></line><line x1="221.99999999999997" x2="221.99999999999997" y1="120" y2="29.28" class="ct-bar" ct:value="756" opacity="1"></line><line x1="239.33333333333331" x2="239.33333333333331" y1="120" y2="12.599999999999994" class="ct-bar" ct:value="895" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="17.333333333333332" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="57.33333333333333" y="125" width="17.333333333333332" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">F</span></foreignObject><foreignObject style="overflow: visible;" x="74.66666666666666" y="125" width="17.333333333333336" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="92" y="125" width="17.33333333333333" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="109.33333333333333" y="125" width="17.33333333333333" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="126.66666666666666" y="125" width="17.333333333333343" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="144" y="125" width="17.33333333333333" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="161.33333333333331" y="125" width="17.33333333333333" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="178.66666666666666" y="125" width="17.333333333333343" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" x="196" y="125" width="17.333333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">O</span></foreignObject><foreignObject style="overflow: visible;" x="213.33333333333331" y="125" width="17.333333333333343" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 17px; height: 20px;">N</span></foreignObject><foreignObject style="overflow: visible;" x="230.66666666666666" y="125" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">D</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg></div>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Email Subscriptions</h4>
+                                <h4 class="card-title">Prévisions des congés à l'année</h4>
                                 <p class="card-category">Last Campaign Performance</p>
                             </div>
                             <div class="card-footer">
@@ -289,10 +292,10 @@ The above copyright notice and this permission notice shall be included in all c
                     <div class="col-md-4">
                         <div class="card card-chart">
                             <div class="card-header card-header-danger">
-                                <div class="ct-chart" id="completedTasksChart"></div>
+                                <div class="ct-chart" id="completedTasksChart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="40" x2="40" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="66.625" x2="66.625" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="93.25" x2="93.25" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="119.875" x2="119.875" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="146.5" x2="146.5" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="173.125" x2="173.125" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="199.75" x2="199.75" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="226.375" x2="226.375" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line y1="120" y2="120" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="253" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="253" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M40,92.4C66.625,30,66.625,30,66.625,30C93.25,66,93.25,66,93.25,66C119.875,84,119.875,84,119.875,84C146.5,86.4,146.5,86.4,146.5,86.4C173.125,91.2,173.125,91.2,173.125,91.2C199.75,96,199.75,96,199.75,96C226.375,97.2,226.375,97.2,226.375,97.2" class="ct-line"></path><line x1="40" y1="92.4" x2="40.01" y2="92.4" class="ct-point" ct:value="230" opacity="1"></line><line x1="66.625" y1="30" x2="66.635" y2="30" class="ct-point" ct:value="750" opacity="1"></line><line x1="93.25" y1="66" x2="93.26" y2="66" class="ct-point" ct:value="450" opacity="1"></line><line x1="119.875" y1="84" x2="119.885" y2="84" class="ct-point" ct:value="300" opacity="1"></line><line x1="146.5" y1="86.4" x2="146.51" y2="86.4" class="ct-point" ct:value="280" opacity="1"></line><line x1="173.125" y1="91.2" x2="173.135" y2="91.2" class="ct-point" ct:value="240" opacity="1"></line><line x1="199.75" y1="96" x2="199.76" y2="96" class="ct-point" ct:value="200" opacity="1"></line><line x1="226.375" y1="97.2" x2="226.385" y2="97.2" class="ct-point" ct:value="190" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="26.625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 27px; height: 20px;">12p</span></foreignObject><foreignObject style="overflow: visible;" x="66.625" y="125" width="26.625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 27px; height: 20px;">3p</span></foreignObject><foreignObject style="overflow: visible;" x="93.25" y="125" width="26.625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 27px; height: 20px;">6p</span></foreignObject><foreignObject style="overflow: visible;" x="119.875" y="125" width="26.625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 27px; height: 20px;">9p</span></foreignObject><foreignObject style="overflow: visible;" x="146.5" y="125" width="26.625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 27px; height: 20px;">12p</span></foreignObject><foreignObject style="overflow: visible;" x="173.125" y="125" width="26.625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 27px; height: 20px;">3a</span></foreignObject><foreignObject style="overflow: visible;" x="199.75" y="125" width="26.625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 27px; height: 20px;">6a</span></foreignObject><foreignObject style="overflow: visible;" x="226.375" y="125" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">9a</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg></div>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Completed Tasks</h4>
+                                <h4 class="card-title">Nombre d'employé en congés par semaine</h4>
                                 <p class="card-category">Last Campaign Performance</p>
                             </div>
                             <div class="card-footer">
@@ -302,279 +305,54 @@ The above copyright notice and this permission notice shall be included in all c
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="card">
-                            <div class="card-header card-header-tabs card-header-primary">
-                                <div class="nav-tabs-navigation">
-                                    <div class="nav-tabs-wrapper">
-                                        <span class="nav-tabs-title">Tasks:</span>
-                                        <ul class="nav nav-tabs" data-tabs="tabs">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" data-toggle="tab" href="#profile">
-                                                    <i class="material-icons">bug_report</i> Bugs
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#messages">
-                                                    <i class="material-icons">code</i> Website
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#settings">
-                                                    <i class="material-icons">cloud</i> Server
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                    <div class="col-md-6">
+
+                        <div class="card ">
+                            <div class="card-header">
+                                <h4 class="card-title">2015 Sales</h4>
+                                <p class="category">All products including Taxes</p>
                             </div>
-                            <div class="card-body">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="profile">
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input checked class="form-check-input" type="checkbox"
-                                                                   value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Flooded: One year later, assessing what was lost and what was found
-                                                    when a ravaging rain swept through metro Detroit
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input checked class="form-check-input" type="checkbox"
-                                                                   value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="tab-pane" id="messages">
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input checked class="form-check-input" type="checkbox"
-                                                                   value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Flooded: One year later, assessing what was lost and what was found
-                                                    when a ravaging rain swept through metro Detroit
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="tab-pane" id="settings">
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input checked class="form-check-input" type="checkbox"
-                                                                   value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Flooded: One year later, assessing what was lost and what was found
-                                                    when a ravaging rain swept through metro Detroit
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input checked class="form-check-input" type="checkbox"
-                                                                   value="">
-                                                            <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                <td class="td-actions text-right">
-                                                    <button class="btn btn-primary btn-link btn-sm" rel="tooltip"
-                                                            title="Edit Task" type="button">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-danger btn-link btn-sm" rel="tooltip"
-                                                            title="Remove" type="button">
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                            <div class="card-content">
+                                <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="245px" class="ct-chart-line" style="width: 100%; height: 245px;"><g class="ct-grids"><line y1="210" y2="210" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="182.14285714285714" y2="182.14285714285714" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="154.28571428571428" y2="154.28571428571428" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="126.42857142857143" y2="126.42857142857143" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="98.57142857142857" y2="98.57142857142857" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="70.71428571428572" y2="70.71428571428572" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="42.85714285714286" y2="42.85714285714286" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="50" x2="439.5" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M50,114.729C60.819,114.636,71.639,114.45,82.458,114.45C93.278,114.45,104.097,120.857,114.917,120.857C125.736,120.857,136.556,76.286,147.375,76.286C158.194,76.286,169.014,83.807,179.833,83.807C190.653,83.807,201.472,55.95,212.292,55.95C223.111,55.95,233.931,174.9,244.75,174.9C255.569,174.9,266.389,155.92,277.208,144.814C288.028,133.708,298.847,113.424,309.667,107.486C320.486,101.547,331.306,101.843,342.125,95.786C352.944,89.728,363.764,68.338,374.583,55.114C385.403,41.89,396.222,29.3,407.042,16.393" class="ct-line"></path><line x1="50" y1="114.72857142857143" x2="50.01" y2="114.72857142857143" class="ct-point" ct:value="542"></line><line x1="82.45833333333334" y1="114.45" x2="82.46833333333335" y2="114.45" class="ct-point" ct:value="543"></line><line x1="114.91666666666667" y1="120.85714285714286" x2="114.92666666666668" y2="120.85714285714286" class="ct-point" ct:value="520"></line><line x1="147.375" y1="76.28571428571428" x2="147.385" y2="76.28571428571428" class="ct-point" ct:value="680"></line><line x1="179.83333333333334" y1="83.80714285714286" x2="179.84333333333333" y2="83.80714285714286" class="ct-point" ct:value="653"></line><line x1="212.29166666666669" y1="55.94999999999999" x2="212.30166666666668" y2="55.94999999999999" class="ct-point" ct:value="753"></line><line x1="244.75" y1="174.9" x2="244.76" y2="174.9" class="ct-point" ct:value="326"></line><line x1="277.20833333333337" y1="144.81428571428572" x2="277.21833333333336" y2="144.81428571428572" class="ct-point" ct:value="434"></line><line x1="309.6666666666667" y1="107.48571428571428" x2="309.6766666666667" y2="107.48571428571428" class="ct-point" ct:value="568"></line><line x1="342.125" y1="95.78571428571429" x2="342.135" y2="95.78571428571429" class="ct-point" ct:value="610"></line><line x1="374.58333333333337" y1="55.11428571428573" x2="374.59333333333336" y2="55.11428571428573" class="ct-point" ct:value="756"></line><line x1="407.0416666666667" y1="16.39285714285714" x2="407.0516666666667" y2="16.39285714285714" class="ct-point" ct:value="895"></line></g><g class="ct-series ct-series-b"><path d="M50,201.643C60.819,195.793,71.639,190.879,82.458,184.093C93.278,177.307,104.097,168.497,114.917,159.857C125.736,151.217,136.556,135.473,147.375,132C158.194,128.527,169.014,128.518,179.833,125.593C190.653,122.667,201.472,116.164,212.292,111.664C223.111,107.165,233.931,103.604,244.75,98.571C255.569,93.539,266.389,84.866,277.208,80.743C288.028,76.619,298.847,72.919,309.667,71.271C320.486,69.624,331.306,69.453,342.125,67.929C352.944,66.404,363.764,64.037,374.583,60.686C385.403,57.334,396.222,49.729,407.042,44.25" class="ct-line"></path><line x1="50" y1="201.64285714285714" x2="50.01" y2="201.64285714285714" class="ct-point" ct:value="230"></line><line x1="82.45833333333334" y1="184.09285714285716" x2="82.46833333333335" y2="184.09285714285716" class="ct-point" ct:value="293"></line><line x1="114.91666666666667" y1="159.85714285714286" x2="114.92666666666668" y2="159.85714285714286" class="ct-point" ct:value="380"></line><line x1="147.375" y1="132" x2="147.385" y2="132" class="ct-point" ct:value="480"></line><line x1="179.83333333333334" y1="125.59285714285714" x2="179.84333333333333" y2="125.59285714285714" class="ct-point" ct:value="503"></line><line x1="212.29166666666669" y1="111.66428571428571" x2="212.30166666666668" y2="111.66428571428571" class="ct-point" ct:value="553"></line><line x1="244.75" y1="98.57142857142857" x2="244.76" y2="98.57142857142857" class="ct-point" ct:value="600"></line><line x1="277.20833333333337" y1="80.74285714285713" x2="277.21833333333336" y2="80.74285714285713" class="ct-point" ct:value="664"></line><line x1="309.6666666666667" y1="71.27142857142857" x2="309.6766666666667" y2="71.27142857142857" class="ct-point" ct:value="698"></line><line x1="342.125" y1="67.92857142857142" x2="342.135" y2="67.92857142857142" class="ct-point" ct:value="710"></line><line x1="374.58333333333337" y1="60.68571428571428" x2="374.59333333333336" y2="60.68571428571428" class="ct-point" ct:value="736"></line><line x1="407.0416666666667" y1="44.25" x2="407.0516666666667" y2="44.25" class="ct-point" ct:value="795"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="50" y="215" width="32.458333333333336" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Jan</span></foreignObject><foreignObject style="overflow: visible;" x="82.45833333333334" y="215" width="32.458333333333336" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Feb</span></foreignObject><foreignObject style="overflow: visible;" x="114.91666666666667" y="215" width="32.45833333333333" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Mar</span></foreignObject><foreignObject style="overflow: visible;" x="147.375" y="215" width="32.45833333333334" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Apr</span></foreignObject><foreignObject style="overflow: visible;" x="179.83333333333334" y="215" width="32.45833333333334" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Mai</span></foreignObject><foreignObject style="overflow: visible;" x="212.29166666666669" y="215" width="32.458333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Jun</span></foreignObject><foreignObject style="overflow: visible;" x="244.75" y="215" width="32.45833333333334" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Jul</span></foreignObject><foreignObject style="overflow: visible;" x="277.20833333333337" y="215" width="32.45833333333334" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Aug</span></foreignObject><foreignObject style="overflow: visible;" x="309.6666666666667" y="215" width="32.458333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Sep</span></foreignObject><foreignObject style="overflow: visible;" x="342.125" y="215" width="32.45833333333337" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Oct</span></foreignObject><foreignObject style="overflow: visible;" x="374.58333333333337" y="215" width="32.458333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Nov</span></foreignObject><foreignObject style="overflow: visible;" x="407.0416666666667" y="215" width="32.458333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Dec</span></foreignObject><foreignObject style="overflow: visible;" y="182.14285714285714" x="10" height="27.857142857142858" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="154.28571428571428" x="10" height="27.857142857142858" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">300</span></foreignObject><foreignObject style="overflow: visible;" y="126.42857142857142" x="10" height="27.857142857142854" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="98.57142857142857" x="10" height="27.85714285714286" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">500</span></foreignObject><foreignObject style="overflow: visible;" y="70.71428571428572" x="10" height="27.857142857142847" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="42.85714285714286" x="10" height="27.85714285714286" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">700</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="27.85714285714286" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">900</span></foreignObject></g></svg><div id="chartActivity" class="ct-chart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="245px" class="ct-chart-line" style="width: 100%; height: 245px;"><g class="ct-grids"><line y1="210" y2="210" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="182.14285714285714" y2="182.14285714285714" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="154.28571428571428" y2="154.28571428571428" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="126.42857142857143" y2="126.42857142857143" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="98.57142857142857" y2="98.57142857142857" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="70.71428571428572" y2="70.71428571428572" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="42.85714285714286" y2="42.85714285714286" x1="50" x2="439.5" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="50" x2="439.5" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M50,114.729C60.819,114.636,71.639,114.45,82.458,114.45C93.278,114.45,104.097,120.857,114.917,120.857C125.736,120.857,136.556,76.286,147.375,76.286C158.194,76.286,169.014,83.807,179.833,83.807C190.653,83.807,201.472,55.95,212.292,55.95C223.111,55.95,233.931,174.9,244.75,174.9C255.569,174.9,266.389,155.92,277.208,144.814C288.028,133.708,298.847,113.424,309.667,107.486C320.486,101.547,331.306,101.843,342.125,95.786C352.944,89.728,363.764,68.338,374.583,55.114C385.403,41.89,396.222,29.3,407.042,16.393" class="ct-line"></path><line x1="50" y1="114.72857142857143" x2="50.01" y2="114.72857142857143" class="ct-point" ct:value="542"></line><line x1="82.45833333333334" y1="114.45" x2="82.46833333333335" y2="114.45" class="ct-point" ct:value="543"></line><line x1="114.91666666666667" y1="120.85714285714286" x2="114.92666666666668" y2="120.85714285714286" class="ct-point" ct:value="520"></line><line x1="147.375" y1="76.28571428571428" x2="147.385" y2="76.28571428571428" class="ct-point" ct:value="680"></line><line x1="179.83333333333334" y1="83.80714285714286" x2="179.84333333333333" y2="83.80714285714286" class="ct-point" ct:value="653"></line><line x1="212.29166666666669" y1="55.94999999999999" x2="212.30166666666668" y2="55.94999999999999" class="ct-point" ct:value="753"></line><line x1="244.75" y1="174.9" x2="244.76" y2="174.9" class="ct-point" ct:value="326"></line><line x1="277.20833333333337" y1="144.81428571428572" x2="277.21833333333336" y2="144.81428571428572" class="ct-point" ct:value="434"></line><line x1="309.6666666666667" y1="107.48571428571428" x2="309.6766666666667" y2="107.48571428571428" class="ct-point" ct:value="568"></line><line x1="342.125" y1="95.78571428571429" x2="342.135" y2="95.78571428571429" class="ct-point" ct:value="610"></line><line x1="374.58333333333337" y1="55.11428571428573" x2="374.59333333333336" y2="55.11428571428573" class="ct-point" ct:value="756"></line><line x1="407.0416666666667" y1="16.39285714285714" x2="407.0516666666667" y2="16.39285714285714" class="ct-point" ct:value="895"></line></g><g class="ct-series ct-series-b"><path d="M50,201.643C60.819,195.793,71.639,190.879,82.458,184.093C93.278,177.307,104.097,168.497,114.917,159.857C125.736,151.217,136.556,135.473,147.375,132C158.194,128.527,169.014,128.518,179.833,125.593C190.653,122.667,201.472,116.164,212.292,111.664C223.111,107.165,233.931,103.604,244.75,98.571C255.569,93.539,266.389,84.866,277.208,80.743C288.028,76.619,298.847,72.919,309.667,71.271C320.486,69.624,331.306,69.453,342.125,67.929C352.944,66.404,363.764,64.037,374.583,60.686C385.403,57.334,396.222,49.729,407.042,44.25" class="ct-line"></path><line x1="50" y1="201.64285714285714" x2="50.01" y2="201.64285714285714" class="ct-point" ct:value="230"></line><line x1="82.45833333333334" y1="184.09285714285716" x2="82.46833333333335" y2="184.09285714285716" class="ct-point" ct:value="293"></line><line x1="114.91666666666667" y1="159.85714285714286" x2="114.92666666666668" y2="159.85714285714286" class="ct-point" ct:value="380"></line><line x1="147.375" y1="132" x2="147.385" y2="132" class="ct-point" ct:value="480"></line><line x1="179.83333333333334" y1="125.59285714285714" x2="179.84333333333333" y2="125.59285714285714" class="ct-point" ct:value="503"></line><line x1="212.29166666666669" y1="111.66428571428571" x2="212.30166666666668" y2="111.66428571428571" class="ct-point" ct:value="553"></line><line x1="244.75" y1="98.57142857142857" x2="244.76" y2="98.57142857142857" class="ct-point" ct:value="600"></line><line x1="277.20833333333337" y1="80.74285714285713" x2="277.21833333333336" y2="80.74285714285713" class="ct-point" ct:value="664"></line><line x1="309.6666666666667" y1="71.27142857142857" x2="309.6766666666667" y2="71.27142857142857" class="ct-point" ct:value="698"></line><line x1="342.125" y1="67.92857142857142" x2="342.135" y2="67.92857142857142" class="ct-point" ct:value="710"></line><line x1="374.58333333333337" y1="60.68571428571428" x2="374.59333333333336" y2="60.68571428571428" class="ct-point" ct:value="736"></line><line x1="407.0416666666667" y1="44.25" x2="407.0516666666667" y2="44.25" class="ct-point" ct:value="795"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="50" y="215" width="32.458333333333336" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Jan</span></foreignObject><foreignObject style="overflow: visible;" x="82.45833333333334" y="215" width="32.458333333333336" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Feb</span></foreignObject><foreignObject style="overflow: visible;" x="114.91666666666667" y="215" width="32.45833333333333" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Mar</span></foreignObject><foreignObject style="overflow: visible;" x="147.375" y="215" width="32.45833333333334" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Apr</span></foreignObject><foreignObject style="overflow: visible;" x="179.83333333333334" y="215" width="32.45833333333334" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Mai</span></foreignObject><foreignObject style="overflow: visible;" x="212.29166666666669" y="215" width="32.458333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Jun</span></foreignObject><foreignObject style="overflow: visible;" x="244.75" y="215" width="32.45833333333334" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Jul</span></foreignObject><foreignObject style="overflow: visible;" x="277.20833333333337" y="215" width="32.45833333333334" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Aug</span></foreignObject><foreignObject style="overflow: visible;" x="309.6666666666667" y="215" width="32.458333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Sep</span></foreignObject><foreignObject style="overflow: visible;" x="342.125" y="215" width="32.45833333333337" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Oct</span></foreignObject><foreignObject style="overflow: visible;" x="374.58333333333337" y="215" width="32.458333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Nov</span></foreignObject><foreignObject style="overflow: visible;" x="407.0416666666667" y="215" width="32.458333333333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 32px; height: 20px;">Dec</span></foreignObject><foreignObject style="overflow: visible;" y="182.14285714285714" x="10" height="27.857142857142858" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="154.28571428571428" x="10" height="27.857142857142858" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">300</span></foreignObject><foreignObject style="overflow: visible;" y="126.42857142857142" x="10" height="27.857142857142854" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="98.57142857142857" x="10" height="27.85714285714286" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">500</span></foreignObject><foreignObject style="overflow: visible;" y="70.71428571428572" x="10" height="27.857142857142847" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="42.85714285714286" x="10" height="27.85714285714286" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">700</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="27.85714285714286" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 28px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">900</span></foreignObject></g></svg></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="chart-legend">
+                                    <i class="fa fa-circle text-info"></i> Tesla Model S
+                                    <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                                </div>
+                                <hr>
+                                <div class="stats">
+                                    <i class="ti-check"></i> Data information certified
                                 </div>
                             </div>
                         </div>
+
                     </div>
+                    <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Users Behavior</h4>
+                            <p class="category">24 Hours performance</p>
+                        </div>
+                        <div class="content">
+                            <div id="chartHours" class="ct-chart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="245px" class="ct-chart-line" style="width: 100%; height: 245px;"><g class="ct-grids"><line y1="210" y2="210" x1="50" x2="469.5" class="ct-grid ct-vertical"></line><line y1="171" y2="171" x1="50" x2="469.5" class="ct-grid ct-vertical"></line><line y1="132" y2="132" x1="50" x2="469.5" class="ct-grid ct-vertical"></line><line y1="93" y2="93" x1="50" x2="469.5" class="ct-grid ct-vertical"></line><line y1="54" y2="54" x1="50" x2="469.5" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="50" x2="469.5" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M50,210L50,154.035C65.537,154.035,81.074,134.925,96.611,134.925C112.148,134.925,127.685,114.45,143.222,114.45C158.759,114.45,174.296,100.41,189.833,100.41C205.37,100.41,220.907,94.17,236.444,94.17C251.981,94.17,267.519,87.93,283.056,87.93C298.593,87.93,314.13,73.89,329.667,73.89C345.204,73.89,360.741,35.475,376.278,35.475C391.815,35.475,407.352,24.36,422.889,24.36L422.889,210Z" class="ct-area"></path><path d="M50,154.035C65.537,154.035,81.074,134.925,96.611,134.925C112.148,134.925,127.685,114.45,143.222,114.45C158.759,114.45,174.296,100.41,189.833,100.41C205.37,100.41,220.907,94.17,236.444,94.17C251.981,94.17,267.519,87.93,283.056,87.93C298.593,87.93,314.13,73.89,329.667,73.89C345.204,73.89,360.741,35.475,376.278,35.475C391.815,35.475,407.352,24.36,422.889,24.36" class="ct-line"></path></g><g class="ct-series ct-series-b"><path d="M50,210L50,196.935C65.537,196.935,81.074,180.36,96.611,180.36C112.148,180.36,127.685,172.365,143.222,172.365C158.759,172.365,174.296,163.2,189.833,163.2C205.37,163.2,220.907,134.535,236.444,134.535C251.981,134.535,267.519,125.175,283.056,125.175C298.593,125.175,314.13,105.675,329.667,105.675C345.204,105.675,360.741,84.81,376.278,84.81C391.815,84.81,407.352,64.92,422.889,64.92L422.889,210Z" class="ct-area"></path><path d="M50,196.935C65.537,196.935,81.074,180.36,96.611,180.36C112.148,180.36,127.685,172.365,143.222,172.365C158.759,172.365,174.296,163.2,189.833,163.2C205.37,163.2,220.907,134.535,236.444,134.535C251.981,134.535,267.519,125.175,283.056,125.175C298.593,125.175,314.13,105.675,329.667,105.675C345.204,105.675,360.741,84.81,376.278,84.81C391.815,84.81,407.352,64.92,422.889,64.92" class="ct-line"></path></g><g class="ct-series ct-series-c"><path d="M50,210L50,205.515C65.537,205.515,81.074,187.965,96.611,187.965C112.148,187.965,127.685,196.935,143.222,196.935C158.759,196.935,174.296,188.94,189.833,188.94C205.37,188.94,220.907,172.95,236.444,172.95C251.981,172.95,267.519,163.395,283.056,163.395C298.593,163.395,314.13,150.135,329.667,150.135C345.204,150.135,360.741,130.05,376.278,130.05C391.815,130.05,407.352,130.05,422.889,130.05L422.889,210Z" class="ct-area"></path><path d="M50,205.515C65.537,205.515,81.074,187.965,96.611,187.965C112.148,187.965,127.685,196.935,143.222,196.935C158.759,196.935,174.296,188.94,189.833,188.94C205.37,188.94,220.907,172.95,236.444,172.95C251.981,172.95,267.519,163.395,283.056,163.395C298.593,163.395,314.13,150.135,329.667,150.135C345.204,150.135,360.741,130.05,376.278,130.05C391.815,130.05,407.352,130.05,422.889,130.05" class="ct-line"></path></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="50" y="215" width="46.611111111111114" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;">9:00AM</span></foreignObject><foreignObject style="overflow: visible;" x="96.61111111111111" y="215" width="46.611111111111114" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;">12:00AM</span></foreignObject><foreignObject style="overflow: visible;" x="143.22222222222223" y="215" width="46.611111111111114" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;">3:00PM</span></foreignObject><foreignObject style="overflow: visible;" x="189.83333333333334" y="215" width="46.611111111111114" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;">6:00PM</span></foreignObject><foreignObject style="overflow: visible;" x="236.44444444444446" y="215" width="46.611111111111114" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;">9:00PM</span></foreignObject><foreignObject style="overflow: visible;" x="283.05555555555554" y="215" width="46.611111111111114" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;">12:00PM</span></foreignObject><foreignObject style="overflow: visible;" x="329.6666666666667" y="215" width="46.61111111111114" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;">3:00AM</span></foreignObject><foreignObject style="overflow: visible;" x="376.2777777777778" y="215" width="46.611111111111086" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;">6:00AM</span></foreignObject><foreignObject style="overflow: visible;" x="422.8888888888889" y="215" width="46.611111111111086" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 47px; height: 20px;"></span></foreignObject><foreignObject style="overflow: visible;" y="171" x="10" height="39" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 39px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="132" x="10" height="39" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 39px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="93" x="10" height="39" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 39px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="54" x="10" height="39" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 39px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="39" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 39px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg></div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i> Open
+                                <i class="fa fa-circle text-danger"></i> Click
+                                <i class="fa fa-circle text-warning"></i> Click Second Time
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-reload"></i> Updated 3 minutes ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header card-header-warning">
@@ -620,6 +398,7 @@ The above copyright notice and this permission notice shall be included in all c
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <footer class="footer">

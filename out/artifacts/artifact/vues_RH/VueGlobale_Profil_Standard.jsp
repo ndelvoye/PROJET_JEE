@@ -47,7 +47,7 @@ The above copyright notice and this permission notice shall be included in all c
       -->
         <div class="logo">
             <a class="simple-text logo-normal" href="http://www.creative-tim.com">
-                Creative Tim
+                Nom Prénom
             </a>
         </div>
         <div class="sidebar-wrapper">
@@ -94,18 +94,6 @@ The above copyright notice and this permission notice shall be included in all c
                         <p>Notifications</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./rtl.html">
-                        <i class="material-icons">language</i>
-                        <p>RTL Support</p>
-                    </a>
-                </li>
-                <li class="nav-item active-pro ">
-                    <a class="nav-link" href="./upgrade.html">
-                        <i class="material-icons">unarchive</i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
@@ -114,7 +102,7 @@ The above copyright notice and this permission notice shall be included in all c
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="#pablo">User Profile</a>
+                    <a class="navbar-brand" href="#pablo">Mon profil</a>
                 </div>
                 <button aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation"
                         class="navbar-toggler" data-toggle="collapse" type="button">
@@ -182,110 +170,112 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header card-header-primary">
-                                <h4 class="card-title">Edit Profile</h4>
-                                <p class="card-category">Complete your profile</p>
-                            </div>
-                            <div class="card-body">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Company (disabled)</label>
-                                                <input class="form-control" disabled type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Username</label>
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Email address</label>
-                                                <input class="form-control" type="email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Fist Name</label>
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Last Name</label>
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Adress</label>
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">City</label>
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Country</label>
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Postal Code</label>
-                                                <input class="form-control" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>About Me</label>
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she
-                                                        so thirsty, I'm in that two seat Lambo.</label>
-                                                    <textarea class="form-control" rows="5"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary pull-right" type="submit">Update Profile</button>
-                                    <div class="clearfix"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+<%--                    <div class="col-md-8">--%>
+<%--                        <div class="card">--%>
+<%--                            <div class="card-header card-header-primary">--%>
+<%--                                <h4 class="card-title">Nom Prénom</h4>--%>
+<%--                                <p class="card-category">Fonction</p>--%>
+<%--                            </div>--%>
+<%--                            <div class="card-body">--%>
+<%--                                <form>--%>
+<%--                                    <div class="row">--%>
+<%--                                        <div class="col-md-5">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">Company (disabled)</label>--%>
+<%--                                                <input class="form-control" disabled type="text">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="col-md-3">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">Username</label>--%>
+<%--                                                <input class="form-control" type="text">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="col-md-4">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">Email address</label>--%>
+<%--                                                <input class="form-control" type="email">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="row">--%>
+<%--                                        <div class="col-md-6">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">Fist Name</label>--%>
+<%--                                                <input class="form-control" type="text">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="col-md-6">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">Last Name</label>--%>
+<%--                                                <input class="form-control" type="text">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="row">--%>
+<%--                                        <div class="col-md-12">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">Adress</label>--%>
+<%--                                                <input class="form-control" type="text">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="row">--%>
+<%--                                        <div class="col-md-4">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">City</label>--%>
+<%--                                                <input class="form-control" type="text">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="col-md-4">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">Country</label>--%>
+<%--                                                <input class="form-control" type="text">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                        <div class="col-md-4">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label class="bmd-label-floating">Postal Code</label>--%>
+<%--                                                <input class="form-control" type="text">--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="row">--%>
+<%--                                        <div class="col-md-12">--%>
+<%--                                            <div class="form-group">--%>
+<%--                                                <label>About Me</label>--%>
+<%--                                                <div class="form-group">--%>
+<%--                                                    <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she--%>
+<%--                                                        so thirsty, I'm in that two seat Lambo.</label>--%>
+<%--                                                    <textarea class="form-control" rows="5"></textarea>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="clearfix"></div>--%>
+<%--                                </form>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+                    <div class="col-md-8 mx-auto">
                         <div class="card card-profile">
                             <div class="card-avatar">
-                                <a href="#pablo">
-                                    <img class="img" src="../assets/img/faces/marc.jpg"/>
-                                </a>
+                                    <img class="img" src="${pageContext.request.contextPath}/assets/img/faces/marc.jpg"/>
                             </div>
                             <div class="card-body">
-                                <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-                                <h4 class="card-title">Alec Thompson</h4>
-                                <p class="card-description">
-                                    Don't be scared of the truth because we need to restart the human foundation in
-                                    truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the
-                                    back is...
-                                </p>
-                                <a class="btn btn-primary btn-round" href="#pablo">Follow</a>
+                                <h6 class="card-category text-gray">RH</h6>
+                                <h4 class="card-title m-3">Alec Thompson</h4>
+                                <p class="card-description">6 avenue du pavé neuf </br>93160 Noisy-le-Grand</p>
+                                <p class="card-description">adresse@mail.fr</p>
+
+                                <ul class="border border-info p-3 m-3 text-left list-unstyled">
+                                    <li>
+                                        <b>4.00</b>  jour(s) de <strong>Congés légaux</strong> (Solde bulletin de paye (reliquat inclus))
+                                    </li>
+                                    <li>
+                                        <b>6.63</b>  jour(s) de <strong>RTT</strong> (Solde bulletin de paye (reliquat inclus))
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -294,37 +284,11 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
         <footer class="footer">
             <div class="container-fluid">
-                <nav class="float-left">
-                    <ul>
-                        <li>
-                            <a href="https://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://creative-tim.com/presentation">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
                 <div class="copyright float-right">
                     &copy;
                     <script>
                         document.write(new Date().getFullYear())
                     </script>
-                    , made with <i class="material-icons">favorite</i> by
-                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
                 </div>
             </div>
         </footer>
