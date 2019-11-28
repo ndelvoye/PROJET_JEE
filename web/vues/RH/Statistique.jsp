@@ -54,9 +54,11 @@
                         <div style="padding-top: 30px;">
                             <div class="card-header-secondary "
                                  style="background-image: linear-gradient(60deg, rgb(235, 179, 27), rgb(211, 52, 33));">
-                                <h5 class="card-title">Représentation du nombre de type de congé pris</h5>
+                                <h5 class="card-title">
+                                    Représentation du nombre de type de congé pris
+                                </h5>
                             </div>
-                            <div class="ct-chartCer col-md-12" style="height: 300px;"></div>
+                            <div class="ct-chartCer col-md-12" style="height: 300px;" id="congesPris"></div>
                         </div>
                     </div>
                 </div>
@@ -174,36 +176,40 @@
             }
         }
 
-        /* Données pour le diagramme proportionel de raisons de congé
-         */
-        var dataCer = {
-            labels: listeType,
-            series: listeNombreJourParType
-        };
+        console.log(listeNombreJourParType.length);
+        if(listeNombreJourParType.length != 0){
+            /* Données pour le diagramme proportionel de raisons de congé
+            */
+            var dataCer = {
+                labels: listeType,
+                series: listeNombreJourParType
+            };
 
-        var optionsCer = {
-            labelInterpolationFnc: function(value) {
-                return value[0]
-            }
-        };
-
-        var responsiveOptionsCer = [
-            ['screen and (min-width: 640px)', {
-                chartPadding: 70,
-                labelOffset: 50,
-                labelDirection: 'explode',
+            var optionsCer = {
                 labelInterpolationFnc: function(value) {
-                    return value;
+                    return value[0]
                 }
-            }],
-            ['screen and (min-width: 1024px)', {
-                labelOffset: 100,
-                chartPadding: 100
-            }]
-        ];
+            };
 
-        new Chartist.Pie('.ct-chartCer', dataCer, optionsCer, responsiveOptionsCer);
+            var responsiveOptionsCer = [
+                ['screen and (min-width: 640px)', {
+                    chartPadding: 70,
+                    labelOffset: 50,
+                    labelDirection: 'explode',
+                    labelInterpolationFnc: function(value) {
+                        return value;
+                    }
+                }],
+                ['screen and (min-width: 1024px)', {
+                    labelOffset: 100,
+                    chartPadding: 100
+                }]
+            ];
+            new Chartist.Pie('.ct-chartCer', dataCer, optionsCer, responsiveOptionsCer);
 
+        } else {
+            document.getElementById('congesPris').innerHTML = "Il n'y a aucun congés.";
+        }
 </script>
 </body>
 </html>
