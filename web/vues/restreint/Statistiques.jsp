@@ -67,7 +67,7 @@
     var listeNom = [];
     var listeJourMax = [];
     jsonListeEmployes = <%= jsonListeEmployes %>;
-    jsonListeEmployes.forEach(element = > {
+    jsonListeEmployes.forEach(element => {
         listeNom.push([element['email'], element['nom']]);
     if (element['fonction'] == 'RH') {
         listeJourMax.push(30)
@@ -93,7 +93,7 @@
     var deb, fin, dif;
     var minutes, hours, days;
     jsonListeDemande = <%=jsonListeDemande%>;
-    jsonListeDemande.forEach(element = > {
+    jsonListeDemande.forEach(element => {
         deb = new Date(element['dateDebut'].replace(/-/g, "/"));
     fin = new Date(element['dateFin'].replace(/-/g, "/"));
     dif = Math.abs(fin - deb);
@@ -152,7 +152,7 @@
      */
     var listeType = [];
     var index;
-    jsonListeDemande.forEach(element = > {
+    jsonListeDemande.forEach(element => {
         index = listeType.indexOf(element['type']);
     if (index === -1) {
         if (element['etat'] == 1) {
