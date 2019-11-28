@@ -74,7 +74,6 @@ public class ConnexionFormulaire {
         if (motDePasse == null || motDePasse.trim().equals("")) {
             throw new Exception("L'email ou le mot de passe saisi n'existe pas.");
         }
-
     }
 
     /*

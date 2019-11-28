@@ -28,15 +28,23 @@
                 <p>Mes demandes</p>
             </a>
         </li>
-        <% boolean isRH = "RH".equals(utilisateur.getFonction()); %>
+        <%
+            String fonction = utilisateur.getFonction();
+            String service = utilisateur.getService();
+            boolean isRH = "RH".equals(service);
+            boolean isLeader = "leader".equals(fonction);
+        %>
         <c:set var="isRH" scope="page" value="<%= isRH %>"/>
-        <c:if test="${isRH}">
+        <c:set var="isLeader" scope="page" value="<%= isLeader %>"/>
+        <c:if test="${isRH && isLeader}">
             <li class="nav-item">
                 <a class="nav-link" href="CreerFiche">
                     <i class="material-icons">control_point</i>
                     <p>Créer fiche</p>
                 </a>
             </li>
+        </c:if>
+        <c:if test="${isRH}">
             <li class="nav-item">
                 <a class="nav-link" href="TraiterDemandes">
                     <i class="material-icons">content_paste</i>
@@ -50,7 +58,6 @@
                 </a>
             </li>
         </c:if>
-        <% boolean isLeader = "leader".equals(utilisateur.getFonction()); %>
         <c:set var="isLeader" scope="page" value="<%= isLeader %>"/>
         <c:if test="${isRH || isLeader}">
             <li class="nav-item">

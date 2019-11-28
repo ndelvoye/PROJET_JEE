@@ -81,6 +81,10 @@ public final class DemandeFormulaire {
             } else {
                 throw new Exception("Les dates entrées ne sont pas cohérentes avec la date du jour.");
             }
+
+            if (TimeUnit.MILLISECONDS.toHours(timestampDebut.getTime() - now.getTime()) < 48)
+                throw new Exception("Un congé doit être posé plus de 48 heures avant son début.");
+
             // Vérifier si l'employé possède assez de congés dans son compteur
             CompteurDAO compteurDAO = new CompteurDAO();
             Employe utilisateur = (Employe) request.getSession().getAttribute("utilisateur");
@@ -161,6 +165,10 @@ public final class DemandeFormulaire {
             } else {
                 throw new Exception("Les dates entrées ne sont pas cohérentes avec la date du jour.");
             }
+
+            if (TimeUnit.MILLISECONDS.toHours(timestampDebut.getTime() - now.getTime()) < 48)
+                throw new Exception("Un congé doit être posé plus de 48 heures avant son début.");
+
             // Vérifier si l'employé possède assez de congés dans son compteur
             CompteurDAO compteurDAO = new CompteurDAO();
             Employe utilisateur = (Employe) request.getSession().getAttribute("utilisateur");

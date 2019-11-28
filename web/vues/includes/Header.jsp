@@ -37,6 +37,7 @@ Coded by Creative Tim
     <link href="${pageContext.request.contextPath}/assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/modal.css"/>
 
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
@@ -47,6 +48,7 @@ Coded by Creative Tim
     <link href="${pageContext.request.contextPath}/assets/css/demande.css" rel="stylesheet" type="text/css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet"
           type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" rel="stylesheet" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
     <style>
         .card-default {
