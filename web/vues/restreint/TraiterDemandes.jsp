@@ -41,6 +41,7 @@
                                 <tbody>
                                 <%
                                     for (Demande demande : listeDemandes) {
+                                        long idDemande = demande.getId();
                                         String emailEmploye = demande.getEmailEmploye();
                                         String dtCreation = String.valueOf(demande.getDateCreation());
                                         String dtDebut = String.valueOf(demande.getDateDebut());
@@ -60,10 +61,14 @@
                                     <td><%=dtFin %>
                                     </td>
                                     <td class="action">
-                                        <jsp:include page="../includes/modalAccepter.jsp"/>
+                                        <jsp:include page="../includes/modalAccepter.jsp">
+                                            <jsp:param name="idDemande" value="<%=idDemande%>"/>
+                                        </jsp:include>
                                     </td>
                                     <td class="action">
                                         <jsp:include page="../includes/modalRefuser.jsp"/>
+
+
                                     </td>
                                 </tr>
                                 <%

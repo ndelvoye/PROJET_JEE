@@ -33,6 +33,20 @@ public class CreerFicheServlet extends javax.servlet.http.HttpServlet {
             // Appel au traitement et à la validation de la requête
             // Récupération du nouvel employé
             Employe nouvelEmploye = form.inscrireUtilisateur(request);
+            if (form.getErreurs().isEmpty() && nouvelEmploye != null) { // S'il n'y a pas eu d'errreurs
+                // On termine les complétions
+                /*nouvelEmploye.setNom(form.);
+                nouvelEmploye.setDateRecrutement();
+                nouvelEmploye.setEmail(utilisateur.getEmail());*/
+                /*
+                // On insère la nouvelle demande en BDD
+                DemandeDAO demandeDAO = new DemandeDAO();
+                demandeDAO.save(demande);*/
+
+                // On redirige l'utilisateur vers la liste de ses demandes
+                response.sendRedirect("MesDemandes");
+            } else { // Sinon
+                request.setAttribute("form", form);
 
             if (form.getErreurs().isEmpty()) {
                 // Si aucune erreur, on retourne à la liste des employés
@@ -42,8 +56,8 @@ public class CreerFicheServlet extends javax.servlet.http.HttpServlet {
                 request.setAttribute("form", form);
                 getServletContext().getRequestDispatcher(Vues.CreerFiche.getLien()).forward(request, response);
             }
-        } else {
-            response.sendRedirect("Connexion");
+        } /*else {
+            response.sendRedirect("Connexion");*/
 
         }
     }

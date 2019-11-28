@@ -24,8 +24,7 @@
                             <div class="col-md-3 col-lg-4">
                                 <div class="form-group">
                                     <label class="control-label">Nom</label>
-                                    <input type="text" class="form-control" id="nom" name="nom" placeholder="nom"
-                                           value="<c:out value="${utilisateur.nom}"/>" size="20" maxlength="20"/>
+                                    <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" size="20" maxlength="20"/>
                                     <span class="erreur">${form.erreurs['nom']}</span>
                                 </div>
                             </div>
@@ -33,7 +32,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Prenom</label>
                                     <input type="text" class="form-control" id="prenom" name="prenom"
-                                           placeholder="prenom" value="<c:out value="${utilisateur.prenom}"/>" size="20"
+                                           placeholder="prenom"  size="20"
                                            maxlength="20"/>
                                     <span class="erreur">${form.erreurs['prenom']}</span>
                                 </div>
@@ -43,8 +42,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Date embauche</label>
                                     <input maxlength="200" required="required" class="form-control" type="date"
-                                           name="dtEmb" value="<c:out value="${utilisateur.dateRecrutement}"/>"
-                                           id="dtEmb"/>
+                                           name="dtEmb" id="dtEmb"/>
                                 </div>
                             </div>
 
@@ -54,9 +52,7 @@
                             <div class="col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label class="control-label">Adresse mail</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="email"
-                                           value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.beans.Employe"--%>
-                                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="20"/>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="email" size="20" maxlength="20"/>
                                     <span class="erreur">${form.erreurs['email']}</span>
                                 </div>
                             </div>
@@ -64,7 +60,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Mot de passe </label>
                                     <input type="password" class="form-control" id="motdepasse" name="motdepasse"
-                                           placeholder="mot de passe" value="<c:out value="${utilisateur.password}"/>"
+                                           placeholder="mot de passe"
                                            size="20" maxlength="20"/>
                                     <span class="erreur">${form.erreurs['motdepasse']}</span>
                                 </div>
@@ -73,7 +69,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Confirmation </label>
                                     <input type="password" class="form-control" id="confirmation" name="confirmation"
-                                           placeholder="confirmation" value="<c:out value="${utilisateur.email}"/>"
+                                           placeholder="confirmation"
                                            size="20" maxlength="20"/>
                                     <span class="erreur">${form.erreurs['confirmation']}</span>
                                 </div>
@@ -107,12 +103,14 @@
                                             <td>Poste</td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="fonction" type="radio" required="required" id="leader" value="leader">
+
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="fonction" type="radio" required="required" id="standard" value="standard">
+
                                                 </label>
                                             </td>
                                         </tr>
@@ -133,22 +131,26 @@
                                             <td>Service</td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="service" type="radio" required="required" id="ia" value="ia">
+
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="service" type="radio" required="required" id="defense" value="defense">
+
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="service" type="radio" required="required" id="iot" value="iot">
+
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="service" type="radio" required="required" id="RH" value="RH">
+
                                                 </label>
                                             </td>
                                         </tr>
@@ -169,22 +171,22 @@
                                             <td>Nom équipe</td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="jawa" value="jawa">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="echo" value="echo">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="hola" value="hola">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="dream" value="dream">
                                                 </label>
                                             </td>
                                         </tr>
