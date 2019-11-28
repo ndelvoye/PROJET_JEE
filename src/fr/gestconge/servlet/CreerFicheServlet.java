@@ -44,7 +44,6 @@ public class CreerFicheServlet extends javax.servlet.http.HttpServlet {
             }
         } else {
             response.sendRedirect("Connexion");
-
         }
     }
 }

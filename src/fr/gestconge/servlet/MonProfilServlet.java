@@ -1,6 +1,9 @@
 package fr.gestconge.servlet;
 
+import fr.gestconge.bean.Compteur;
 import fr.gestconge.bean.Employe;
+import fr.gestconge.dao.CompteurDAO;
+import fr.gestconge.formulaire.ModifierProfilFormulaire;
 import fr.gestconge.utils.Vues;
 
 import javax.servlet.ServletException;
@@ -17,6 +20,24 @@ public class MonProfilServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Employe utilisateur = (Employe) session.getAttribute("utilisateur");
         if (utilisateur != null) {
+            CompteurDAO compteurDAO = new CompteurDAO();
+            Compteur compteur = compteurDAO.getByEmail(utilisateur.getEmail());
+            request.setAttribute("compteur", compteur);
+            this.getServletContext().getRequestDispatcher(Vues.MonProfil.getLien()).forward(request, response);
+        } else {
+            response.sendRedirect("Connexion");
+        }
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Employe utilisateur = (Employe) session.getAttribute("utilisateur");
+        if (utilisateur != null) {
+            ModifierProfilFormulaire form = new ModifierProfilFormulaire();
+
+            boolean passwordUpdated = form.modifierMotDePasse(utilisateur, request.getParameter("password"), request.getParameter("passwordConfirm"));
+
+            request.setAttribute("passwordUpdated", passwordUpdated);
             this.getServletContext().getRequestDispatcher(Vues.MonProfil.getLien()).forward(request, response);
         } else {
             response.sendRedirect("Connexion");
