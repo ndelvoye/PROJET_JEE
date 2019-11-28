@@ -20,10 +20,9 @@ public class AccepterServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Employe utilisateur = (Employe) session.getAttribute("utilisateur");
-        String commentaire =(String)request.getAttribute("commentaire");
-        Integer idDemande = (Integer) request.getAttribute("idDemande");
+        String commentaire = request.getParameter("commentaire");
         DemandeDAO demandeDAO = new DemandeDAO();
-        Demande demande =demandeDAO.getById(idDemande);
+        Demande demande = demandeDAO.getById(Integer.parseInt(request.getParameter("idDemande")));
         if (demande != null) {
             String[] tableauModifs = new String[5];
             tableauModifs[0] = demande.getType();

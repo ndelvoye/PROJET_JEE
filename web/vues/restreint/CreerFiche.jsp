@@ -104,12 +104,14 @@
                                             <td>Poste</td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="fonction" type="radio" required="required" id="leader" value="leader">
+
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="fonction" type="radio" required="required" id="standard" value="standard">
+
                                                 </label>
                                             </td>
                                         </tr>
@@ -130,22 +132,26 @@
                                             <td>Service</td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="service" type="radio" required="required" id="ia" value="ia">
+
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="service" type="radio" required="required" id="defense" value="defense">
+
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="service" type="radio" required="required" id="iot" value="iot">
+
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="service" type="radio" required="required" id="RH" value="RH">
+
                                                 </label>
                                             </td>
                                         </tr>
@@ -166,22 +172,22 @@
                                             <td>Nom équipe</td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="jawa" value="jawa">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="echo" value="echo">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="hola" value="hola">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input type="checkbox">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="dream" value="dream">
                                                 </label>
                                             </td>
                                         </tr>
