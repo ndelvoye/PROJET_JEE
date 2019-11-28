@@ -46,14 +46,14 @@ public class ConnexionFormulaire {
 
         if (utilisateur != null) { // Si le mail existe en base de donnée
             try {
-                validationMotDePasse(motDePasse); // On vérifie la longueur du mot de passe
-                if (!utilisateur.getPassword().equals(motDePasse)) {
+                validationMotDePasse(motDePasse); // On vérifie si le mot de passe est NULL ou vide
+                if (!utilisateur.getPassword().equals(motDePasse)) { // Si le mot de passe est incorrect
                     throw new Exception("L'email ou le mot de passe saisi n'existe pas.");
                 }
             } catch (Exception e) {
                 setErreur(CHAMP_EMAIL, e.getMessage());
             }
-        } else {
+        } else { // Si l'email n'existe pas en base
             setErreur(CHAMP_EMAIL, "L'email ou le mot de passe saisi n'existe pas.");
         }
 
@@ -71,13 +71,10 @@ public class ConnexionFormulaire {
      * Valide le mot de passe saisi.
      */
     private void validationMotDePasse(String motDePasse) throws Exception {
-        if (motDePasse != null) {
-            if (motDePasse.length() < 3) {
-                throw new Exception("Le mot de passe doit contenir au moins 3 caractères.");
-            }
-        } else {
+        if (motDePasse == null || motDePasse.trim().equals("")) {
             throw new Exception("L'email ou le mot de passe saisi n'existe pas.");
         }
+
     }
 
     /*

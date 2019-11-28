@@ -16,6 +16,7 @@ public class Demande {
     private Timestamp dateFin;
     private Timestamp dateCreation;
     private String emailEmploye;
+    private String commentaire;
 
     @Id
     @Column(name = "id")
@@ -77,16 +78,6 @@ public class Demande {
         this.dateCreation = dateCreation;
     }
 
-    @Basic
-    @Column(name = "emailEmploye")
-    public String getEmailEmploye() {
-        return emailEmploye;
-    }
-
-    public void setEmailEmploye(String emailEmploye) {
-        this.emailEmploye = emailEmploye;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -105,16 +96,23 @@ public class Demande {
         return Objects.hash(id, type, etat, dateDebut, dateFin, dateCreation);
     }
 
-    @Override
-    public String toString() {
-        return "Demande{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", etat=" + etat +
-                ", dateDebut=" + dateDebut +
-                ", dateFin=" + dateFin +
-                ", dateCreation=" + dateCreation +
-                ", emailEmploye='" + emailEmploye + '\'' +
-                '}';
+    @Basic
+    @Column(name = "emailEmploye")
+    public String getEmailEmploye() {
+        return emailEmploye;
+    }
+
+    public void setEmailEmploye(String emailEmploye) {
+        this.emailEmploye = emailEmploye;
+    }
+
+    @Basic
+    @Column(name = "commentaire")
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
     }
 }

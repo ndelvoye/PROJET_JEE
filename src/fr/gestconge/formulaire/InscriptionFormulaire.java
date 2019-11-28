@@ -3,7 +3,7 @@ package fr.gestconge.formulaire;
 import fr.gestconge.bean.Employe;
 
 import javax.servlet.http.HttpServletRequest;
-import java.sql.Date;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,8 +83,7 @@ public class InscriptionFormulaire {
             setErreur(CHAMP_PRENOM, e.getMessage());
         }
         utilisateur.setPrenom(prenom);
-
-        utilisateur.setDateRecrutement(new Date(2000, 10, 10));
+        utilisateur.setDateRecrutement(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
         utilisateur.setService(service);
         utilisateur.setFonction(poste);
         utilisateur.setEquipe(equipe);
@@ -138,6 +137,4 @@ public class InscriptionFormulaire {
     private void setErreur(String champ, String message) {
         erreurs.put(champ, message);
     }
-
-
 }

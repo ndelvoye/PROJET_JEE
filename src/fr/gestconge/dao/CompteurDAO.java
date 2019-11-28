@@ -17,8 +17,8 @@ public class CompteurDAO implements DAO<Compteur> {
     }
 
     // Fonctions spécifiques
-    public List<Compteur> getByEmail(String email) {
-        return entityManager.createQuery("SELECT c FROM Compteur c WHERE emailEmploye = '" + email + "'").getResultList();
+    public Compteur getByEmail(String email) {
+        return (Compteur) entityManager.createQuery("SELECT c FROM Compteur c WHERE emailEmploye = '" + email + "'").getSingleResult();
     }
 
     // Fonctions de base

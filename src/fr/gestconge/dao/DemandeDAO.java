@@ -19,8 +19,8 @@ public class DemandeDAO implements DAO<Demande> {
     }
 
     // Fonctions spécifiques
-    public List<Demande> getById(int id) {
-        return entityManager.createQuery("SELECT d FROM Demande d WHERE id = '" + id + "'").getResultList();
+    public Demande getById(int id) {
+        return (Demande) entityManager.createQuery("SELECT d FROM Demande d WHERE id = '" + id + "'").getSingleResult();
     }
 
     public List<Demande> getByEmailEmploye(String emailEmploye) {
@@ -45,10 +45,11 @@ public class DemandeDAO implements DAO<Demande> {
     @Override
     public void update(Demande demande, String[] params) {
         demande.setType(Objects.requireNonNull(
-                params[0], "Email cannot be null"));
-        demande.setEtat(Short.parseShort(params[1]));
-        demande.setDateDebut(Timestamp.valueOf(params[2]));
-        demande.setDateFin(Timestamp.valueOf(params[3]));
+                params[0], "Type cannot be null"));
+        demande.setDateDebut(Timestamp.valueOf(params[1]));
+        demande.setDateFin(Timestamp.valueOf(params[2]));
+        demande.setEtat(Short.parseShort(params[3]));
+        demande.setCommentaire(params[4]);
         executeInsideTransaction(entityManager -> entityManager.merge(demande));
     }
 

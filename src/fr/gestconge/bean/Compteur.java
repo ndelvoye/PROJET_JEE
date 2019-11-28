@@ -80,15 +80,4 @@ public class Compteur {
     public int hashCode() {
         return Objects.hash(emailEmploye, rtt, congesAnnuels, enfantMalade, famille);
     }
-
-    @Override
-    public String toString() {
-        return "Compteur{" +
-                "emailEmploye='" + emailEmploye + '\'' +
-                ", rtt=" + rtt +
-                ", congesAnnuels=" + congesAnnuels +
-                ", enfantMalade=" + enfantMalade +
-                ", famille=" + famille +
-                '}';
-    }
 }

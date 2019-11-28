@@ -1,27 +1,24 @@
 package fr.gestconge.formulaire;
 
+import fr.gestconge.bean.Compteur;
 import fr.gestconge.bean.Demande;
+import fr.gestconge.bean.Employe;
+import fr.gestconge.dao.CompteurDAO;
+import fr.gestconge.utils.TypeConges;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 
 public final class DemandeFormulaire {
-
-    private static final String CHAMP_NOM = "nom_demandeur";
-    private static final String CHAMP_PRENOM = "prenom_demandeur";
-    private static final String CHAMP_DATE_DEBUT = "dtDebut";
-    private static final String CHAMP_DATE_FIN = "dtFin";
-    private static final String CHAMP_DATE_CREATION = "dtCreation";
-    private static final String CHAMP_TYPE_DEMANDE = "typeDemande";
-    private static final String CHAMP_STATUT_DEMANDE = "statutDemande";
-
-    private static final String FORMAT_DATE = "dd-MM-yyyy HH:mm:ss";
-
     private String resultat;
-    private Map<String, String> erreurs = new HashMap<String, String>();
+    private Map<String, String> erreurs = new HashMap<>();
 
     /*
      * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
@@ -44,75 +41,77 @@ public final class DemandeFormulaire {
         return resultat;
     }
 
-    public Demande creerDemande(HttpServletRequest request) {
-        String typeDemande = getValeurChamp(request, CHAMP_TYPE_DEMANDE);
-        String dtDebut = getValeurChamp(request, CHAMP_DATE_DEBUT);
-        String dtFin = getValeurChamp(request, CHAMP_DATE_FIN);
-        String nom = getValeurChamp(request, CHAMP_NOM);
-        String prenom = getValeurChamp(request, CHAMP_PRENOM);
-
-        // Noter la date de création de la demande
+    public Demande creerDemande(HttpServletRequest request) throws Exception {
         Demande demande = new Demande();
-        demande.setDateCreation(new Timestamp(2000, 10, 10, 10, 10, 10, 10));
-        demande.setEtat((short) 0); // statut 0 en cours de validation
+        String typeDemande = getValeurChamp(request, "typeDemande");
+        String dateDebut = getValeurChamp(request, "dateDebut");
+        String demiJourDebut = getValeurChamp(request, "demiJourDebut");
+        String dateFin = getValeurChamp(request, "dateFin");
+        String demiJourFin = getValeurChamp(request, "demiJourFin");
 
-        try {
-            validationNom(nom);
-        } catch (Exception e) {
-            setErreur(CHAMP_NOM, e.getMessage());
+        // Vérifications
+        if (typeDemande != null && dateDebut != null && demiJourDebut != null && dateFin != null && demiJourFin != null) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
+            Date parsedDate;
+            // Traitement afin de déterminer l'heure de la dateDebut et la dateFin
+            if (demiJourDebut.equals("demiJourDebutMatin")) {
+                parsedDate = dateFormat.parse(dateDebut + " 11:00:00.000");
+            } else if (demiJourDebut.equals("demiJourDebutJournee")) {
+                parsedDate = dateFormat.parse(dateDebut + " 23:00:00.000");
+            } else {
+                throw new Exception("La valeur de demiJourMatin est erronée...");
+            }
+            Timestamp timestampDebut = new Timestamp(parsedDate.getTime());
+            if (demiJourFin.equals("demiJourFinMatin")) {
+                parsedDate = dateFormat.parse(dateFin + " 11:00:00.000");
+            } else if (demiJourFin.equals("demiJourFinJournee")) {
+                parsedDate = dateFormat.parse(dateFin + " 23:00:00.000");
+            } else {
+                throw new Exception("La valeur de demiJourFin est erronée...");
+            }
+            Timestamp timestampFin = new Timestamp(parsedDate.getTime());
+
+            // Vérifier que les dates entrées sont > à aujourd'hui
+            Timestamp now = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+            if (timestampDebut.after(now) && timestampFin.after(now)) {
+                if (timestampDebut.before(timestampFin)) {
+                } else {
+                    throw new Exception("La date de début se situe après la date de fin...");
+                }
+            } else {
+                throw new Exception("Les dates entrées ne sont pas cohérentes avec la date du jour.");
+            }
+            // Vérifier si l'employé possède assez de congés dans son compteur
+            CompteurDAO compteurDAO = new CompteurDAO();
+            Employe utilisateur = (Employe) request.getSession().getAttribute("utilisateur");
+            Compteur compteurUser = compteurDAO.getByEmail(utilisateur.getEmail());
+            Integer nbCongesDuType;
+            if (typeDemande.equals(TypeConges.RTT.getTypeConge())) { // RTT
+                nbCongesDuType = compteurUser.getRtt();
+            } else if (typeDemande.equals(TypeConges.CongesAnnuels.getTypeConge())) { // Congés annuels
+                nbCongesDuType = compteurUser.getCongesAnnuels();
+            } else if (typeDemande.equals(TypeConges.EnfantMalade.getTypeConge())) { // Enfant malade
+                nbCongesDuType = compteurUser.getEnfantMalade();
+            } else if (typeDemande.equals(TypeConges.Famille.getTypeConge())) { // Famille
+                nbCongesDuType = compteurUser.getFamille();
+            } else {
+                throw new Exception("Ce type de congé n'existe pas...");
+            }
+
+            long diffMillis = timestampFin.getTime() - timestampDebut.getTime();
+            long diffHour = TimeUnit.MILLISECONDS.toHours(diffMillis);
+
+            // Une unité de congé = une demi-journée de congé
+            if ((nbCongesDuType - diffHour / 12) < 0) {
+                throw new Exception("Vous ne possédez pas assez de congés de ce type.");
+            } else {
+                demande.setType(typeDemande);
+                demande.setDateDebut(timestampDebut);
+                demande.setDateFin(timestampFin);
+            }
+        } else {
+            throw new Exception("Une valeur du formulaire est nulle.");
         }
-        try {
-            validationPrenom(prenom);
-        } catch (Exception e) {
-            setErreur(CHAMP_PRENOM, e.getMessage());
-        }
-
-        //demande.setEmailEmploye(employeService.getEmployesByNomPrenom(nom, prenom).get(0).getEmail());
-
-       /* try {
-            validationDateDebut( dtDebut );
-        } catch ( Exception e ) {
-            setErreur( CHAMP_DATE_DEBUT, e.getMessage() );
-        }*/
-
-
-        String[] dtDebutInv = dtDebut.split("-");
-        String[] res = new String[3];
-        String tmp = "";
-        for (int i = dtDebutInv.length - 1; i >= 0; i--) {
-            res[dtDebutInv.length - 1 - i] = dtDebutInv[i];
-        }
-        for (int j = 0; j < res.length - 1; j++) {
-            tmp = tmp + res[j] + "-";
-        }
-        tmp = tmp + res[res.length - 1];
-
-        demande.setDateDebut(new Timestamp(2000, 10, 10, 10, 10, 10, 10));
-
-        /*try {
-            validationDateFin( dtFin );
-        } catch ( Exception e ) {
-            setErreur( CHAMP_DATE_FIN, e.getMessage() );
-        }*/
-        String[] dtFinInv = dtFin.split("-");
-        String[] res1 = new String[3];
-        String tmp1 = "";
-        for (int i = dtFinInv.length - 1; i >= 0; i--) {
-            res1[dtFinInv.length - 1 - i] = dtFinInv[i];
-        }
-        for (int j = 0; j < res1.length - 1; j++) {
-            //tmp = join("-",res[j]);
-            tmp1 = tmp1 + res1[j] + "-";
-        }
-        tmp1 = tmp1 + res1[res1.length - 1];
-        demande.setDateFin(new Timestamp(2000, 10, 10, 10, 10, 10, 10));
-
-        /*try {
-            validationTypeDemande( typeDemande );
-        } catch ( Exception e ) {
-            setErreur( CHAMP_TYPE_DEMANDE, e.getMessage() );
-        }*/
-        demande.setType(typeDemande);
 
         if (erreurs.isEmpty()) {
             resultat = "Succès de la création de la demande.";
@@ -122,40 +121,85 @@ public final class DemandeFormulaire {
         return demande;
     }
 
-    private void validationNom(String nom) throws Exception {
-        if (nom != null && nom.length() < 3) {
-            throw new Exception("Le nom d'utilisateur doit contenir au moins 3 caractères.");
-        }
-    }
+    public String[] getTableauModifsDemande(HttpServletRequest request) throws Exception {
+        String[] tableauModifs = new String[5];
+        String typeDemande = getValeurChamp(request, "typeDemande");
+        String dateDebut = getValeurChamp(request, "dateDebut");
+        String demiJourDebut = getValeurChamp(request, "demiJourDebut");
+        String dateFin = getValeurChamp(request, "dateFin");
+        String demiJourFin = getValeurChamp(request, "demiJourFin");
 
-    private void validationPrenom(String prenom) throws Exception {
-        if (prenom != null && prenom.length() < 3) {
-            throw new Exception("Le nom d'utilisateur doit contenir au moins 3 caractères.");
-        }
-    }
+        // Vérifications
+        if (typeDemande != null && dateDebut != null && demiJourDebut != null && dateFin != null && demiJourFin != null) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
+            Date parsedDate;
+            // Traitement afin de déterminer l'heure de la dateDebut et la dateFin
+            if (demiJourDebut.equals("demiJourDebutMatin")) {
+                parsedDate = dateFormat.parse(dateDebut + " 11:00:00.000");
+            } else if (demiJourDebut.equals("demiJourDebutJournee")) {
+                parsedDate = dateFormat.parse(dateDebut + " 23:00:00.000");
+            } else {
+                throw new Exception("La valeur de demiJourMatin est erronée...");
+            }
+            Timestamp timestampDebut = new Timestamp(parsedDate.getTime());
+            if (demiJourFin.equals("demiJourFinMatin")) {
+                parsedDate = dateFormat.parse(dateFin + " 11:00:00.000");
+            } else if (demiJourFin.equals("demiJourFinJournee")) {
+                parsedDate = dateFormat.parse(dateFin + " 23:00:00.000");
+            } else {
+                throw new Exception("La valeur de demiJourFin est erronée...");
+            }
+            Timestamp timestampFin = new Timestamp(parsedDate.getTime());
 
-    private void validationDateDebut(String dtDebut) throws Exception {
-        if (dtDebut != null) {
-            throw new Exception("La date de début n'est pas correct");
-        }
-    }
+            // Vérifier que les dates entrées sont > à aujourd'hui
+            Timestamp now = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+            if (timestampDebut.after(now) && timestampFin.after(now)) {
+                if (timestampDebut.before(timestampFin)) {
+                } else {
+                    throw new Exception("La date de début se situe après la date de fin...");
+                }
+            } else {
+                throw new Exception("Les dates entrées ne sont pas cohérentes avec la date du jour.");
+            }
+            // Vérifier si l'employé possède assez de congés dans son compteur
+            CompteurDAO compteurDAO = new CompteurDAO();
+            Employe utilisateur = (Employe) request.getSession().getAttribute("utilisateur");
+            Compteur compteurUser = compteurDAO.getByEmail(utilisateur.getEmail());
+            Integer nbCongesDuType;
+            if (typeDemande.equals(TypeConges.RTT.getTypeConge())) { // RTT
+                nbCongesDuType = compteurUser.getRtt();
+            } else if (typeDemande.equals(TypeConges.CongesAnnuels.getTypeConge())) { // Congés annuels
+                nbCongesDuType = compteurUser.getCongesAnnuels();
+            } else if (typeDemande.equals(TypeConges.EnfantMalade.getTypeConge())) { // Enfant malade
+                nbCongesDuType = compteurUser.getEnfantMalade();
+            } else if (typeDemande.equals(TypeConges.Famille.getTypeConge())) { // Famille
+                nbCongesDuType = compteurUser.getFamille();
+            } else {
+                throw new Exception("Ce type de congé n'existe pas...");
+            }
 
-    private void validationDateFin(String dtFin) throws Exception {
-        if (dtFin != null) {
-            throw new Exception("La date de fin n'est pas correct");
-        }
-    }
+            long diffMillis = timestampFin.getTime() - timestampDebut.getTime();
+            long diffHour = TimeUnit.MILLISECONDS.toHours(diffMillis);
 
-    private void validationTypeDemande(String typeDemande) throws Exception {
-        if (typeDemande != null) {
-            throw new Exception("Le type de demande est invalide.");
+            // Une unité de congé = une demi-journée de congé
+            if ((nbCongesDuType - diffHour / 12) < 0) {
+                throw new Exception("Vous ne possédez pas assez de congés de ce type.");
+            } else {
+                tableauModifs[0] = typeDemande;
+                tableauModifs[1] = String.valueOf(timestampDebut);
+                tableauModifs[2] = String.valueOf(timestampFin);
+                tableauModifs[3] = "0";
+                tableauModifs[4] = null;
+            }
+        } else {
+            throw new Exception("Une valeur du formulaire est nulle.");
         }
-    }
 
-    /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
-     */
-    private void setErreur(String champ, String message) {
-        erreurs.put(champ, message);
+        if (erreurs.isEmpty()) {
+            resultat = "Succès de la modification de la demande.";
+        } else {
+            resultat = "Échec de la modification de la demande.";
+        }
+        return tableauModifs;
     }
 }

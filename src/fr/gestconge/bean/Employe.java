@@ -1,6 +1,9 @@
 package fr.gestconge.bean;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -17,7 +20,7 @@ public class Employe {
     private Date dateRecrutement;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -125,20 +128,5 @@ public class Employe {
     @Override
     public int hashCode() {
         return Objects.hash(email, password, nom, prenom, adresse, fonction, equipe, service, dateRecrutement);
-    }
-
-    @Override
-    public String toString() {
-        return "Employe{" +
-                "email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", fonction='" + fonction + '\'' +
-                ", equipe='" + equipe + '\'' +
-                ", service='" + service + '\'' +
-                ", dateRecrutement=" + dateRecrutement +
-                '}';
     }
 }
