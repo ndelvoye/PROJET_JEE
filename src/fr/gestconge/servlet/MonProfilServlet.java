@@ -29,16 +29,21 @@ public class MonProfilServlet extends HttpServlet {
         }
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         Employe utilisateur = (Employe) session.getAttribute("utilisateur");
         if (utilisateur != null) {
             ModifierProfilFormulaire form = new ModifierProfilFormulaire();
 
-            boolean passwordUpdated = form.modifierMotDePasse(utilisateur, request.getParameter("password"), request.getParameter("passwordConfirm"));
+            form.modifierMotDePasse(utilisateur, request.getParameter("password"), request.getParameter("passwordConfirm"));
 
-            request.setAttribute("passwordUpdated", passwordUpdated);
-            this.getServletContext().getRequestDispatcher(Vues.MonProfil.getLien()).forward(request, response);
+            request.setAttribute("form", form);
+
+            CompteurDAO compteurDAO = new CompteurDAO();
+            Compteur compteur = compteurDAO.getByEmail(utilisateur.getEmail());
+            request.setAttribute("compteur", compteur);
+
+            response.sendRedirect("MonProfil");
         } else {
             response.sendRedirect("Connexion");
         }

@@ -1,5 +1,6 @@
 <%@ page import="fr.gestconge.bean.Compteur" %>
 <%@ page import="fr.gestconge.bean.Employe" %>
+<%@ page import="fr.gestconge.formulaire.ModifierProfilFormulaire" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <jsp:include page="includes/Header.jsp">
@@ -11,7 +12,9 @@
 <%
     Employe utilisateur = (Employe) session.getAttribute("utilisateur");
     Compteur compteur = (Compteur) request.getAttribute("compteur");
+    ModifierProfilFormulaire form = (ModifierProfilFormulaire) request.getAttribute("form");
 %>
+<c:set scope="request" value="<%= form %>" var="form"/>
 <div class="content">
     <div class="container-fluid">
         <div class="row">

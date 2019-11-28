@@ -24,7 +24,7 @@
     <div class="container">
         <br><br><br><br><br><br><br>
         <div class="d-flex justify-content-center h-100">
-            <div class="card">
+            <div class="card" style="height: 350px;">
                 <div class="card-header">
                     <h3>Authentification</h3>
                 </div>
@@ -36,9 +36,7 @@
                         <label for="email"></label><input type="email" id="email" name="email" class="form-control"
                                                           placeholder="email"
                                                           value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.bean.Employe"--%>
-                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="60" required/><br>
-                        <span class="erreur"
-                              style="text-align: center; color: white; font-weight: bold;">${form.erreurs['email']}</span>
+                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="60" required/>
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend"><span class="input-group-text"><i
@@ -49,15 +47,16 @@
                                                                value="<c:out value="${utilisateur.password}"/>"
                                                                size="20"
                                                                maxlength="20" required/>
-                        <span class="erreur">${form.erreurs['motdepasse']}</span>
                     </div>
+                    <span class="erreur"
+                          style="text-align: center; color: white; font-weight: bold;">${form.erreurs['email']}</span>
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
                         <div class="form-group" style="text-align: center;">
                             <input type="submit" value="Entrer" class="btn login_btn"/>
                             <p class="${empty form.erreurs ? 'succes' : 'erreur'}"
-                               style="color: red;">${form.resultat}</p>
+                               style="color: red; margin-top: 5px;">${form.resultat}</p>
                         </div>
                     </div>
                 </div>

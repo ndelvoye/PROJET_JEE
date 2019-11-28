@@ -3,7 +3,8 @@ package fr.gestconge.formulaire;
 import fr.gestconge.bean.Employe;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Calendar;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +18,7 @@ public class InscriptionFormulaire {
     private static final String CHAMP_POSTE = "poste";
     private static final String CHAMP_SERVICE = "service";
     private static final String CHAMP_EQUIPE = "equipe";
-    private static final String CHAMP_DATE_RECRUTEMENT = "dtRecrutement";
+    private static final String CHAMP_DATE_RECRUTEMENT = "dateRecrutement";
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
 
@@ -42,16 +43,16 @@ public class InscriptionFormulaire {
         return erreurs;
     }
 
-    public Employe inscrireUtilisateur(HttpServletRequest request) {
+    public Employe inscrireUtilisateur(HttpServletRequest request) throws ParseException {
+        String nom = getValeurChamp(request, CHAMP_NOM);
+        String prenom = getValeurChamp(request, CHAMP_PRENOM);
+        String dateRecrutement = getValeurChamp(request, CHAMP_DATE_RECRUTEMENT);
         String email = getValeurChamp(request, CHAMP_EMAIL);
         String motDePasse = getValeurChamp(request, CHAMP_PASS);
         String confirmation = getValeurChamp(request, CHAMP_CONF);
-        String nom = getValeurChamp(request, CHAMP_NOM);
-        String prenom = getValeurChamp(request, CHAMP_PRENOM);
         String poste = getValeurChamp(request, CHAMP_POSTE);
         String service = getValeurChamp(request, CHAMP_SERVICE);
-        String equipe = getValeurChamp(request, CHAMP_PRENOM);
-        String dtRecrutement = getValeurChamp(request, CHAMP_DATE_RECRUTEMENT);
+        String equipe = getValeurChamp(request, CHAMP_EQUIPE);
 
         Employe utilisateur = new Employe();
 
@@ -83,7 +84,7 @@ public class InscriptionFormulaire {
             setErreur(CHAMP_PRENOM, e.getMessage());
         }
         utilisateur.setPrenom(prenom);
-        utilisateur.setDateRecrutement(new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+        utilisateur.setDateRecrutement(new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse(dateRecrutement).getTime()));
         utilisateur.setService(service);
         utilisateur.setFonction(poste);
         utilisateur.setEquipe(equipe);

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ModifierProfilFormulaire {
     private String resultat;
-    private List<String> errors;
+    private List<String> errors = new ArrayList<>();
 
     public String getResultat() {
         return resultat;
@@ -31,8 +31,7 @@ public class ModifierProfilFormulaire {
         errors.add(erreur);
     }
 
-    public boolean modifierMotDePasse(Employe utilisateur, String password, String passwordConfirm) {
-        boolean passwordUpdated = false;
+    public void modifierMotDePasse(Employe utilisateur, String password, String passwordConfirm) {
         if (!"".equals(password) && !"".equals(passwordConfirm)) {
             if (password.equals(passwordConfirm)) {
                 EmployeDAO employeDAO = new EmployeDAO();
@@ -46,13 +45,13 @@ public class ModifierProfilFormulaire {
                 tabModifs[6] = utilisateur.getEquipe();
                 tabModifs[7] = utilisateur.getService();
                 employeDAO.update(utilisateur, tabModifs);
-                passwordUpdated = true;
+
+                setResultat("Votre mot de passe a bien été modifié.");
             } else {
                 ajouterErreur("Les deux mots de passe ne sont pas identiques.");
             }
         } else {
             ajouterErreur("Un mot de passe ne peut pas être vide.");
         }
-        return passwordUpdated;
     }
 }

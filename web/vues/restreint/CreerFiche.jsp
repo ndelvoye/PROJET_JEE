@@ -25,15 +25,15 @@
                                 <div class="form-group">
                                     <label class="control-label">Nom</label>
                                     <input type="text" class="form-control" id="nom" name="nom" placeholder="nom"
-                                           value="<c:out value="${utilisateur.nom}"/>" size="20" maxlength="20"/>
+                                           value="" size="20" maxlength="20"/>
                                     <span class="erreur">${form.erreurs['nom']}</span>
                                 </div>
                             </div>
                             <div class="col-md-1 col-lg-4">
                                 <div class="form-group">
-                                    <label class="control-label">Prenom</label>
+                                    <label class="control-label">Prénom</label>
                                     <input type="text" class="form-control" id="prenom" name="prenom"
-                                           placeholder="prenom" value="<c:out value="${utilisateur.prenom}"/>" size="20"
+                                           placeholder="prenom" value="" size="20"
                                            maxlength="20"/>
                                     <span class="erreur">${form.erreurs['prenom']}</span>
                                 </div>
@@ -41,10 +41,10 @@
                             </div>
                             <div class="col-md-3 col-lg-4">
                                 <div class="form-group">
-                                    <label class="control-label">Date embauche</label>
+                                    <label class="control-label">Date recrutement</label>
                                     <input maxlength="200" required="required" class="form-control" type="date"
-                                           name="dtEmb" value="<c:out value="${utilisateur.dateRecrutement}"/>"
-                                           id="dtEmb"/>
+                                           name="dateRecrutement" value=""
+                                           id="dateRecrutement"/>
                                 </div>
                             </div>
 
@@ -55,8 +55,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Adresse mail</label>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="email"
-                                           value="<%--@elvariable id="utilisateur" type="fr.gestconge.classes.beans.Employe"--%>
-                                        <c:out value="${utilisateur.email}"/>" size="20" maxlength="20"/>
+                                           value="" size="20" maxlength="20"/>
                                     <span class="erreur">${form.erreurs['email']}</span>
                                 </div>
                             </div>
@@ -64,8 +63,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Mot de passe </label>
                                     <input type="password" class="form-control" id="motdepasse" name="motdepasse"
-                                           placeholder="mot de passe" value="<c:out value="${utilisateur.password}"/>"
-                                           size="20" maxlength="20"/>
+                                           placeholder="mot de passe" value="" size="20" maxlength="20"/>
                                     <span class="erreur">${form.erreurs['motdepasse']}</span>
                                 </div>
                             </div>
@@ -73,8 +71,7 @@
                                 <div class="form-group">
                                     <label class="control-label">Confirmation </label>
                                     <input type="password" class="form-control" id="confirmation" name="confirmation"
-                                           placeholder="confirmation" value="<c:out value="${utilisateur.email}"/>"
-                                           size="20" maxlength="20"/>
+                                           placeholder="confirmation" value="" size="20" maxlength="20"/>
                                     <span class="erreur">${form.erreurs['confirmation']}</span>
                                 </div>
                             </div>
@@ -200,8 +197,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="pull-right">
-                            <a href="#" class="btn btn-success btn-lg" id="btnSubmit"><i class="fa fa-save"></i>
-                                Save</a>
+                            <input type="submit" class="btn btn-success btn-lg" id="btSubmit" value="Save"/>
                             <a class="btn btn-warning btn-lg" href="#" id="btnToTop"><i class="fa fa-arrow-up"></i> Top</a>
                         </div>
                     </div>
