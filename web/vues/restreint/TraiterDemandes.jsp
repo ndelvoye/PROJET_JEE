@@ -1,47 +1,47 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="fr.gestconge.bean.Demande" %>
-<%@ page import="java.util.List" %><%--
-  Created by IntelliJ IDEA.
-  User: Marie-Danielle
-  Date: 15/11/2019
-  Time: 15:29
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% List<Demande> listeDemandes = (List<Demande>) request.getAttribute("listeDemandes");%>
-<html>
-<head>
-</head>
-<body>
-<div class="content">
-    <div class="container-fluid">
+<% request.setCharacterEncoding("utf-8"); %>
+<jsp:include page="../includes/Header.jsp">
+    <jsp:param name="nomPage" value="Liste demandes non traitées"/>
+    <jsp:param name="texteModal" value="Commentaire"/>
+</jsp:include>
+<%
+    List<Demande> listeDemandes = (List<Demande>) request.getAttribute("listeDemandes");
+%>
+<c:set scope="request" value="${listeDemandes}" var="listeDemandes"/>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-primary "
                          style="background-image: linear-gradient(60deg, rgb(0, 188, 212), rgb(142, 36, 170));">
-                        <h4 class="card-title ">Demandes Conges</h4>
-                        <p class="card-category">Recapitulatif</p>
+                        <h4 class="card-title ">Demandes employés</h4>
+                        <p class="card-category"> Recapitulatif</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
+                        <c:choose>
+                            <%-- Si aucune demande n'existe en session, affichage d'un message par défaut. --%>
+                            <c:when test="${ empty listeDemandes }">
+                            <p class="erreur">Aucune demande à traiter.</p>
+                            </c:when>
+                            <%-- Sinon, affichage du tableau. --%>
+                        <c:otherwise>
                             <table class="table">
                                 <thead class=" text-primary">
                                 <th>date Creation</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
+                                <th>Email de l'employé</th>
                                 <th>Type demande</th>
                                 <th>Date debut</th>
                                 <th>Date fin</th>
-                                <th>Statut</th>
                                 <th>Action</th>
+                                <th></th>
                                 </thead>
                                 <tbody>
                                 <%
                                     for (Demande demande : listeDemandes) {
-                                        demande.setEtat((short) 1);
-                                        int statut = demande.getEtat();
-                                        String nomD = demande.getEmailEmploye();
-                                        String prenomD = demande.getEmailEmploye();
+                                        String emailEmploye = demande.getEmailEmploye();
                                         String dtCreation = String.valueOf(demande.getDateCreation());
                                         String dtDebut = String.valueOf(demande.getDateDebut());
                                         String dtFin = String.valueOf(demande.getDateFin());
@@ -51,9 +51,7 @@
                                 <tr>
                                     <td><%=dtCreation %>
                                     </td>
-                                    <td><%=nomD %>
-                                    </td>
-                                    <td><%=prenomD %>
+                                    <td><%=emailEmploye %>
                                     </td>
                                     <td><%=type%>
                                     </td>
@@ -61,45 +59,24 @@
                                     </td>
                                     <td><%=dtFin %>
                                     </td>
-
-                                    <td>
-                                        <img src="${pageContext.request.contextPath}/assets/img/attente.png"
-                                             alt="En cours" id=statut style="height: 25px" ; width="25px"/>
-                                        <script>
-                                            if ((<%=statut %>) === 0) {
-                                                document.getElementById('statut').src = '${pageContext.request.contextPath}/assets/img/attente.png';
-                                            } else if ((<%=statut %>) === 1) {
-                                                document.getElementById('statut').src = '${pageContext.request.contextPath}/assets/img/valider.png';
-                                            } else if ((<%=statut %>) === -1) {
-                                                document.getElementById('statut').src = '${pageContext.request.contextPath}/assets/img/refuser.png';
-                                            }
-                                        </script>
-
+                                    <td class="action">
+                                        <jsp:include page="../includes/modalAccepter.jsp"/>
                                     </td>
                                     <td class="action">
-                                        <a href="<c:url value="/SuppressionServlet"><c:param name="dtCreation" value="${ mapDemandes.key }" /></c:url>">
-                                            <img src="${pageContext.request.contextPath}/assets/img/valider.png"
-                                                 alt="Supprimer" style="height: 25px" ; width="25px"/>
-                                        </a>
-                                        <a href="<c:url value="/ModificationServlet"><c:param name="dtCreation" value="${ mapDemandes.key }" /></c:url>">
-                                            <img src="${pageContext.request.contextPath}/assets/img/refuser.png"
-                                                 alt="Modifier" style="height: 25px" ; width="25px"/>
-                                        </a>
+                                        <jsp:include page="../includes/modalRefuser.jsp"/>
                                     </td>
-
-
                                 </tr>
                                 <%
                                     }
                                 %>
                                 </tbody>
                             </table>
+                        </c:otherwise>
+                        </c:choose>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</body>
-</html>
+<jsp:include page="../includes/Footer.jsp"/>
+
