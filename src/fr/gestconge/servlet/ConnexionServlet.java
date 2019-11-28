@@ -15,12 +15,12 @@ public class ConnexionServlet extends HttpServlet {
     private static final String ATT_FORM = "form";
     private static final String ATT_SESSION_USER = "utilisateur";
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Employe utilisateur = (Employe) request.getSession().getAttribute(ATT_SESSION_USER);
         if (utilisateur != null) { // Si un utilisateur est déjà connecté
             response.sendRedirect("Agenda"); // On le redirigé vers son agenda
         } else { // Sinon on affiche le formulaire de connexion
-            response.sendRedirect("Connexion");
+            request.getRequestDispatcher("/vues/Connexion.jsp").forward(request, response);
         }
     }
 
