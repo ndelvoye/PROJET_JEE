@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <form action="RefuserDemande" method="post">
                     <label>
-                        <textarea id ="commentaire" name="commentaire" rows="5" cols="30" placeholder="commentaires"></textarea>
+                        <textarea id ="commentaire" name="commentaire" rows="5" cols="30" placeholder="commentaires" required></textarea>
                     </label>
                     <input type="hidden" id ="idDemande" name="idDemande" value="<%= request.getParameter("idDemande") %>">
                     <p>
