@@ -10,6 +10,7 @@ public enum Vues {
     ListeFiche("/vues/ListeFiche.jsp"),
     MesDemandes("/vues/MesDemandes.jsp"),
     Agenda("/vues/Agenda.jsp"),
+    MonProfil("/vues/MonProfil.jsp"),
     Connexion("/vues/Connexion.jsp");
 
     private String lien;
