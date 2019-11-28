@@ -104,7 +104,7 @@ Coded by Creative Tim
 
         <div class="content">
             <div class="container-fluid">
-                <jsp:include page="../vues_Standard/VueGlobale_Calendrier_Standard.jsp"/>
+                <jsp:include page="../standard/VueGlobale_Calendrier_Standard.jsp"/>
 
 
             </div>

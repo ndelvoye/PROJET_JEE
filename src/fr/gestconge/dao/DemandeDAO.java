@@ -31,6 +31,8 @@ public class DemandeDAO implements DAO<Demande> {
         return entityManager.createQuery("SELECT d FROM Demande d WHERE dateDebut BETWEEN " + date1 + " AND " + date2 + " AND dateFin BETWEEN " + date1 + " AND " + date2).getResultList();
     }
 
+
+
     // Fonctions de base
     @Override
     public List<Demande> getAll() {

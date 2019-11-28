@@ -86,7 +86,7 @@ Coded by Creative Tim
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="modal"
-                               href="${pageContext.request.contextPath}/vues/vues_Standard/Aide_Standard.jsp">
+                               href="${pageContext.request.contextPath}/vues/standard/Aide_Standard.jsp">
                                 <i class="material-icons">help_outline</i>
                                 <p class="d-lg-none d-md-block">
                                     Stats
@@ -148,7 +148,7 @@ Coded by Creative Tim
 
             </div>
             <div class="container-fluid">
-                <jsp:include page="../vues_RH/ListeDemandesRhoom_RH.jsp"/>
+                <jsp:include page="../RH/ListeDemandesRhoom_RH.jsp"/>
 
 
             </div>

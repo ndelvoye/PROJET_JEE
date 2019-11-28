@@ -4,11 +4,12 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/gestionconges</property>
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <mapping class="fr.gestconge.bean.Compteur"/>
         <mapping class="fr.gestconge.bean.Demande"/>
         <mapping class="fr.gestconge.bean.Employe"/>
+        <mapping class="fr.gestconge.bean.DemandeEntity"/>
         <!-- <property name="connection.username"/> -->
         <!-- <property name="connection.password"/> -->
 

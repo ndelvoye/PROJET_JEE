@@ -45,13 +45,13 @@ Coded by Creative Tim
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item active  ">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="AcceuilServlet">
                         <i class="material-icons">dashboard</i>
                         <p>Mon agenda</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#0">
+                    <a class="nav-link" href="#">
                         <i class="material-icons">face</i>
                         <p>Mon profil</p>
                     </a>
@@ -103,7 +103,7 @@ Coded by Creative Tim
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="modal"
-                               href="${pageContext.request.contextPath}/vues/vues_Standard/Aide_Standard.jsp">
+                               href="${pageContext.request.contextPath}/vues/standard/Aide_Standard.jsp">
                                 <i class="material-icons">help_outline</i>
                                 <p class="d-lg-none d-md-block">
                                     Stats

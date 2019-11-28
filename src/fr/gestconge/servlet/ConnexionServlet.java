@@ -18,7 +18,7 @@ public class ConnexionServlet extends HttpServlet {
     private static final String ATT_SESSION_USER = "sessionUtilisateur";
     private static final String VUE_FORM = "/vues/standard/VueGlobale_Connexion_Standard.jsp";
     private static final String VUE_STANDARD = "/vues/standard/VueGlobale_Accueil_Standard.jsp";
-    private static final String VUE_RH = "/vues/rh/VueGlobale_Accueil_RH.jsp";
+    private static final String VUE_RH = "/vues/RH/VueGlobale_Accueil_RH.jsp";
     private static final String VUE_LEADER = "/vues/leader/VueGlobale_Accueil_TeamLeader.jsp";
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,6 +35,8 @@ public class ConnexionServlet extends HttpServlet {
 
         // Récupération de la session depuis la requête
         HttpSession session = request.getSession();
+
+
         if (utilisateur != null) {
             session = request.getSession();
         } else {

@@ -46,13 +46,13 @@ Coded by Creative Tim
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="AcceuilServlet">
                         <i class="material-icons">dashboard</i>
                         <p>Mon agenda</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#0">
+                    <a class="nav-link" href="#">
                         <i class="material-icons">face</i>
                         <p>Mon profil</p>
                     </a>
@@ -129,8 +129,7 @@ Coded by Creative Tim
                 </div>
             </div>
             <div class="container-fluid">
-                <jsp:include
-                        page="../../../out/artifacts/PROJET_JEE_war_exploded/vues_Standard/Formulaire_Standard.jsp"/>
+                <jsp:include page="/vues/standard/Formulaire_Standard.jsp"/>
             </div>
         </div>
         <footer class="footer">

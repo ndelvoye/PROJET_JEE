@@ -11,6 +11,10 @@
         <servlet-class>fr.gestconge.servlet.ConnexionServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>AcceuilServlet</servlet-name>
+        <servlet-class>fr.gestconge.servlet.ConnexionServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>InscriptionServlet</servlet-name>
         <servlet-class>fr.gestconge.servlet.InscriptionServlet</servlet-class>
     </servlet>
@@ -39,11 +43,18 @@
         <servlet-name>TestServlet</servlet-name>
         <servlet-class>fr.gestconge.servlet.TestServlet</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>StatistiqueServlet</servlet-name>
+        <servlet-class>fr.gestconge.servlet.StatistiqueServlet</servlet-class>
+    </servlet>
     <!-- Mapping-->
     <servlet-mapping>
         <servlet-name>ConnexionServlet</servlet-name>
         <url-pattern>/ConnexionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AcceuilServlet</servlet-name>
+        <url-pattern>/AcceuilServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>InscriptionServlet</servlet-name>
@@ -70,12 +81,14 @@
         <servlet-name>RhoomServlet</servlet-name>
         <url-pattern>/RhoomServlet</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/TestServlet</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>StatistiqueServlet</servlet-name>
+        <url-pattern>/StatistiqueServlet</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>vues/standard/VueGlobale_Connexion_Standard.jsp</welcome-file>
     </welcome-file-list>

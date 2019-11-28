@@ -29,6 +29,8 @@ Coded by Creative Tim
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+
+
 </head>
 
 <body>
@@ -70,7 +72,7 @@ Coded by Creative Tim
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../examples/dashboard.html">
+                    <a class="nav-link" href="StatistiqueServlet">
                         <i class="material-icons">timeline</i>
                         <p>Statistiques</p>
                     </a>
@@ -113,7 +115,7 @@ Coded by Creative Tim
 
         <div class="content">
             <div class="container-fluid">
-                <jsp:include page="../vues_Standard/VueGlobale_Calendrier_Standard.jsp"/>
+                <jsp:include page="../standard/VueGlobale_Calendrier_Standard.jsp"/>
             </div>
         </div>
         <footer class="footer">
