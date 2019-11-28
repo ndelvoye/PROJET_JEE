@@ -8,20 +8,18 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
+            <form role="form" action="RefuserDemande" method="post">
             <div class="modal-body">
-                <form action="RefuserDemande" method="post">
                     <label>
-                        <textarea id ="commentaire" name="commentaire" rows="5" cols="30" placeholder="commentaires" required></textarea>
+                        <textarea id ="commentaire" name="commentaire" rows="5" cols="30" placeholder="Commentaire obligatoire" required></textarea>
                     </label>
                     <input type="hidden" id ="idDemande" name="idDemande" value="<%= request.getParameter("idDemande") %>">
-                    <p>
-                        <button type="submit">Valider</button>
-                    </p>
-                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn">Valider</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

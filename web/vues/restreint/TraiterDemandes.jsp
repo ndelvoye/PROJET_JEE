@@ -17,7 +17,7 @@
                     <div class="card-header card-header-primary "
                          style="background-image: linear-gradient(60deg, rgb(0, 188, 212), rgb(142, 36, 170));">
                         <h4 class="card-title ">Demandes employés</h4>
-                        <p class="card-category"> Recapitulatif</p>
+                        <p class="card-category">Récapitulatif</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -30,12 +30,12 @@
                         <c:otherwise>
                             <table class="table">
                                 <thead class=" text-primary">
-                                <th>date Creation</th>
+                                <th>Date de création</th>
                                 <th>Email de l'employé</th>
                                 <th>Type demande</th>
-                                <th>Date debut</th>
+                                <th>Date début</th>
                                 <th>Date fin</th>
-                                <th>Action</th>
+                                <th>Actions</th>
                                 <th></th>
                                 </thead>
                                 <tbody>
@@ -61,14 +61,14 @@
                                     <td><%=dtFin %>
                                     </td>
                                     <td class="action">
-                                        <jsp:include page="../includes/modalAccepter.jsp">
-                                            <jsp:param name="idDemande" value="<%=idDemande%>"/>
+                                        <jsp:include page="../includes/ModalAccepter.jsp">
+                                            <jsp:param name="idDemande" value="<%= idDemande %>"/>
                                         </jsp:include>
                                     </td>
                                     <td class="action">
-                                        <jsp:include page="../includes/modalRefuser.jsp"/>
-
-
+                                        <jsp:include page="../includes/ModalRefuser.jsp">
+                                            <jsp:param name="idDemande" value="<%= idDemande %>"/>
+                                        </jsp:include>
                                     </td>
                                 </tr>
                                 <%

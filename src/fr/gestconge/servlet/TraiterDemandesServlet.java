@@ -20,12 +20,16 @@ public class TraiterDemandesServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Employe utilisateur = (Employe) session.getAttribute("utilisateur");
-        if (utilisateur != null && utilisateur.getFonction().equals("RH")) {
-            DemandeDAO demandeDAO = new DemandeDAO();
-            // On récupère toutes les demandes ayant un état "EN ATTENTE" en base de données
-            List<Demande> listeDemandesNonTraitees = demandeDAO.getAll().stream().filter(d -> d.getEtat() == 0).collect(Collectors.toList());
-            if (!listeDemandesNonTraitees.isEmpty()) request.setAttribute("listeDemandes", listeDemandesNonTraitees);
-            this.getServletContext().getRequestDispatcher(Vues.TraiterDemandes.getLien()).forward(request, response);
+        if (utilisateur != null) {
+            if (utilisateur.getService().equals("RH")) {
+                DemandeDAO demandeDAO = new DemandeDAO();
+                // On récupère toutes les demandes ayant un état "EN ATTENTE" en base de données
+                List<Demande> listeDemandesNonTraitees = demandeDAO.getAll().stream().filter(d -> d.getEtat() == 0).collect(Collectors.toList());
+                if (!listeDemandesNonTraitees.isEmpty()) request.setAttribute("listeDemandes", listeDemandesNonTraitees);
+                this.getServletContext().getRequestDispatcher(Vues.TraiterDemandes.getLien()).forward(request, response);
+            } else {
+                response.sendRedirect("Agenda");
+            }
         } else {
             response.sendRedirect("Connexion");
         }
