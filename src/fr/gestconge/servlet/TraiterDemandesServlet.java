@@ -25,6 +25,9 @@ public class TraiterDemandesServlet extends HttpServlet {
                 DemandeDAO demandeDAO = new DemandeDAO();
                 // On récupère toutes les demandes ayant un état "EN ATTENTE" en base de données
                 List<Demande> listeDemandesNonTraitees = demandeDAO.getAll().stream().filter(d -> d.getEtat() == 0).collect(Collectors.toList());
+
+                // S'il s'agit d'un RH standard, on enlève ses congés de la liste (on laisse le DRH voir ses propres demandes)
+                if(utilisateur.getFonction().equals("standard")) listeDemandesNonTraitees = listeDemandesNonTraitees.stream().filter(d -> !d.getEmailEmploye().equals(utilisateur.getEmail())).collect(Collectors.toList());
                 if (!listeDemandesNonTraitees.isEmpty()) request.setAttribute("listeDemandes", listeDemandesNonTraitees);
                 this.getServletContext().getRequestDispatcher(Vues.TraiterDemandes.getLien()).forward(request, response);
             } else {

@@ -20,21 +20,25 @@ public class RefuserServlet extends HttpServlet {
         Employe utilisateur = (Employe) session.getAttribute("utilisateur");
 
         if (utilisateur != null) {
-            String commentaire = request.getParameter("commentaire");
-            if(!commentaire.equals("")) { // Si le commentaire est renseigné
-                DemandeDAO demandeDAO = new DemandeDAO();
-                Demande demande = demandeDAO.getById(Integer.parseInt(request.getParameter("idDemande")));
-                if (demande != null) {
-                    String[] tableauModifs = new String[5];
-                    tableauModifs[0] = demande.getType();
-                    tableauModifs[1] = String.valueOf(demande.getDateDebut());
-                    tableauModifs[2] = String.valueOf(demande.getDateFin());
-                    tableauModifs[3] = String.valueOf(-1);
-                    tableauModifs[4] = commentaire;
-                    demandeDAO.update(demande, tableauModifs);
+            if (utilisateur.getService().equals("RH")) {
+                String commentaire = request.getParameter("commentaire");
+                if (!commentaire.equals("")) { // Si le commentaire est renseigné
+                    DemandeDAO demandeDAO = new DemandeDAO();
+                    Demande demande = demandeDAO.getById(Integer.parseInt(request.getParameter("idDemande")));
+                    if (demande != null) {
+                        String[] tableauModifs = new String[5];
+                        tableauModifs[0] = demande.getType();
+                        tableauModifs[1] = String.valueOf(demande.getDateDebut());
+                        tableauModifs[2] = String.valueOf(demande.getDateFin());
+                        tableauModifs[3] = String.valueOf(-1);
+                        tableauModifs[4] = commentaire;
+                        demandeDAO.update(demande, tableauModifs);
+                    }
                 }
+                response.sendRedirect("TraiterDemandes");
+            } else {
+                response.sendRedirect("Agenda");
             }
-            response.sendRedirect("TraiterDemandes");
         } else {
             response.sendRedirect("Connexion");
         }
