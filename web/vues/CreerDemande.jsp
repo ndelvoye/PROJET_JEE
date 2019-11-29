@@ -57,7 +57,7 @@
                                                                   class="form-control" type="date" name="dateDebut"
                                                                   id="dateDebut"
                                                                   value="<c:out value="${demande.dateDebut}"/>"/>
-                            <span class="erreur">${form.erreurs['dtDebut']}</span>
+
                         </div>
                         <div class="d-inline">
                             <label for="demiJourDebut">Dès le matin</label>
@@ -84,8 +84,6 @@
                                    id="dateFin"
                                    value="<%--@elvariable id="demande" type="fr.gestconge.classes.beans.Demande"--%>
                                     <c:out value="${demande.dateFin}"/>"/>
-
-                            <span class="erreur">${form.erreurs['dtFin']}</span>
                         </div>
                         <div class="d-inline">
                             <label for="demiJourFin">Dès le matin</label>
@@ -104,6 +102,13 @@
                         </div>
                     </div>
                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit">Envoyer</button>
+                    <div style="color: red;">
+                        <p class="erreur">==> ${form.erreurs['demiJourDebutMatin']} </p>
+                        <p class="erreur">==> ${form.erreurs['demiJourFinMatin']} </p>
+                        <p class="erreur">==> ${form.erreurs['TimestampNow']} </p>
+                        <p class="erreur">==> ${form.erreurs['NbCongesDuType']} </p>
+                    </div>
+
                 </div>
             </div>
         </form>
