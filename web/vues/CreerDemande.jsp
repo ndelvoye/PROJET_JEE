@@ -11,7 +11,7 @@
             <div class="col-xs-12">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <p class="control-label">Type de congé</p>
+                        <h4>Type de congé</h4>
                         <div class="d-inline">
                             <input class="bouton-radio" type="radio" name="typeDemande" value="RTT"
                                    required="required" id="rtt"
@@ -51,13 +51,12 @@
                     </div>
 
                     <div class="form-group">
-                        <p class="control-label">Date de début</p>
+                        <h4>Date de début</h4>
                         <div class="d-inline">
                             <label for="dateDebut"></label><input maxlength="200" required="required"
                                                                   class="form-control" type="date" name="dateDebut"
                                                                   id="dateDebut"
-                                                                  value="<c:out value="${demande.dateDebut}"/>"/>
-                            <span class="erreur">${form.erreurs['dtDebut']}</span>
+                                                                  value="<c:out value="${demande.dateDebut}"/>"/><br>
                         </div>
                         <div class="d-inline">
                             <label for="demiJourDebut">Dès le matin</label>
@@ -77,15 +76,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <p class="control-label">Date de fin</p>
+                        <h4>Date de fin</h4>
                         <div class="d-inline">
                             <label for="dateFin"></label>
                             <input maxlength="200" required="required" class="form-control" type="date" name="dateFin"
                                    id="dateFin"
                                    value="<%--@elvariable id="demande" type="fr.gestconge.classes.beans.Demande"--%>
-                                    <c:out value="${demande.dateFin}"/>"/>
-
-                            <span class="erreur">${form.erreurs['dtFin']}</span>
+                                    <c:out value="${demande.dateFin}"/>"/><br>
                         </div>
                         <div class="d-inline">
                             <label for="demiJourFin">Dès le matin</label>
@@ -103,7 +100,22 @@
                             </c:if>
                         </div>
                     </div>
-                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit">Envoyer</button>
+                    <button class="btn btn-primary nextBtn btn-lg" type="submit">Envoyer</button><br>
+
+                    <div style="color: red;">
+                        <c:if test="${ form.erreurs['demiJourDebutMatin'] != null }">
+                            <p class="erreur">${form.erreurs['demiJourDebutMatin']} </p>
+                        </c:if>
+                        <c:if test="${ form.erreurs['demiJourFinMatin'] != null }">
+                            <p class="erreur">${form.erreurs['demiJourFinMatin']} </p>
+                        </c:if>
+                        <c:if test="${ form.erreurs['TimestampNow'] != null }">
+                            <p class="erreur">${form.erreurs['TimestampNow']} </p>
+                        </c:if>
+                        <c:if test="${ form.erreurs['NbCongesDuType'] != null }">
+                            <p class="erreur">${form.erreurs['NbCongesDuType']} </p>
+                        </c:if>
+                    </div>
                 </div>
             </div>
         </form>

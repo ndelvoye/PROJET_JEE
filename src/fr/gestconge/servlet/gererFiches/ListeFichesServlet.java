@@ -1,4 +1,4 @@
-package fr.gestconge.servlet;
+package fr.gestconge.servlet.gererFiches;
 
 import fr.gestconge.bean.Employe;
 import fr.gestconge.dao.EmployeDAO;
@@ -19,10 +19,14 @@ public class ListeFichesServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Employe utilisateur = (Employe) session.getAttribute("utilisateur");
         if (utilisateur != null) {
-            EmployeDAO employeDAO = new EmployeDAO();
-            List<Employe> listeEmployes = employeDAO.getAll();
-            if (!listeEmployes.isEmpty()) request.setAttribute("listeEmployes", listeEmployes);
-            this.getServletContext().getRequestDispatcher(Vues.ListeFiche.getLien()).forward(request, response);
+            if(utilisateur.getFonction().equals("leader") && utilisateur.getService().equals("RH")) {
+                EmployeDAO employeDAO = new EmployeDAO();
+                List<Employe> listeEmployes = employeDAO.getAll();
+                if (!listeEmployes.isEmpty()) request.setAttribute("listeEmployes", listeEmployes);
+                this.getServletContext().getRequestDispatcher(Vues.ListeFiches.getLien()).forward(request, response);
+            } else {
+                response.sendRedirect("Agenda");
+            }
         } else {
             response.sendRedirect("Connexion");
         }

@@ -106,6 +106,12 @@
                     </div>
                     <input type="hidden" id="idDemande" name="idDemande" value="<%= idDemande %>">
                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit">Modifier</button>
+                    <div style="color: red;">
+                        <p class="erreur">${form.erreurs['demiJourDebutMatin']} </p>
+                        <p class="erreur">${form.erreurs['demiJourFinMatin']} </p>
+                        <p class="erreur">${form.erreurs['TimestampNow']} </p>
+                        <p class="erreur">${form.erreurs['NbCongesDuType']} </p>
+                    </div>
                 </div>
             </div>
         </form>

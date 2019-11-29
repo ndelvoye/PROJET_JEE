@@ -1,15 +1,23 @@
 package fr.gestconge.utils;
 
 public enum Vues {
-    Statistiques("/vues/restreint/Statistiques.jsp"),
-    TraiterDemandes("/vues/restreint/TraiterDemandes.jsp"),
-    ListeDemandes("/vues/restreint/ListeConges.jsp"),
+    // DRH
     CreerFiche("/vues/restreint/CreerFiche.jsp"),
+    ModifierFiche("/vues/restreint/ModifierFiche.jsp"),
+    ListeFiches("/vues/restreint/ListeFiches.jsp"),
+
+    // RH
+    TraiterDemandes("/vues/restreint/TraiterDemandes.jsp"),
+    Statistiques("/vues/restreint/Statistiques.jsp"),
+
+    // RH & Chef équipe
+    ListeConges("/vues/restreint/ListeConges.jsp"),
+
+    // Pour tous
     CreerDemande("/vues/CreerDemande.jsp"),
     ModifierDemande("/vues/ModifierDemande.jsp"),
-    ListeFiche("/vues/ListeFiche.jsp"),
     MesDemandes("/vues/MesDemandes.jsp"),
-    Agenda("/vues/Agenda.jsp"),
+    MonAgenda("/vues/MonAgenda.jsp"),
     MonProfil("/vues/MonProfil.jsp"),
     Connexion("/vues/Connexion.jsp");
 

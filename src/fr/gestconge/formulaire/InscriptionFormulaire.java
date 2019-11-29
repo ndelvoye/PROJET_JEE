@@ -15,7 +15,7 @@ public class InscriptionFormulaire {
     private static final String CHAMP_CONF = "confirmation";
     private static final String CHAMP_NOM = "nom";
     private static final String CHAMP_PRENOM = "prenom";
-    private static final String CHAMP_POSTE = "poste";
+    private static final String CHAMP_FONCTION = "fonction";
     private static final String CHAMP_SERVICE = "service";
     private static final String CHAMP_EQUIPE = "equipe";
     private static final String CHAMP_DATE_RECRUTEMENT = "dateRecrutement";
@@ -50,7 +50,7 @@ public class InscriptionFormulaire {
         String email = getValeurChamp(request, CHAMP_EMAIL);
         String motDePasse = getValeurChamp(request, CHAMP_PASS);
         String confirmation = getValeurChamp(request, CHAMP_CONF);
-        String poste = getValeurChamp(request, CHAMP_POSTE);
+        String fonction = getValeurChamp(request, CHAMP_FONCTION);
         String service = getValeurChamp(request, CHAMP_SERVICE);
         String equipe = getValeurChamp(request, CHAMP_EQUIPE);
 
@@ -86,7 +86,7 @@ public class InscriptionFormulaire {
         utilisateur.setPrenom(prenom);
         utilisateur.setDateRecrutement(new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse(dateRecrutement).getTime()));
         utilisateur.setService(service);
-        utilisateur.setFonction(poste);
+        utilisateur.setFonction(fonction);
         utilisateur.setEquipe(equipe);
 
         if (erreurs.isEmpty()) {

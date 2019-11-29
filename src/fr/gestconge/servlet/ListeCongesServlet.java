@@ -42,7 +42,7 @@ public class ListeCongesServlet extends HttpServlet {
             // S'il y a des congés validées qui n'appartiennent pas à la personne qui demande, on affiche
             if (!listeConges.isEmpty()) request.setAttribute("listeConges",  listeConges.stream().filter(c -> !c.getEmailEmploye().equals(utilisateur.getEmail())).collect(Collectors.toList()));
 
-            this.getServletContext().getRequestDispatcher(Vues.ListeDemandes.getLien()).forward(request, response);
+            this.getServletContext().getRequestDispatcher(Vues.ListeConges.getLien()).forward(request, response);
         } else {
             response.sendRedirect("Connexion");
         }

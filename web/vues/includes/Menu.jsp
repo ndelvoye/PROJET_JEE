@@ -17,14 +17,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="CreerDemande">
-                <i class="material-icons">description</i>
-                <p>Créer une demande</p>
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="MesDemandes">
-                <i class="material-icons">list</i>
+                <i class="material-icons">description</i>
                 <p>Mes demandes</p>
             </a>
         </li>
@@ -38,9 +32,9 @@
         <c:set var="isLeader" scope="page" value="<%= isLeader %>"/>
         <c:if test="${isRH && isLeader}">
             <li class="nav-item">
-                <a class="nav-link" href="CreerFiche">
-                    <i class="material-icons">control_point</i>
-                    <p>Créer fiche</p>
+                <a class="nav-link" href="ListeFiches">
+                    <i class="material-icons">person</i>
+                    <p>Liste fiches</p>
                 </a>
             </li>
         </c:if>

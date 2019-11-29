@@ -26,6 +26,7 @@
                     <th>Date fin</th>
                     <th>Date création</th>
                     <th>Statut</th>
+                    <th>Commentaire</th>
                     <th class="action">Actions</th>
                 </tr>
                     <%-- Parcours de la Map des demandes en session, et utilisation de l'objet varStatus. --%>
@@ -53,6 +54,7 @@
                                 </c:otherwise>
                             </c:choose>
                         </td>
+                        <td><c:out value="${ demande.commentaire }"/></td>
 
                             <%-- Lien vers la servlet de suppression, avec passage de la date de la commande - c'est-à-dire la clé de la Map - en paramètre grâce à la balise <c:param/>. --%>
                         <td class="action">
@@ -74,6 +76,7 @@
             </table>
         </c:otherwise>
     </c:choose>
+    <a href="${pageContext.request.contextPath}/CreerDemande"><button class="btn-primary btn">Créer une nouvelle demande</button> </a>
 </div>
 
 <jsp:include page="includes/Footer.jsp"/>

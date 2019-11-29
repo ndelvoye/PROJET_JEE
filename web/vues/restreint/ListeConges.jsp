@@ -11,6 +11,8 @@
     List<Demande> listeConges = (List<Demande>) request.getAttribute("listeConges");
 %>
 <c:set scope="request" value="${listeConges}" var="listeConges"/>
+<%-- --%>
+<form
 <div class="p-4">
     <c:choose>
         <%-- Si aucune demande n'existe en session, affichage d'un message par défaut. --%>
@@ -27,6 +29,7 @@
                     <th>Date début</th>
                     <th>Date fin</th>
                     <th>Date création</th>
+                    <th>Commentaire</th>
                 </tr>
                     <%-- Parcours de la Map des demandes en session, et utilisation de l'objet varStatus. --%>
                 <c:forEach var="conge" items="${ listeConges }">
@@ -40,6 +43,7 @@
                         <td><c:out value="${ conge.dateDebut }"/></td>
                         <td><c:out value="${ conge.dateFin }"/></td>
                         <td><c:out value="${ conge.dateCreation }"/></td>
+                        <td><c:out value="${ conge.commentaire }"/></td>
                     </tr>
                 </c:forEach>
             </table>

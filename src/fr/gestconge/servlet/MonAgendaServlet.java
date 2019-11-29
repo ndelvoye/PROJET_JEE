@@ -11,13 +11,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/Agenda")
-public class AgendaServlet extends HttpServlet {
+public class MonAgendaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Employe utilisateur = (Employe) session.getAttribute("utilisateur");
         if (utilisateur != null) {
-            this.getServletContext().getRequestDispatcher("/vues/Agenda.jsp").forward(request, response);
+            this.getServletContext().getRequestDispatcher("/vues/MonAgenda.jsp").forward(request, response);
         } else {
             response.sendRedirect("Connexion");
         }

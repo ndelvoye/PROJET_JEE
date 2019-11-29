@@ -111,7 +111,6 @@
                                             <td>
                                                 <label class="control-label">
                                                     <input class="bouton-radio" name="fonction" type="radio" required="required" id="standard" value="standard">
-
                                                 </label>
                                             </td>
                                         </tr>
@@ -133,25 +132,21 @@
                                             <td>
                                                 <label class="control-label">
                                                     <input class="bouton-radio" name="service" type="radio" required="required" id="ia" value="ia">
-
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
                                                     <input class="bouton-radio" name="service" type="radio" required="required" id="defense" value="defense">
-
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
                                                     <input class="bouton-radio" name="service" type="radio" required="required" id="iot" value="iot">
-
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
                                                     <input class="bouton-radio" name="service" type="radio" required="required" id="RH" value="RH">
-
                                                 </label>
                                             </td>
                                         </tr>
@@ -172,22 +167,22 @@
                                             <td>Nom équipe</td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="jawa" value="jawa">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="JAWA" value="JAWA">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="echo" value="echo">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="ECHO" value="ECHO">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="hola" value="hola">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="HOLA" value="HOLA">
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="control-label">
-                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="dream" value="dream">
+                                                    <input class="bouton-radio" name="equipe" type="radio" required="required" id="DREAM" value="DREAM">
                                                 </label>
                                             </td>
                                         </tr>

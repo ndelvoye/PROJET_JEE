@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<a class="nav-link" data-toggle="modal" href="#accepter">
+<a class="nav-link" data-toggle="modal" href="#accepter<%= request.getParameter("idDemande") %>">
     <img src="${pageContext.request.contextPath}/assets/img/valider.png" alt="Accepter" style="height: 25px" ; width="25px"/>
 </a>
-<div class="modal" id="accepter">
+<div class="modal" id="accepter<%= request.getParameter("idDemande")%>">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

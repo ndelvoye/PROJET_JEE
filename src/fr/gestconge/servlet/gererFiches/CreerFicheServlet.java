@@ -1,4 +1,4 @@
-package fr.gestconge.servlet;
+package fr.gestconge.servlet.gererFiches;
 
 import fr.gestconge.bean.Compteur;
 import fr.gestconge.bean.Employe;
@@ -59,7 +59,7 @@ public class CreerFicheServlet extends javax.servlet.http.HttpServlet {
                     compteurDAO.save(compteurNouvelEmploye);
 
                     // On retourne à la liste des employés
-                    getServletContext().getRequestDispatcher(Vues.ListeFiche.getLien()).forward(request, response);
+                    response.sendRedirect("ListeFiches");
                 } else {
                     // Sinon, on re-affiche le formulaire avec les erreurs
                     request.setAttribute("form", form);
