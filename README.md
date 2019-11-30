@@ -7,22 +7,22 @@
 
 ## Mettre en place notre application
 ### Modification du mot de passe
-* mysql -u root -p
-* `SET PASSWORD FOR root@localhost=PASSWORD(root);`
-* `FLUSH PRIVILEGES;`
+* `mysql -u root -p`
+* \> `SET PASSWORD FOR root@localhost=PASSWORD(root);`
+* \> `FLUSH PRIVILEGES;`
 
 ### Création de la base + peuplement
-* mysql -u root -p
-* `CREATE DATABASE gestionconges;`
+* `mysql -u root -p` 
+* \> `CREATE DATABASE gestionconges;`
 * `mysql -u root -p gestionconges < [repertoire_SQL]/createTables.sql`
 * `mysql -u root -p gestionconges < [repertoire_SQL]/insertValues.sql`
 * `mysql -u root -p gestionconges < [repertoire_SQL]/acceptAutoDemandes.sql`
 
 Un problème rencontré lors de l’export du .war sur l’environnement Unix nous oblige à modifier
 le nom des tables (dans un souci de respect de la casse) :
-* `RENAME TABLE employe TO Employe;`
-* `RENAME TABLE compteur TO Compteur;`
-* `RENAME TABLE demande TO Demande;`
+* \> `RENAME TABLE employe TO Employe;`
+* \> `RENAME TABLE compteur TO Compteur;`
+* \> `RENAME TABLE demande TO Demande;`
 
 ### Déploiement du war 
 Ensuite, il suffit d’installer le .war sur un serveur Apache Tomcat :
