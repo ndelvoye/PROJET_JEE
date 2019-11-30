@@ -28,8 +28,6 @@ create table if not exists demande
     dateCreation datetime    not null,
     emailEmploye varchar(64) not null,
     commentaire varchar(128),
-    constraint demande_employe_uindex
-        unique (emailEmploye),
     constraint demande_id_uindex
         unique (id),
     constraint id

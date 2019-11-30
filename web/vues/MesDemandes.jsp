@@ -56,7 +56,7 @@
                         </td>
                         <td><c:out value="${ demande.commentaire }"/></td>
 
-                            <%-- Lien vers la servlet de suppression, avec passage de la date de la commande - c'est-à-dire la clé de la Map - en paramètre grâce à la balise <c:param/>. --%>
+                            <%-- Lien vers la servlet de suppression, avec passage de la date de la Demande - c'est-à-dire la clé de la Map - en paramètre grâce à la balise <c:param/>. --%>
                         <td class="action">
                                 <%-- Si la demande est en état "En cours", on affiche les actions "Modifier" et "Supprimer" --%>
                             <c:if test="${demande.etat == 0}">
